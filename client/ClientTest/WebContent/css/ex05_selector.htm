@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+/*
+
+	CSS 선택자
+	1. 태그 선택자
+	2. ID 선택자
+	3. Class 선택자
+	4. 그룹 선택자
+	
+	5. 자손 선택자, Descendant Selector
+	- 자식 + 손자 + 증손자 + 고손자...
+	- 할아버지태그 + 부모 태그 + 당사자 태그
+	- 할아버지태그 부모태그 당사자 태그
+	- '' 공백을 구분자
+	- 앞의 선택자들을 직계 조상으로 가지는 태그를 선택한다.
+	
+	6. 자식 선택자, Child Selector
+	- 친자식
+	- 친부모를 조건으로 검색하는 선택자
+	- '>'을 구분자
+	- 자손(5) 선택자보다 정밀도 높음
+
+
+
+	선택자를 선택 기준
+	1. id vs class
+	2. 자손 vs 자식
+	
+	-> 범위가 넓은 것 선택
+	
+	
+*/
+
+table#tbl1 td {
+	color : blue;
+}
+
+ul li {
+	color : orange;
+}
+
+div > span {
+	text-decoration : underline;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<!-- 
+	
+	
+	
+ -->
+
+<h1>주소록</h1>
+
+<table border = "1" width = "500">
+	<tr>
+		<td>1</td>
+		<td>길동</td>
+		<td>남자</td>
+		<td>서울시</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>무개</td>
+		<td>여자</td>
+		<td>부산시</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>하하하</td>
+		<td>남자</td>
+		<td>구미시</td>
+	</tr>
+</table>
+
+
+<h1>주소록</h1>
+
+<table border = "1" width = "500" id="tbl1">
+	<tr>
+		<td>1</td>
+		<td>길동</td>
+		<td>남자</td>
+		<td>서울시</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>무개</td>
+		<td>여자</td>
+		<td>부산시</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>하하하</td>
+		<td>남자</td>
+		<td>구미시</td>
+	</tr>
+</table>
+
+
+<h1>오늘의 할일</h1>
+<ul>
+	<li>이클립스 설치하기</li>
+	<li>오라클 설치하기</li>
+	<li>프로젝트 정리하기</li>
+</ul>
+
+<div>
+<h1>오늘의 할일</h1>
+<ol>
+	<li>이클립스 설치하기</li>
+	<li><p><span>오라클 설치하기</span></p></li>
+	<li><div><span>프로젝트 정리하기</span></div></li>
+</ol>
+</div>
+
+
+
+</body>
+</html>

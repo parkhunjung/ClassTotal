@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	/* 웹 프로젝트 진행 시 초반 작업 중 하나 : 해상도 결정(고객의 디스플레이 크기에 따라서) */
+	
+	#main{
+		border: 0px solid black;
+		width: 800px;
+	}
+	
+	#menu{
+		background-color: orange;
+		width: 800px;
+		height: 80px;
+	}
+	
+	#submenu{
+		background-color: green;
+		width: 200px;
+		height: 500px;
+		float: left;
+	}
+	
+	#content{
+		background-color: pink;
+		width: 600px;
+		height: 500px;
+		float: left;
+	}
+	
+	#footer{
+		background-color: cornflowerblue;
+		clear: left;
+		width: 800px;
+		height: 80px;
+	}
+	
+	
+</style>
+</head>
+<body>
+
+	<!-- 
+	레이아웃 만들기
+	1. 표 사용
+	2. <div> + CSS 사용
+	
+	-->
+	
+	<!-- div버전 -->
+	<div id="main">
+		<div id="menu">주메뉴(orange)</div>
+		<div id="submenu">보조메뉴(green)</div>
+		<div id="content">주내용(pink)</div>
+		<div id="footer">하단(cornflowerblue)</div>
+	</div>
+	<!-- semantic -->
+	<!-- 
+	<nav id="menu">주메뉴(orange)</nav>
+	<nav id="submenu">보조메뉴(green)</nav>
+	<section id="content">주내용(pink)</section>
+	<footer id="footer">하단(cornflowerblue)</footer>
+	 -->
+	
+	
+</body>
+</html>

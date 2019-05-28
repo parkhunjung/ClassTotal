@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        .item {
+            border: 0px solid black;
+            width: 750px;
+            margin: 40px 10px;
+            border-top: 1px solid #ccc;
+            padding-top: 30px;
+        }
+
+        .content > div {
+            float: left;
+        }
+
+        .content > div:first-child {
+            width: 230px;
+            margin-right: 10px;
+        }
+
+        .content > div:first-child > div:last-child {
+            font-family: Helvetica;
+            font-size: 14px;
+            letter-spacing: -1px;
+            color: black;
+            margin-top: 3px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+
+        .content > div:nth-child(2) {
+            width: 510px;
+        }
+
+        .content > div:nth-child(2) > div {
+            margin-bottom: 10px;
+        }
+
+        .content > div:nth-child(2) > div > span:nth-child(1) {
+            display: inline-block;
+            /* border: 1px solid black; */
+            font-size: 15px;
+            letter-spacing: -1px;
+            color: #000;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: auto;
+            box-sizing: border-box;
+        }
+
+        .content > div:nth-child(2) > div > span:nth-child(2) {
+            display: inline-block;
+            width: 14px;
+            height: 11px;
+            background-image: url(../images/sp_news.png);
+            background-position: -467px -345px;
+        }
+
+        .content > div:nth-child(2) > div > span:nth-child(3) {
+            font-size: 12px;
+            color: #888;
+            letter-spacing: -1px;
+            font-family: "Helvetica Neue";
+        }
+
+
+        .header {
+            margin-bottom: 15px;
+        }
+
+        .header > span:first-child {
+
+        }
+
+        .header > span:first-child  > h1 {
+            display: inline;
+            color: #000;
+            font-size: 20px;
+            font-family: Helvetica;
+        }
+
+        .header > span:first-child > span {
+            font-size: 13px;
+            color: #444;
+            letter-spacing: -1px;
+            margin: 0px 3px;
+        }
+
+        .header > span:first-child > span:nth-child(3),
+        .header > span:first-child > span:nth-child(5) {
+            color: #e5e5e5;
+        }
+
+        .header > span:nth-child(2) {
+            float: right;
+            margin-top: 7px;
+        }
+
+        .header > span:nth-child(2) > span:nth-child(1) {
+            /* 햄버거 메뉴 */
+            display: inline-block;
+            width: 24px;
+            height: 19px;
+            background-image: url(../images/sp_news.png); 
+            background-position: -723px -645px;
+        }
+
+        .header > span:nth-child(2) > span:nth-child(2) {
+            /* 위 화살표 */
+            display: inline-block;
+            width: 24px;
+            height: 19px;
+            background-image: url(../images/sp_news.png); 
+            background-position: -723px -674px;
+        }
+
+        .header > span:nth-child(2) > span:nth-child(3) {
+            /* 아래 화살표 */
+            display: inline-block;
+            width: 24px;
+            height: 19px;
+            background-image: url(../images/sp_news.png); 
+            background-position: -723px -616px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <!-- 
+    1. 뼈대 만들기(레이아웃 만들기)
+        - HTML 태그를 사용한 구조 만들기(CSS X)
+    2. 데이터 추가하기
+        - PCDATA(문자열)
+        - 이미지
+    ------------------------------------HTML 작업----
+
+    -->
+
+    <div class="item">
+        <div class="header">
+            <span>
+                <h1>IT/과학</h1>
+                <span>모바일</span>
+                <span>|</span>
+                <span>통신</span>
+                <span>|</span>
+                <span>인터넷</span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../images/pic.jpg">
+                <div>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하...</div>
+            </div>
+            <div>
+                <div>
+                    <span>스페이스X 캡슐 폭발…NASA 유인 우주선 계획 차질</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>한미약품 단장증후군 치료 신약, 美FDA 희귀의약품 지정</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>이론상 최대속도 ‘큼직’, 실제 속도 ‘깨알’…LGU+, KT 5G ‘꼼수야 하나만이라도 넘치면 확인하는 코드</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>화웨이, LG유플러스와 잠실야구장서 5G 다중 사용 검증</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+            </div>
+        </div>
+        <div style="clear: left;"></div>
+    </div>
+<div class="item">
+        <div class="header">
+            <span>
+                <h1>IT/과학</h1>
+                <span>모바일</span>
+                <span>|</span>
+                <span>통신</span>
+                <span>|</span>
+                <span>인터넷</span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../images/pic.jpg">
+                <div>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하...</div>
+            </div>
+            <div>
+                <div>
+                    <span>스페이스X 캡슐 폭발…NASA 유인 우주선 계획 차질</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>한미약품 단장증후군 치료 신약, 美FDA 희귀의약품 지정</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>이론상 최대속도 ‘큼직’, 실제 속도 ‘깨알’…LGU+, KT 5G ‘꼼</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>화웨이, LG유플러스와 잠실야구장서 5G 다중 사용 검증</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+            </div>
+        </div>
+        <div style="clear: left;"></div>
+    </div>
+    <div class="item">
+        <div class="header">
+            <span>
+                <h1>IT/과학</h1>
+                <span>모바일</span>
+                <span>|</span>
+                <span>통신</span>
+                <span>|</span>
+                <span>인터넷</span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../images/pic.jpg">
+                <div>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하...</div>
+            </div>
+            <div>
+                <div>
+                    <span>스페이스X 캡슐 폭발…NASA 유인 우주선 계획 차질</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>한미약품 단장증후군 치료 신약, 美FDA 희귀의약품 지정</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>이론상 최대속도 ‘큼직’, 실제 속도 ‘깨알’…LGU+, KT 5G ‘꼼</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>화웨이, LG유플러스와 잠실야구장서 5G 다중 사용 검증</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+            </div>
+        </div>
+        <div style="clear: left;"></div>
+    </div>
+    <div class="item">
+        <div class="header">
+            <span>
+                <h1>IT/과학</h1>
+                <span>모바일</span>
+                <span>|</span>
+                <span>통신</span>
+                <span>|</span>
+                <span>인터넷</span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../images/pic.jpg">
+                <div>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하...</div>
+            </div>
+            <div>
+                <div>
+                    <span>스페이스X 캡슐 폭발…NASA 유인 우주선 계획 차질</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>한미약품 단장증후군 치료 신약, 美FDA 희귀의약품 지정</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>이론상 최대속도 ‘큼직’, 실제 속도 ‘깨알’…LGU+, KT 5G ‘꼼</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>화웨이, LG유플러스와 잠실야구장서 5G 다중 사용 검증</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+            </div>
+        </div>
+        <div style="clear: left;"></div>
+    </div>
+    <div class="item">
+        <div class="header">
+            <span>
+                <h1>IT/과학</h1>
+                <span>모바일</span>
+                <span>|</span>
+                <span>통신</span>
+                <span>|</span>
+                <span>인터넷</span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../images/pic.jpg">
+                <div>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하...</div>
+            </div>
+            <div>
+                <div>
+                    <span>스페이스X 캡슐 폭발…NASA 유인 우주선 계획 차질</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>한미약품 단장증후군 치료 신약, 美FDA 희귀의약품 지정</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>SKT·KT, '갤럭시S10 5G' 출고가 10만원 인하</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>이론상 최대속도 ‘큼직’, 실제 속도 ‘깨알’…LGU+, KT 5G ‘꼼</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+                <div>
+                    <span>화웨이, LG유플러스와 잠실야구장서 5G 다중 사용 검증</span>
+                    <span></span>
+                    <span>ZDNet Korea</span>
+                </div>
+            </div>
+        </div>
+        <div style="clear: left;"></div>
+    </div>
+
+
+
+</body>
+</html>

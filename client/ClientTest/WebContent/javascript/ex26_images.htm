@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #sw {
+            cursor: pointer;
+        }
+
+    </style>
+    <script>
+    
+        var btn1, cat1, cat2, sw1, cat3, num1;
+
+        window.onload = function() {
+            btn1 = document.all["btn1"];
+            cat1 = document.images["cat1"];
+            cat2 = document.images["cat2"];
+            sw1 = document.images["sw1"];
+            cat3 = document.images["cat3"];
+            num1 = document.images["num1"];
+
+            btn1.onclick = function () {
+                cat1.src = "../images/cat02.jpg";
+                cat1.width = 100;
+                cat1.title = "고양이";
+            };
+
+            cat2.onmouseover = function () {
+                cat2.src = "../images/cat03.jpg"
+            };
+
+            cat2.onmouseout = function () {
+                cat2.src = "../images/cat02.jpg"
+            };
+
+            sw1.onclick = function () {
+                // alert(getFileName(sw1.src));
+                if (getFileName(sw1.src) == "switch_on.png") {
+                    sw1.src = "../images/switch_off.png";
+                    document.body.bgColor = "black";
+                } else {
+                    sw1.src = "../images/switch_on.png";
+                    document.body.bgColor = "white";
+                }
+            };
+
+            function getFileName(path) {
+                var index = path.lastIndexOf("/");
+
+                if(index > -1) {
+                    return path.substring(index + 1);
+                } else {
+                    return null;
+                }
+            }
+
+            var n = 1;
+            cat3.onclick = function() {
+                n++;
+                if(n > 5) n=1;
+                cat3.src = "../images/cat0" + n + ".jpg";
+
+
+            }
+
+        }; //window.onload
+
+
+        // 전역 이벤트(window)
+        var n = 1;
+
+        window.onkeydown = function (event) {
+
+            if (event.keyCode == 39) {
+                //오른쪽 방향키
+                n++;
+                // if (n > 5) n=1;
+                if (n > 5) {
+                    alert("마지막 고양이 입니다.");
+                    n = 5;
+                }
+                cat3.src="../images/cat0" + n + ".jpg";
+            } else if (event.keyCode == 37) {
+                n--;
+                // if (n < 1) n=5;
+                if (n < 1) {
+                    alert("처음 고양이 입니다.")
+                    n = 1;
+                }
+                cat3.src="../images/cat0" + n + ".jpg";
+            }
+
+
+            // alert(event.keyCode);
+
+            if(event.keyCode >= 48 && event.keyCode <= 57) {
+                num1.src = "../images/" + (event.keyCode - 48) + ".png";
+            } else if (event.keyCode >= 96 && event.keyCode <= 105) {
+                num1.src = "../images/" + (event.keyCode - 96) + ".png";
+            }
+
+
+        };//window.onkeydown
+
+
+
+
+    
+    </script>
+</head>
+<body>
+    
+    <img src="../images/cat01.jpg" name="cat1">
+    <hr>
+    <img src="../images/cat02.jpg" name="cat2">
+    <hr>
+    <img src="../images/switch_on.png" name="sw1" id="sw">
+    <hr>
+    <input type="button" value="테스트" name="btn1" id="">
+    <hr>
+    <img src="../images/cat01.jpg" name="cat3" id="sw">
+    <hr>
+    <img src="../images/0.png" name="num1">
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+        전후 선택자
+        1. :before
+        2. :after
+
+        전후 선택자에서 사용하는 CSS 추가 요소
+        - content 속성의 값
+        a. none
+        b. 문자열
+        c. attr(속성)
+        d. open-quote
+        e. close-quote
+
+        */
+
+        span { 
+            color: red;
+        }
+
+        span::before {
+            /* content: "["; */
+            /* content: "<b>"; */
+            content: open-quote;
+        }
+
+        span::after {
+            /* content: "]"; */
+            /* content: "</b>"; */
+            content: close-quote;
+        }
+
+        .tistory {
+            width: 90%;	
+            font-weight: bold;
+            background-color: #D8D8D8;
+            border-left: 10px solid #FF8224;	
+            border-righht: 10px solid #FF8224;
+            margin: 1.5em 10px;	
+            padding: 0.5em 10px;
+            quotes:"\201C""\201D""\2018""\2019";
+        }
+        .tistory:before {
+            color: #FF8224;	
+            content: open-quote;	
+            font-size: 4em;
+            line-height: 0.1em;
+            vertical-align: -0.4em;		
+        }
+        
+        .tistory:after {
+            color: #FF8224;	
+            content: close-quote;	
+            font-size: 4em;
+            line-height: 0.1em;
+            vertical-align: -0.4em;		
+        }
+
+    </style>
+</head>
+<body>
+    
+    <p>Lorem <span>ipsum</span> dolor, sit amet consectetur <span>adipisicing</span> elit. Ab vitae modi temporibus sint eos aliquid, <span>quibusdam</span> eum consectetur rerum tenetur nobis eius, laborum cum obcaecati ullam <span>eveniet</span> quisquam odio hic ad ducimus ipsum voluptatem <sapn>nulla</span> reprehenderit. Quidem et qui animi numquam voluptate voluptas explicabo facilis dolor a? Molestias veniam cumque facere doloribus explicabo nulla, quo ipsa necessitatibus assumenda ea harum quia possimus qui suscipit perferendis in accusamus quae vel voluptas corporis! Aspernatur dolores voluptatem mollitia ex neque ipsa accusantium, <span>laborum</span> odit in officia earum exercitationem amet dicta ad deleniti officiis. Esse debitis quidem eius est sit illum fugit harum rem.</p>
+
+    <blockquote class="tistory">홍길동 왈. 자바를 공부하세요. 열심히 하세요.홍길동 왈. 자바를 공부하세요. 열심히 하세요.홍길동 왈. 자바를 공부하세요. 열심히 하세요.홍길동 왈. 자바를 공부하세요. 열심히 하세요.홍길동 왈. 자바를 공부하세요. 열심히 하세요.</blockquote>
+
+
+</body>
+</html>

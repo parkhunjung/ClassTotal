@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #content {
+            border: 1px solid black;
+            width: 860px;
+            padding: 30px 30px;
+            margin: 0 auto;
+        }
+
+        #content > label {
+            font-size: 30px;
+        }
+
+        #content > img {
+            border-radius: 50%;
+            opacity: .2;
+        }
+
+        #btndog:checked ~ .dog,
+        #btncat:checked ~ .cat {
+            border-radius: 0px;
+            opacity: 1;
+            transition: all 1s;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="content">
+        <input type="radio" name="animal" id="btndog" style="width:25px; height: 25px;"> <label for="btndog">강아지</label>
+        <input type="radio" name="animal" id="btncat" style="width:25px; height: 25px;"> <label for="btncat">고양이</label>
+        <hr>
+        <img src="../images/cat01.jpg" alt="" class="cat">
+        <img src="../images/dog01.jpg" alt="" class="dog">
+        <img src="../images/cat02.jpg" alt="" class="cat">
+        <img src="../images/dog02.jpg" alt="" class="dog">
+        <img src="../images/dog03.jpg" alt="" class="dog">
+        <img src="../images/cat03.jpg" alt="" class="cat">
+        <img src="../images/cat04.jpg" alt="" class="cat">
+        <img src="../images/dog04.jpg" alt="" class="dog">
+        <img src="../images/cat05.jpg" alt="" class="cat">
+        <img src="../images/dog05.jpg" alt="" class="dog">
+    </div>
+
+</body>
+</html>

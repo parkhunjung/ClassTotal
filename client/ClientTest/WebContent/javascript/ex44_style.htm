@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        #box1 {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 20px;
+        }
+
+        #box1.one {
+            font-size: 4em;
+            width: 400px;
+            text-decoration: underline;
+        }
+
+        #box1.two {
+            background-color: tomato;
+            border: 10px dashed green;
+        }
+
+        #box1.three {
+            height: 400px;
+            text-align: center;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .incli {
+            text-decoration: underline;
+        }
+
+    </style>
+
+    <script>
+    
+        var btn1, btn2, btn3, box1;
+
+        window.addEventListener("load", function() {
+
+            box1 = document.getElementById("box1");
+            btn1 = document.getElementById("btn1");
+            btn2 = document.getElementById("btn2");
+            btn3 = document.getElementById("btn3");
+
+            btn1.addEventListener("click", function() {
+                // CSS 속성을 객체(태그)에 추가하기
+                // 1. CSS 속성을 하나씩 직접 제어하기
+                // - style 프로퍼티
+                // box1.style.fontSize = "4em";
+
+                // 2-1. CSS 속성을 집합으로 제어하기
+                // - CSS의 class 선택자 사용 > class 선택자를 미리 준비
+                // box1.className = "one";
+                // box1.setAttribute("class", "two");
+
+                // 2-2. CSS 속성을 class 제어 + 다중 제어
+                // - 일부 클래스 조작을 안한다. > 귀찮고 손이 많이가서
+                // <div class="one two three">
+                // box1.className = "one";
+                // box1.className += " two";
+                // box1.className += " three";
+
+                // box1.className = "one two three";
+
+                // 3. CSS 클래스 + 다중 제어
+                // - classList 프로퍼티 사용(배열)
+                box1.classList.add("one");
+                // box1.classList.add("two");
+                box1.classList.add("three");
+
+
+            }); //btn1.click
+
+            btn2.addEventListener("click", function() {
+
+                // box1.style.fontSize = ""; // 초기화
+                // box1.style.fontSize = "1em";
+
+                // box1.className = "";
+
+                // 일부 클래스 제거 > 문자열 조작 > 어렵다.
+                // box1.className = "";
+                box1.classList.remove("one");
+
+            });
+
+            btn3.addEventListener("click", function() {
+
+                // box1.className = "one";
+                if (btn3.value =="적용하기") {
+                    // box1.className = "one";
+                    btn3.value = "해제하기";
+                } else {
+                    // box1.className = "";
+                    btn3.value = "적용하기";
+                }
+
+                box1.classList.toggle("one");
+
+            });
+
+        });
+    
+    </script>
+
+
+
+
+</head>
+<body>
+    
+    <input type="button" value="CSS 속성 추가" id="btn1">
+    <input type="button" value="CSS 속성 삭제" id="btn2">
+    <input type="button" value="CSS 속성 토글" id="btn3">
+    <hr>
+
+    <div id="box1">상자1</div>
+
+    <h1>텍스트 서식</h1>
+
+    <div>
+        <input type="button" value="B" id="c1">
+        <input type="button" value="I" id="c2">
+        <input type="button" value="U" id="c3">
+    </div>
+
+    <p id="p1">[이데일리 정병묵 기자] 9.13 부동산 대책 이후 아파트 매매거래량이 줄어들면서 전월세 시장 역시 거래가 줄고 하락세가 이어지고 있다. 전세시장 비수기가 시작되는 시점으로 수요가 줄어 더욱 한산한 모습이다.
+
+            17일 KB부동산에 따르면 전국 아파트 전세가격은 전주 대비 0.04% 하락했다. 서울 (-0.03%), 수도권(-0.03%), 5개 광역시(-0.02%), 기타 지방(-0.07%) 모두 전주대비 하락세를 보였다.</p>
+
+    <script>
+    
+        var c1, c2, c3, p1;
+
+        c1 = document.getElementById("c1");
+        c2 = document.getElementById("c2");
+        c3 = document.getElementById("c3");
+        p1 = document.getElementById("p1");
+        
+        c1.addEventListener("click", function() {
+
+            // p1.classList.add("bold");
+            p1.classList.toggle("bold");
+
+        });
+
+        c2.addEventListener("click", function() {
+
+            // p1.classList.add("italic");
+            p1.classList.toggle("italic");
+            
+        });
+
+        c3.addEventListener("click", function() {
+            
+            p1.classList.toggle("incli");
+
+        });
+
+    
+    </script>
+
+
+</body>
+</html>

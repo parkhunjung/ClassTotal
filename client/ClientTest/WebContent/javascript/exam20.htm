@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        img {
+            width: 128px;
+            height: 128px;
+            position: absolute;
+            transition: all 1s;
+            /* left: 0px;
+            top: 0px; */
+        }
+    
+    </style>
+
+</head>
+<body>
+    
+    <script>
+    
+        var img = document.createElement("img");
+        img.setAttribute("src", "../images/catty01.png");
+
+        document.body.appendChild(img);
+        img.style.left = 0;
+        img.style.top = 0;
+
+        window.addEventListener("click", function() {
+
+            
+            img.style.left = event.clientX - 50 + "px";
+            img.style.top = event.clientY - 50 + "px";
+
+
+        });
+
+    
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        body {
+            padding-bottom: 500px;
+        }
+        
+        #box {
+            border: 10px solid black;
+            background-color: gold;
+            width: 200px;
+            height: 200px;
+            margin: 15px;
+            transition: all 3s ease-out;
+        }
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 128px;
+            height: 128px;
+        }
+
+        #tbl1 td img {
+            width: 128px;
+            height: 128px;
+            display: block;
+            transition: all 1s;
+        }
+    
+    </style>
+    <script>
+
+        var angle = 0;
+        var cell;
+
+        window.onload = function() {
+
+            cell = document.getElementsByTagName("td");
+
+            // <td>안에 고양이 넣기
+            for (var i=0; i<cell.length; i++){
+                // DOM(innerHTML) vs DOM(createElement)
+                // cell[i].innerHTML = "<img>";
+                // cell[i].children[0]
+
+                var img = document.createElement("img");
+                img.setAttribute("src", "../images/catty01.png");
+                cell[i].appendChild(img);
+
+                //mouseover == mouseenter
+                img.onmouseenter = function() {
+                    event.srcElement.style.transform = "rotate(360deg)";
+                    event.srcElement.style.opacity = "0.01";
+                    // event.srcElement.style.transition = "all 1s";
+                };
+
+                // mouseout == mouseleave
+                img.onmouseleave = function() {
+                    event.srcElement.style.transform = "rotate(0deg)";
+                    event.srcElement.style.opacity = "1";
+                    // event.srcElement.style.transition = "all 1s";
+                };
+
+
+            }
+
+            document.getElementById("btn1").onclick = function() {
+                
+                var box = document.getElementById("box");
+
+                // 변형
+                // box.style.transform = "translate(500px, 200px)";
+                // box.style.transform = "scale(-1, 1)";
+
+                // 최소 5바퀴 ~ 10바퀴 = 1800 ~ 3600
+                angle += parseInt(Math.random() * 1800) + 1800;
+
+                box.style.transform = "rotate(" + angle + "deg)";
+
+            };
+        };
+    
+    
+    </script>
+</head>
+<body>
+
+    <input type="button" value="테스트" id="btn1">
+    <hr>
+    <div id="box">상자</div>
+
+    <h1>Table</h1>
+    
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+</html>

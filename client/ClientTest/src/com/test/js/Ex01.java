@@ -1,0 +1,189 @@
+package com.test.js;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Ex01 {
+	
+	private static String data;
+	
+	static {
+		data = "안녕하세요. 박헌정입니다. 연락처는 010-1234-5678입니다."
+				+ " 혹시 연락이 안되면 010-9876-5432로 연락주세요."
+				+ " 추가로 이메일 주소는 hong@gmail.com 입니다.";
+	}
+	
+	
+	public static void main(String[] args) {
+		
+//		m1();
+//		m2();
+//		m3();
+//		m4();
+		m5();
+		
+	}
+
+	private static void m5() {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("아이디 입력 : ");
+		String input = scan.nextLine();
+		
+		String regex = "^[A-Za-z_][A-Za-z0-9_]{3,11}$";
+		
+		if(Pattern.matches(regex, input)) {
+			System.out.println("올바른 아이디");
+		} else {
+			System.out.println("올바르지 않은 아이디");
+		}
+		
+	}
+
+	private static void m4() {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("이름 입력(한글만 2~5자 이내로) : ");
+		String input = scan.nextLine();
+		
+		String regex = "^[가-힣]{2,5}$";
+		
+		if(Pattern.matches(regex, input)) {
+			System.out.println("올바른 이름");
+		} else {
+			System.out.println("올바르지 않은 이름");
+		}
+		
+	}
+
+	private static void m3() {
+		
+		// 유효성 검사
+		// - 나이 입력
+		// - 숫자만 입력(js -> isNaN())
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("나이 입력 : ");
+		String input = scan.nextLine();
+		
+		String regex = "^[0-9]{1,3}$"; //앞의 ^는 앞에 검사하고자하는 객체를 제외하곤 올수없게한다 뒤의 $는 뒤에 적용된다.
+		
+		if(Pattern.compile(regex).matcher(input).find()) {
+			System.out.println("통과");
+		} else {
+			System.out.println("거절");
+		}
+		
+		//위의 축약형
+		if(Pattern.matches(regex, input)) {
+			System.out.println("통과");
+		} else {
+			System.out.println("거절");
+		}
+		
+		
+	}
+
+	private static void m2() {
+		
+		try {
+			
+			BufferedReader reader = new BufferedReader(new FileReader("src\\com\\test\\js\\naver.htm"));
+			
+			String line ="";
+			StringBuilder sb = new StringBuilder();
+			
+			while((line=reader.readLine()) != null) {
+				sb.append(line);
+			}
+			
+			reader.close();
+
+			//System.out.println(sb.toString());
+			
+			//네이버 시작 페이지에서 찾고 싶은 것들을 정규 표현식으로 찾기
+			
+			Pattern p = Pattern.compile("(http|ftp|https):\\/\\/[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%&amp;:/~\\+#]*[\\w\\-\\@?^=%&amp;/~\\+#])?");
+			Matcher m = p.matcher(sb.toString());
+			
+			while(m.find()) {
+				System.out.println(m.group());
+			}
+			
+			
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		
+	}
+
+	private static void m1() {
+		
+		int count = 0;
+		// 자바에서 정규 표현식 사용하기
+		
+		// data에 전화번호가 있는지 확인?(유무)
+		
+		// 사용할 정규 표현식 > 정규식 객체
+		Pattern p = Pattern.compile("[0-9]{3}-[0-9]{3,4}-[0-9]{4}");
+//		Pattern p2 = Pattern.compile("\\d{3}-\\d{3,4}-\\d{4}");
+//		
+//		Pattern p = Pattern.compile("박[가-힣]{2}");
+//		
+		Matcher m = p.matcher(data); //매개변수에 CharSequence 는 문자열을 달라는 소리이다.
+//		
+//		
+//		System.out.println(m.find());
+//		
+//		if(m.find()) {
+//			System.out.println("전화번호를 찾았습니다.");
+//			System.out.println(m.group());
+//		} else {
+//			System.out.println("전화번호가 없습니다.");
+//		}
+//		
+		
+		// 모든 전화번호 찾기
+		while (m.find()) {
+			System.out.println(m.group());
+		}
+		
+		
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

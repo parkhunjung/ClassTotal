@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>이미지</h1>
+    <img src="../images/catty01.png"></img>
+    <img src="../images/catty02.png"></img>
+    <img src="../images/catty03.png"></img>
+    <img src="../images/catty04.png"></img>
+
+    <h1>링크</h1>
+    <a href="http://www.naver.com">네이버</a> <!-- 링크(Link) -->
+    <a name="a">A</a>   <!-- 앵커(Anchor) -->
+    <a href="http://www.google.com">구글</a>
+    <a name="b">B</a>
+    <a href="http://www.daum.net">다음</a>
+    <a name="c">C</a>
+
+    <h1>폼</h1>
+    <form name="form1">
+        <label>이름</label><input type="text" name="name1"><br>
+        <label>나이</label><input type="text" name="age1"><br>
+        <label>동의</label><input type="checkbox" name="cb1"><br>
+        <input type="submit" value="전송하기">
+    </form>
+
+    <script>
+        
+    // Collection
+    // - JavaScript가 문서 내용을 기반으로 자동 생성되는 배열을 제공한다.
+    // 1. window.document.images : 문서상의 모든 <img> 태그 배열
+    // 2. window.document.links : 문서상의 모든 <a href=""> 태그 배열 (그냥 <a> 태그는 제외한다.
+    // 3. window.documnet.anchors : 문서상의 모든 <a name=""> 태그 배열 
+    // 4. window.documnet.forms : 문서상의 모든 <form> 태그 배열 
+    // 5. window.documnet.forms[index].elements : 특정 폼의 하위 입력 태그 배열
+    // 6. window.document.all : 문서상의 모든 태그 배열 (images + links + anchors + forms + elements), 비표준(MS), 대부분 브라우저 지원
+
+    console.log(window.document.images.length);
+    console.log(window.document.images);
+
+    console.log(window.document.links.length);
+    console.log(window.document.links);
+    
+    console.log(window.document.anchors.length);
+    console.log(window.document.anchors);
+
+    window.document.form1.name1.value = "홍길동";
+    window.document.forms[0].age1.value = "20";
+
+    console.log(window.document.form1.elements);
+
+    var eles = window.document.form1.elements;
+
+    for(var i=0; i<eles.length; i++){
+        if (eles[i].type != "submit") {
+            eles[i].disabled = true;
+        }
+    }
+    
+    console.log(window.document.all.length);
+
+    window.document.all["name1"].value = "아무개";
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        #box {
+            border: 1px solid black;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            left: 200px;
+            top: 50px;
+        }
+
+        .box {
+            border: 1px solid black;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+        }
+
+    </style>
+    
+    <script>
+
+        var box;
+        var isDown = false;
+
+        window.addEventListener("load", function() {
+
+            // box = document.getElementById("box");
+            
+        });
+
+        window.onmouseup = function() {
+            isDown = false;
+        }
+
+        window.onmousedown = function() {
+            isDown = true;
+
+            box = document.createElement("div");
+            box.className = "box";
+            box.style.left = event.clientX + "px";
+            box.style.top = event.clientY + "px";
+
+            document.body.appendChild(box);
+        };
+
+        window.onmousemove = function() {
+
+            if(isDown) {
+                box.style.width = event.clientX - parseInt(box.style.left) + "px";
+                box.style.height = event.clientY - parseInt(box.style.top) + "px";
+            }
+
+
+        };
+        
+    
+    </script>
+
+</head>
+<body>
+    
+    <!-- <div id="box"></div> -->
+
+    <!-- 우+하 방향만 지원 -->
+    <!-- 좌+상 방향만 지원 -->
+
+    
+
+</body>
+</html>

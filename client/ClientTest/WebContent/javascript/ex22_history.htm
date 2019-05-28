@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    /*
+    window
+        - screen
+        - location
+        - history
+
+    history 객체
+    - 현재 브라우저가 방문했던 기록 관리 객체
+    */
+    
+    var btnBack, btnForward;
+
+    window.onload = init;
+
+    function init() {
+        btnBack = document.all["btnBack"];
+        btnForward = document.all["btnForward"];
+
+        btnBack.onclick = f1;
+        btnForward.onclick = f2;
+    }
+
+    // 현재 -> 네이버 -> 구글
+    function f1() {
+        // history.back();
+        history.go(-1);
+    }
+
+    function f2() {
+        // history.forward();
+        history.go(1);
+    }
+
+
+    </script>
+</head>
+<body>
+
+    <input type="button" value="뒤로 가기" name="btnBack" id="">
+    <input type="button" value="앞으로 가기" name="btnForward" id="">
+
+    
+</body>
+</html>

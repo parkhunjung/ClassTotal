@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #content {
+            border: 10px solid black;
+            width: 1200px;
+            height: 452px;
+            column-count: 3;
+            column-width: 400px;
+            column-gap: 0px; 
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        #content img.big {
+            width : 400px;
+        }
+
+        #content img.middle {
+            width : 200px;
+        }
+
+        #content img {
+            display: block;
+            float: left;
+            border-radius: 20px;
+            opacity: 0;
+            transition: all 1s;
+            transform: scale(5, 5)
+        }
+
+        #content:hover img {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="content">
+        <img src="../images/cat02.jpg" class="big">
+        <img src="../images/dog02.jpg" class="middle">
+        <img src="../images/cat04.jpg" class="middle">
+        <img src="../images/cat04.jpg" class="middle">
+        <img src="../images/cat01.jpg" class="middle">
+        <img src="../images/dog01.jpg" class="big">
+        <img src="../images/cat03.jpg" class="big">
+        <img src="../images/dog05.jpg" class="middle">
+        <img src="../images/cat05.jpg" class="middle">
+        <div style="clear: both;"></div>        
+    </div>
+    
+</body>
+</html>

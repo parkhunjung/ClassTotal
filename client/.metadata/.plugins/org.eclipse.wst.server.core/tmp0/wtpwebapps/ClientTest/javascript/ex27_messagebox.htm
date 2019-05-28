@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="button" value="버튼1" name="btn1">
+    <input type="button" value="버튼2" name="btn2">
+    <input type="button" value="버튼3" name="btn3">
+
+    <script>
+        
+        var btn1 = document.all["btn1"];
+        var btn2 = document.all["btn2"];
+        var btn3 = document.all["btn3"];
+        
+        // 메시지 박스
+        // 1. alert(메시지); //단순한 문자열 전달 용
+        // 2. boolean confirm(메시지); //사용자에게 질문 > 의사 표현
+
+        btn1.onclick = function () {
+            alert("메시지");
+        };
+
+        btn2.onclick = function () {
+            // confirm("메시지");
+            if (confirm("정말 삭제하시겠습니까?")) {
+                alert("삭제 완료");
+            } else {
+                alert("취소");
+            }
+        };
+
+        btn3.onclick = function () {
+            var result = prompt("암호를 입력하세요", "");
+            if (result == "1234") {
+                location.href = "member.htm";
+            }
+        };
+
+
+    </script>
+
+</body>
+</html>

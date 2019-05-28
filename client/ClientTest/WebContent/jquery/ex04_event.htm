@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    
+    <style>
+    
+    
+    
+    </style>
+    
+    <script>
+    
+        // window.onload = function() {};
+        
+        // 1.
+        // jQuery(window).load(function() {
+        //     alert("load");
+        // });
+
+        // 2. onload대신 ready 를 쓴다.(가독성 표현) 둘다 많이쓴다. 2,3번
+        // jQuery(document).ready(function() {
+        //     alert("로드");
+        // });
+
+        // 3. 2번을 3번처럼 쓸 수 있다.(간결 표현) 둘다 많이쓴다. 2,3번
+        // jQuery(function() {
+        //     alert("안녕");
+        // });
+
+    </script>
+
+
+</head>
+<body>
+    <!--  -->
+    <input type="button" value="버튼" id="btn1">
+
+    <script>
+    
+        // 버튼1의 클릭 이벤트 매핑
+        // 1. BOM
+        // document.all["btn1"].onclick = function() {};
+
+        // 2. DOM
+        // document.getElementById("btn1").addEventListener("click", function() {});
+
+        // 3. jQuery
+        // a. 전용 이벤트 함수
+        //      - 객체.이벤트함수명(함수)
+        // b. 범용 이벤트 함수
+        //      - 객체.bind("이벤트명", 함수)
+        //      - 객체.live("이벤트명", 함수)
+        //      - 객체.on("이벤트명", 함수) // 가장 최근에 나온 함수 (대부분 이걸 쓴다.)
+
+        // 전용 => 기본적으로씀
+        // jQuery("#btn1").click(function() {
+        //     alert("클릭");
+        // });
+
+        // 범용 => 이벤트제어를 할때 씀
+        // jQuery("#btn1").on("click",function() {
+        //     alert("click");
+        // });
+
+    </script>
+
+
+</body>
+</html>

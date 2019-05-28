@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	/*
+	
+	HTML의 서식
+	- 특정 태그만이 특정 서식을 지정할 수 있다.
+	- 글자색 : <font color:"">
+	
+	CSS의 서식
+	- 모든 서식을 모든 태그에 적용할 수 있다.
+	- 글자색 : color 속성 > 모든 태그
+	
+	배경
+	 1. 배경색
+	 	- background-color
+	 2. 배경 이미지
+		- background-image
+	
+	CSS 색상 표현법
+	1. Color Name : red, blue..
+	2. RGB Color(HEX) : #FF0000..
+	3. RGB Color(DEC) : rgb(255, 0, 0)
+	4. RGBA Color(DEC) : rgba(255, 0, 0, 1) //A(alpah channel - 투명도, 0~1) 0이투명, 1이 불투명
+	
+		
+	*/
+	#div1{
+		/* background-color : #FF0000; */
+		/* background-color : rgb(255, 0, 100); */
+		/* background-color : rgba(255, 0, 0, 0.1); */
+		
+		background-image: url(../images/catty01.png);
+	}
+	
+	
+		
+	/* 
+	폼 컨트롤들은 브라우저가 서식을 자체적으로 건드린다.
+	-> 이 경우 최소 1가지 이상의 서식을 CSS로 건드리면 나머지 서식을 초기화 되버린다.
+	
+	*/
+	
+	/*
+	#txt1{ background-color: yellow; }
+	#txt2{ background-color: maroon; }
+	#btn1{ background-color: teal; }
+	*/
+	
+	/* 	
+	#txt1{ background-image: url("../images/catty03.png"); }
+	#txt2{ background-image: url('../images/catty04.png'); }	
+	#btn1{ background-image: url(../images/catty05.png); } 
+	*/
+	
+	#txt2{ 
+		background-image: url("../images/catty02.png"); 
+		background-repeat: no-repeat; /* repeat-y; 가로, 세로로만 반복 */
+		/* 1. 열거형, 2. 상대단위(%), 3. 절대단위(px), 혼합도 가능 */
+		background-position: 400px center; /* left center right & top center bottom */
+		
+	}
+	
+	body{
+		background-image: url("../images/cat01.jpg");
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-attachment: fixed;
+	}
+	
+	
+</style>
+</head>
+<body>
+	
+	<div id="div1">영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.영역입니다.</div>
+	
+	<input type="text" id="txt1">
+	<br>
+	<textarea id="txt2" rows="20" cols="80"></textarea>
+	<br>
+	<input type="button" id="btn1" value="버튼입니다">
+	
+	((h1>lorem5)+(p>lorem)) <!-- Ctrl + E -->
+	
+	<h1>Lorem ipsum dolor sit amet.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat nemo autem est ratione ipsum corporis quasi soluta ullam dolorum possimus! Voluptatibus labore natus quaerat expedita ullam tempore nesciunt aliquam molestias.</p>
+	<h1>Soluta impedit sit nemo ducimus!</h1>
+	<p>Officiis at ab praesentium quisquam placeat tenetur porro perspiciatis laudantium dolore eum ipsam voluptas amet aperiam minus assumenda eligendi quia nobis suscipit vero fugit ducimus incidunt impedit nostrum recusandae id.</p>
+	<h1>Quo ipsam id nisi maxime?</h1>
+	<p>Provident ab molestiae saepe est iste cupiditate voluptas. Quidem quibusdam dolorum voluptates facilis quo cupiditate similique laboriosam doloremque provident voluptate sunt reprehenderit corporis atque distinctio tempora veritatis vero omnis earum.</p>
+	<h1>Incidunt ipsum dicta saepe pariatur!</h1>
+	<p>Illo atque ex unde quo tenetur repellendus reiciendis saepe accusamus ab. Laudantium doloribus iure fugiat veritatis distinctio delectus libero quae vitae asperiores dolorum. Quibusdam fuga soluta repellendus ipsum eveniet non.</p>
+	<h1>Quia animi quos fugit nobis.</h1>
+	<p>Enim delectus libero praesentium omnis sequi facilis quo sunt dolores nobis voluptates exercitationem assumenda quae ipsam molestias voluptas vero voluptatem optio nostrum voluptate similique asperiores ea quod. Blanditiis quaerat reprehenderit!</p>
+	<h1>Commodi nihil amet provident ipsum!</h1>
+	<p>Id similique ex nesciunt excepturi dolores! Quis saepe cum voluptas et nulla rem qui inventore incidunt! Praesentium veniam sit ducimus ullam consequatur blanditiis consectetur rerum! Sit similique blanditiis doloremque libero.</p>
+	<h1>Quos voluptas consectetur veniam est.</h1>
+	<p>Est culpa aliquid nihil architecto odit officia nostrum nulla ducimus nesciunt iste. Voluptas eligendi facere voluptatum eveniet eos delectus quidem sapiente fugit quam nulla accusantium quis dolor perferendis molestiae non.</p>
+	<h1>Error quia odit veritatis temporibus.</h1>
+	<p>Odit mollitia iste culpa ut amet laboriosam numquam exercitationem maxime inventore repellendus praesentium expedita in cum ipsam natus laborum quaerat corrupti modi incidunt reiciendis assumenda ea illo dolores dolorem consectetur.</p>
+	<h1>Autem consectetur asperiores sequi impedit!</h1>
+	<p>Quasi alias beatae quisquam saepe velit nobis numquam distinctio minima ullam accusantium excepturi tenetur esse laudantium atque sint. Ab commodi fuga ex aut laborum inventore suscipit in sunt praesentium illum.</p>
+	<h1>Voluptas iste eius in aliquam!</h1>
+	<p>Inventore facilis commodi dolorem a accusantium dolores accusamus non aliquid nostrum fugit possimus culpa officia aut dolorum nihil ipsam minus excepturi doloremque maiores sint quia at voluptates blanditiis voluptatum beatae.</p>
+	<h1>Laudantium saepe commodi vitae quisquam.</h1>
+	<p>Sint asperiores in commodi obcaecati totam rem quidem nesciunt hic quibusdam est reiciendis quasi nam vel amet ipsum labore aperiam nostrum. Quis nulla saepe quisquam in aspernatur molestiae maiores vel?</p>
+	<h1>Illum eligendi maxime nemo aspernatur?</h1>
+	<p>Vero rem iusto nihil sequi minima a. Neque molestias eos ea id iusto nesciunt recusandae maxime ipsam ullam dolores. Nam omnis dignissimos id accusamus explicabo reprehenderit dicta placeat sunt sapiente.</p>
+	<h1>Provident quibusdam quos itaque natus.</h1>
+	<p>Necessitatibus nobis nihil ratione mollitia ut dolor minima laboriosam quas eius pariatur reiciendis asperiores iure eligendi sunt nostrum dolore voluptatum fugit id maiores exercitationem repudiandae at dolorum optio adipisci nesciunt!</p>
+	<h1>Non nobis voluptatum in aliquid!</h1>
+	<p>Molestias eum dolorem maxime nemo vitae commodi incidunt repellendus a nostrum consequatur sint illum. Ab ut laboriosam vitae neque voluptate aliquam debitis distinctio voluptas accusamus eius reprehenderit dolore? Nemo sit.</p>
+	<h1>Modi adipisci consequatur voluptates ipsum.</h1>
+	<p>Non deleniti autem voluptatibus fugit quasi praesentium maiores iusto deserunt sint itaque. Explicabo consequuntur voluptas fuga harum ut quis fugit adipisci corporis ipsa laboriosam magnam fugiat illo ipsam voluptatem doloribus!</p>
+	<h1>Voluptas deleniti nostrum itaque numquam.</h1>
+	<p>Quas facere non minima doloremque omnis esse necessitatibus! Ab quaerat quidem reiciendis eos architecto! Consequuntur laborum a tenetur delectus quam eligendi quisquam aspernatur doloribus cum velit assumenda porro fugit facere.</p>
+	<h1>Cupiditate incidunt officia facere reprehenderit!</h1>
+	<p>Cum optio hic dolor voluptas quod eius illum tempora totam numquam doloribus tempore recusandae nisi harum cumque alias blanditiis provident delectus eum libero quo nulla? Iure numquam dolor officia repellendus!</p>
+	<h1>Architecto quas blanditiis quisquam tempora.</h1>
+	<p>Mollitia facilis id suscipit explicabo maiores ullam quam. Nobis est asperiores voluptatibus totam maiores omnis excepturi illum architecto doloribus quisquam. Optio quas nesciunt quisquam tenetur vero libero dolorem quasi aliquid.</p>
+	<h1>Totam neque molestias voluptate possimus.</h1>
+	<p>Ducimus fugit minima incidunt facilis laborum cum molestias distinctio qui cupiditate esse expedita vero non delectus nam aut explicabo amet accusantium nihil asperiores repellat libero eius saepe ipsam? Excepturi iste?</p>
+	<h1>Doloribus impedit rem obcaecati quidem.</h1>
+	<p>Quia quisquam optio. Laudantium at vel quam repudiandae sed pariatur qui odit et rem accusamus dicta illum ea fuga sit iure nobis quibusdam eligendi tenetur saepe molestiae deleniti eaque odio?</p>
+	<h1>Inventore ullam laudantium maxime magni.</h1>
+	<p>Quia sapiente odit necessitatibus pariatur aliquam corporis optio officia natus rerum quod. Beatae laudantium esse quisquam. Temporibus voluptas excepturi neque iusto repudiandae ad quia vitae provident voluptatibus beatae labore veniam.</p>
+	<h1>Iste deserunt et eos facilis.</h1>
+	<p>Sequi deserunt nobis! Ad voluptatum natus qui vitae sunt ratione cum mollitia eligendi minima! Ab dolor harum laborum eius sunt autem fugiat eaque repellat nesciunt fuga illum atque labore dolorem.</p>
+	<h1>Vitae nobis molestiae eius velit.</h1>
+	<p>Quo temporibus nesciunt perferendis. Deserunt ipsum tempora! Voluptate reiciendis totam provident quam temporibus magni sapiente. Sint quo in accusantium iure soluta doloremque dolorem sunt consequatur unde magni ut ducimus distinctio.</p>
+	<h1>Dignissimos inventore repudiandae velit voluptatem.</h1>
+	<p>Officiis alias dignissimos a ab impedit aperiam aut id ducimus quos hic in rem doloremque magni tenetur non deleniti quam necessitatibus velit architecto iste rerum ratione cupiditate quod repellendus corrupti.</p>
+	<h1>Nemo quas officia magnam ullam.</h1>
+	<p>Fugiat labore dolorem eum vero rerum hic alias id tenetur eaque quaerat! Nihil quo iure neque quia repudiandae cupiditate non recusandae doloremque tenetur amet culpa minus tempora sint quasi facilis.</p>
+	<h1>Nemo dolores velit optio laboriosam.</h1>
+	<p>Quae eum veniam minus consequuntur odit rem consectetur incidunt dolore magnam commodi possimus obcaecati doloribus necessitatibus mollitia quos id facere. Deserunt dicta odio fugit error ad incidunt in eius dignissimos.</p>
+	<h1>Architecto nostrum officia tempore aut.</h1>
+	<p>Fugit molestias inventore cumque debitis magnam reiciendis sapiente nobis esse a aperiam distinctio error consectetur odio laudantium dolores mollitia aliquid nam totam veniam ut minima aspernatur quam id velit saepe!</p>
+	<h1>Hic suscipit assumenda vero doloremque.</h1>
+	<p>Obcaecati aliquam soluta laboriosam libero quisquam ipsam quia eligendi eum temporibus quidem illo culpa cumque. Debitis quas illum libero alias enim et iure velit itaque accusantium veritatis dicta vel tenetur?</p>
+	<h1>Beatae nobis amet suscipit in.</h1>
+	<p>Recusandae cumque quam reprehenderit magnam autem ab voluptatem nam earum illo aliquid neque unde quasi fugiat praesentium voluptates exercitationem facere nulla quis similique iure ullam in odio vitae quidem dolores.</p>
+	<h1>Commodi voluptates consectetur laboriosam repellendus!</h1>
+	<p>Debitis excepturi sapiente labore ducimus ea porro impedit nesciunt veniam libero aliquid aliquam ex rem et saepe sit eius alias quisquam ut vero sunt tenetur ab obcaecati. Debitis provident labore!</p>	
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

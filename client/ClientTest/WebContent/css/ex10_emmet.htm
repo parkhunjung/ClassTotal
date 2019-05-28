@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+
+	<!-- 
+		Emmet, Zen-Coding
+		- 편집기 확장 기능
+		- CSS 선택자를 사용해서 HTML 코드를 손쉽게 작성할 수 있도록 하는 기능
+		- http://emmet.io
+	 -->
+	 
+	 <h1>태그 선택자</h1>
+	 
+	 <div></div>
+
+	<p></p>
+
+	<a href="ex.htm">test</a>
+	
+	<img src="dog.jpg" alt="강아지" />
+	
+	<h1>ID 선택자</h1>
+	<!-- div#box1{} -->
+	<div id="box1"></div>
+	div#box1
+	<div id="box1"></div>
+	
+	<h1 id="title"></h1>
+	
+	<nav id="mainmenu"></nav>
+	
+	#box1
+	<div id="box1"></div>
+	
+	
+	<h1>Class 선택자</h1>
+	
+	<!-- div.box {} -->
+	<div class="box"></div>
+	
+	p.description
+	<p class="description"></p>
+	
+	.item
+	<div class="item"></div>
+	
+	div.one.two.three
+	<div class="one tow three"></div>
+	
+	div#box1.box
+	<div id="box1" class="box"></div>
+	
+	div#box1.box.red.big
+	<div id="box1" class="box red big"></div>
+	
+	
+	<h1>속성 선택자</h1>
+	<!-- div[title] {} -->
+	<div title=""></div>
+	
+	div[title]
+	<div title=""></div>
+	
+	div[title='상자']
+	<div title="상자"></div>
+	
+	img[width height]
+	<img src="dog.jpg" alt="강아지" width="200" height="150" />
+	
+	<img src="" alt="" width="200" height="200" />
+	
+	<img src="" alt="" id="dog1" class="animal" width="300" height="200" title="강아지" />
+	
+	
+	<h1>PCDATA</h1>
+	<div>상자</div>
+	
+	div{상자}
+	<div>상자</div>
+	
+	
+	div#box1.box[title=상자]{상자입니다}
+	<div id="box1" class="box" title="상자">상자입니다</div>
+	
+	-------------------------------------------------------- 기본
+	
+	위의 요소 조합 x 반복
+	<h1>반복 생성</h1>
+	
+	div*5
+	<div>z</div>
+	<div>z</div>
+	<div>z</div>
+	<div>z</div>
+	<div>z</div>
+	
+	
+	div.item*5
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	
+	div.item[title]{아이템}*5
+	<div class="item" title="aaa">아이템</div>
+	<div class="item" title="bbb">아이템</div>
+	<div class="item" title="ccc">아이템</div>
+	<div class="item" title="ddd">아이템</div>
+	<div class="item" title="eee">아이템</div>
+	
+	div#box$*5
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<div id="box4"></div>
+	<div id="box5"></div>
+	
+	div#box$$*5
+	<div id="box01"></div>
+	<div id="box02"></div>
+	<div id="box03"></div>
+	<div id="box04"></div>
+	<div id="box05"></div>
+	
+	
+	div#box$${상자$}*5
+	<div id="box01">상자1</div>
+	<div id="box02">상자2</div>
+	<div id="box03">상자3</div>
+	<div id="box04">상자4</div>
+	<div id="box05">상자5</div>
+	
+	
+	a[href='view.jsp?seq=$']{글보기}*5
+	<a href="view.jsp?seq=1">글보기</a>
+	<a href="view.jsp?seq=2">글보기</a>
+	<a href="view.jsp?seq=3">글보기</a>
+	<a href="view.jsp?seq=4">글보기</a>
+	<a href="view.jsp?seq=5">글보기</a>
+	
+	
+	
+	<h1>형제 선택자</h1>
+	a ~ b : 형
+	a + b : 친형
+	<a>
+		<b></b>
+	</a>
+	
+	div+p
+	<div></div>
+	<p></p>
+	
+	
+	h1+p+p+p
+	<h1></h1>
+	<p></p>
+	<p></p>
+	<p></p>
+	
+	h1+p*3
+	<h1></h1>
+	<p></p>
+	<p></p>
+	<p></p>
+	
+	(h1+p)*3
+	<h1></h1>
+	<p></p>
+	<h1></h1>
+	<p></p>
+	<h1></h1>
+	<p></p>
+	
+	
+	(h1#title$.titles{제목입니다.})+p.content{설명입니다.}*3
+	<h1 id="title1" class="titles">제목입니다.</h1>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	
+	
+	<h1>자식 선택자</h1>
+	a b : X
+	a > b : O
+	
+	div>a
+	<div><a href=""></a></div>
+	
+	
+	ul>li*3
+	
+	ul>li.item*3
+	<ul>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+	</ul>
+	
+	ul#list1>li.item*3
+	<ul id="list1">
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+	</ul>
+	
+	
+	ul#list1>li.item{항목$}*3
+	<ul id="list1">
+		<li class="item">항목1</li>
+		<li class="item">항목2</li>
+		<li class="item">항목3</li>
+	</ul>
+	
+	
+	h1{오늘의 할일}+ul#list1>li.item{항목$}*3
+	<h1>오늘의 할일</h1>
+	<ul id="list1">
+		<li class="item">항목1</li>
+		<li class="item">항목2</li>
+		<li class="item">항목3</li>
+	</ul>
+	
+	
+	<h1>10행 5열 테이블</h1>
+	table>tr>td
+	table>tr*10>td*5
+	<table>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	
+	
+	table#tbl1>tr*10>td*5
+	<table id="tbl1">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	
+	
+	table#tbl1>(tr>th*5)+(tr>td*5)*3
+	<table id="tbl1">
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	
+	
+	table#tbl1>(tr>th*5)+(tr>td.cell$*5)*3
+	<table id="tbl1">
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+	</table>
+	
+	
+	<h1>Lorem Ipsum</h1>
+	- 임의의 문자열(***) 난수 생성기
+	
+	<h1>제목입니다.</h1>
+	<p>어쩌구~</p>
+	
+	
+	lorem
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore aliquid soluta eum deserunt placeat eos magni ipsa eius. Necessitatibus accusantium nesciunt officiis explicabo cum quasi quae voluptates impedit rerum ut.
+	
+	
+	lorem5
+	Lorem ipsum dolor sit amet.
+	
+	
+	h1{lorem}
+	((h1>lorem5)+(p>lorem100))*3
+	<h1>Lorem ipsum dolor sit amet.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ea tempore quia cum velit eveniet nisi pariatur ullam? Assumenda cupiditate reprehenderit provident ex ullam illo soluta dolores sit recusandae aliquam fugit quas beatae qui quis dicta. Ipsum officia molestiae architecto itaque possimus pariatur neque voluptatem numquam fugiat modi. Itaque quibusdam praesentium reprehenderit at molestias sint cum exercitationem officiis similique eius libero mollitia! Delectus doloremque laborum laboriosam rem quo necessitatibus nisi odit sint numquam deleniti obcaecati quidem expedita. Iste rem ad obcaecati id impedit doloribus dolores amet maiores qui enim molestias explicabo suscipit blanditiis. Laboriosam eaque alias magni distinctio temporibus! Impedit.</p>
+	<h1>Aliquid ad adipisci sequi cumque.</h1>
+	<p>Accusamus perspiciatis assumenda nisi nam necessitatibus dolorem unde amet fugit cupiditate temporibus possimus illo sunt placeat pariatur aliquid explicabo voluptatum tempore eligendi similique sequi eius! Fugiat fugit quae adipisci deleniti tenetur temporibus magni quis similique dolorum quod mollitia neque animi illum eligendi consequuntur totam voluptates quo maxime a nisi. Similique ipsam fuga laborum earum voluptatem reprehenderit perspiciatis tempore animi iure quae! Officia iste voluptas earum enim quis veritatis ipsum. Aut hic tenetur asperiores iusto natus possimus libero dolor exercitationem sequi numquam illum doloremque consectetur sed laudantium dolorem ratione voluptates est totam veritatis consequuntur culpa omnis odio earum maiores explicabo praesentium?</p>
+	<h1>Harum eos voluptas architecto odit?</h1>
+	<p>Pariatur eum quasi hic beatae voluptatibus assumenda recusandae aut architecto quis temporibus delectus perferendis ipsa vel nesciunt quisquam commodi blanditiis. Odio consequuntur omnis assumenda sunt quod deserunt repudiandae impedit necessitatibus fuga nisi non sint! Error quidem quae vel hic magni mollitia modi atque quasi sit provident. Fugiat in dolorem eaque reprehenderit sequi adipisci voluptas accusamus quam mollitia eos architecto qui quod recusandae assumenda officiis nulla exercitationem distinctio error quis soluta. Accusamus sunt nulla laudantium atque vel adipisci veritatis aut amet pariatur unde magni quod consequatur perspiciatis omnis vitae nam fuga animi modi ipsa quia! Ipsum ratione ab doloribus ipsa obcaecati.</p>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

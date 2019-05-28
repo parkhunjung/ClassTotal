@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #content {
+            border: 10px solid black;
+            width: 1260px;
+            height: 630px;
+        }
+
+        #content:hover .item:nth-child(1) {
+            animation: train 5s linear;
+            animation-fill-mode: forwards;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes train {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            8% {
+                transform: translate(1134px, 0px);
+            }
+            
+            10% {
+                transform: translate(1134px, 126px);
+            }
+
+            18% {
+                transform: translate(0px, 126px);
+            }
+
+            20% {
+                transform: translate(0px, 252px);
+            }
+
+            28% {
+                transform: translate(1134px, 252px);
+            }
+
+            30% {
+                transform: translate(1134px, 378px);
+            }
+
+            38% {
+                transform: translate(0px, 378px);
+            }
+
+            40% {
+                transform: translate(0px, 504px);
+            }
+
+            48% {
+                transform: translate(1134px, 504px);
+            }
+
+            58% {
+                transform: translate(0px, 504px);
+            }
+
+            60% {
+                transform: translate(0px, 378px);
+            }
+
+            68% {
+                transform: translate(1134px, 378px);
+            }
+
+            70% {
+                transform: translate(1134px, 252px);
+            }
+
+            78% {
+                transform: translate(0px, 252px);
+            }
+            80% {
+                transform: translate(0px, 126px);
+            }
+            88% {
+                transform: translate(1134px, 126px);
+            }
+
+            90% {
+                transform: translate(1134px, 0px);
+            }
+
+            100% {
+                transform: translate(0px, 0px);
+            }
+
+        }
+
+        .item {
+            width: 126px;
+            height: 126px;
+            float: left;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        .item:nth-child(1) {
+            z-index: 10;
+        }
+
+        .item:nth-child(2) {
+            transform: translate(-126px, 0px);
+            z-index: 9;
+        }
+
+        .item:nth-child(3) {
+            transform: translate(-252px, 0px);
+            z-index: 8;
+        }
+
+        .item:nth-child(4) {
+            transform: translate(-378px, 0px);
+            z-index: 7;
+        }
+
+        .item:nth-child(5) {
+            transform: translate(-504px, 0px);
+            z-index: 6;
+        }
+
+        .item:nth-child(6) {
+            transform: translate(-630px, 0px);
+            z-index: 5;
+        }
+
+        .item:nth-child(7) {
+            transform: translate(-756px, 0px);
+            z-index: 4;
+        }
+
+        .item:nth-child(8) {
+            transform: translate(-882px, 0px);
+            z-index: 3;
+        }
+
+        .item:nth-child(9) {
+            transform: translate(-1008px, 0px);
+            z-index: 2;
+        }
+
+        .item:nth-child(10) {
+            transform: translate(-1134px, 0px);
+            z-index: 1;
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="content">
+        <img src="../images/rect_icon01.png" alt="" class="item">
+        <img src="../images/rect_icon02.png" alt="" class="item">
+        <img src="../images/rect_icon03.png" alt="" class="item">
+        <img src="../images/rect_icon04.png" alt="" class="item">
+        <img src="../images/rect_icon05.png" alt="" class="item">
+        <img src="../images/rect_icon06.png" alt="" class="item">
+        <img src="../images/rect_icon07.png" alt="" class="item">
+        <img src="../images/rect_icon08.png" alt="" class="item">
+        <img src="../images/rect_icon09.png" alt="" class="item">
+        <img src="../images/rect_icon10.png" alt="" class="item">
+        <div style="clear: both;"></div>
+    </div>
+
+</body>
+</html>

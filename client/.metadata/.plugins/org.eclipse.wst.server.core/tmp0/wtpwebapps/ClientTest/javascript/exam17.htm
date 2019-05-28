@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        fieldset {
+            width: 300px;
+            font-size: 14px;
+        }
+
+        fieldset > div, fieldset > input {
+            margin: 10px 10px;
+        }
+
+        #tbl {
+            width: 500px;
+            border: 1px solid #808080;
+            border-collapse: collapse;
+            margin: 15px 2px;
+        }
+
+        #tbl th, #tbl td {
+            border: 1px solid #808080;
+            padding: 4px;
+            text-align: center;
+        }
+
+        #tbl th {
+            background: #ddd;
+        }
+
+        #tbl th:nth-child(1) { width: 50px; }
+        #tbl th:nth-child(2) { width: 70px; }
+        #tbl th:nth-child(3) { width: 50px; }
+        #tbl th:nth-child(4) { width: 120px; }
+        #tbl th:nth-child(5) { width: 210px; }
+    
+    </style>
+
+</head>
+<body>
+    
+    <h1>데이터 추가하기</h1>
+    <fieldset>
+        <legend>입력 항목</legend>
+        <div><label>이름 : </label><input type="text" id="txtName"></div>
+        <div><label>나이 : </label><select id="age"></select></div>
+        <div>
+            <label>성별 : </label><input type="radio" name="gender" id="man" checked> 남자
+                   <input type="radio" name="gender" id="woman"> 여자
+        </div>
+        <div><label>주소 : </label><input type="text" id="txtAddress"></div>
+        <input type="button" value="추가하기" id="add">
+    </fieldset>
+
+    <table id="tbl">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>성별</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody id="infoTbody">
+            <tr>
+                <td colspan="5">등록된 항목이 없습니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+    
+        var txtName, age, man, woman, txtAddress, add;
+        var tbl, infoTbody;
+        var temp = "";
+        var n = 1;
+
+        txtName = document.getElementById("txtName");
+        age = document.getElementById("age");
+        man = document.getElementById("man");
+        woman = document.getElementById("woman");
+        txtAddress = document.getElementById("txtAddress");
+        add = document.getElementById("add");
+
+        tbl = document.getElementById("tbl");
+        infoTbody = document.getElementById("infoTbody");
+
+        txtName.focus();
+
+        for (var i=20; i <=60; i++) {
+            // var op = new Option();
+            // op.value = i - 19;
+            // op.text = i;
+            var op = new Option(i, i-19);
+            age.options.add(op);
+        }
+        // <option value="1">20</option>
+        add.onclick = function() {
+            
+            temp = "<tr>";
+            temp += "<td>";
+            temp += n;
+            temp += "</td>";
+            temp += "<td>";
+            temp += txtName.value;
+            temp += "</td>";
+            temp += "<td>";
+            temp += age.options[age.options.selectedIndex].text;
+            temp += "</td>";
+            temp += "<td>";
+            if (man.checked) {
+                temp += "<img src='../images/man_06.png'>"
+            } else if (woman.checked) {
+                temp += "<img src='../images/woman_06.png'>"
+            }
+            temp += "</td>";
+            temp += "<td>";
+            temp += txtAddress.value;
+            temp += "</td>";
+            temp += "</tr>";
+
+            if (txtName.value != "" && txtAddress.value != ""){
+
+                if (infoTbody.children[0].children.length == 1) {
+                    infoTbody.innerHTML = "";
+                }
+
+                infoTbody.innerHTML += temp;
+                txtName.value = "";
+                txtAddress.value = "";
+                txtName.focus();
+            } else if(txtName.value == "") {
+                txtName.focus();
+            } else if(txtAddress.value == "") {
+                txtAddress.focus();
+            } 
+
+        }; //onclick
+
+        txtAddress.onkeyup = function() {
+
+            if(event.keyCode == 13) {
+
+                temp = "<tr>";
+                temp += "<td>";
+                temp += n;
+                temp += "</td>";
+                temp += "<td>";
+                temp += txtName.value;
+                temp += "</td>";
+                temp += "<td>";
+                temp += age.options[age.options.selectedIndex].text;
+                temp += "</td>";
+                temp += "<td>";
+                if (man.checked) {
+                    temp += "<img src='../images/man_06.png'>"
+                } else if (woman.checked) {
+                    temp += "<img src='../images/woman_06.png'>"
+                }
+                temp += "</td>";
+                temp += "<td>";
+                temp += txtAddress.value;
+                temp += "</td>";
+                temp += "</tr>";
+                
+                console.log(txtName.value);
+
+                if (txtName.value != "" && txtAddress.value != ""){
+
+                    if (infoTbody.children[0].children.length == 1) {
+                        infoTbody.innerHTML = "";
+                    }
+
+                    infoTbody.innerHTML += temp;
+                    txtName.value = "";
+                    txtAddress.value = "";
+                } else if(txtName.value == "") {
+                    txtName.focus();
+                } else if(txtAddress.value == "") {
+                    txtAddress.focus();
+                } 
+
+            }
+
+        }
+
+    
+    
+    </script>
+
+
+
+</body>
+</html>

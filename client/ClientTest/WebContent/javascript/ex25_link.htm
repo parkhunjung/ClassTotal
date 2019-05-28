@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    var link1, btn1;
+
+    // 익명 함수
+    window.onload = function() {
+        // 링크 찾는방식
+        link1 = document.links["link1"];
+        
+        // 평범한 버튼 찾는방식
+        btn1 = document.form1.btn1;
+
+        btn1.onclick = function() {
+            // alert("test");
+            link1.href = "http://google.com";
+            link1.target = "_blank";
+            link1.title = "구글로 이동합니다.";
+
+            //DOM
+            link1.innerText = "구글";
+        };
+    };
+    
+    </script>
+</head>
+<body>
+
+    <form name="form1" action="">
+        <a href="http://naver.com" name="link1">네이버</a>
+        <hr>
+        <input type="button" value="버튼" name="btn1" id="">
+    </form>
+    
+</body>
+</html>

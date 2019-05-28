@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    </style>
+
+    <script>
+    
+        /*
+        자바스크립트 구성
+        1. 코어 (= ECMScript)
+        2. BOM
+        3. DOM
+
+        자바스크립트 객체, Object
+        1. 내장 객체
+            - Array, Math, Date 등
+
+        2. BOM 객체
+            - window, document, form, text, button, image, link 등
+
+        3. DOM 객체
+            - element, attribute, text, comment 등
+        
+        4. 사용자 정의 객체
+            - 클래스를 사용해서 사용자 객체를 만드는 것과 유사한 작업
+
+        사용자 정의 객체 만들기
+        1. Object 클래스 사용하기
+        2. {} : 객체 상수 표기법 사용하기
+        
+        요구사항] 홍길동 객체를 생성하시오.
+        class user { 
+            private String name;
+            private int age;
+            private String address;
+        }
+
+        User hong = new User();
+
+        
+        */
+       
+        var hong = new Object();
+       
+        // name, age, address
+        // - 자바스크립트의 프로퍼티(Property)
+        //   a. 자유롭게 생성이 가능하다.
+        //   b. 자유롭게 삭제도 가능하다. 
+        hong.name = "홍길동";
+        hong.age = 20;
+        hong.address = "서울시";
+
+        console.log(hong.name);
+        console.log(hong.age);
+        console.log(hong.address);
+
+        var lee = new Object();
+
+        lee.name = "이순신";
+        lee.address = "서울시 강동구";
+        lee.gender = "남자";
+
+        var haha = {}; //new Object() 동일 표현 > 리터럴 표기법
+
+        haha.name = "하하하";
+        haha.age = 25;
+
+        console.log(haha);
+
+        var hoho = {
+            name: "호호호",
+            age: 22
+        };
+
+        hoho.address = "서울시";
+
+        console.log(hoho);
+
+        // 프로퍼티 접근 방법
+        // 1. 멤버 접근 연산자
+        // 2. 연관 배열 형태
+
+        var prop = "name";
+        
+        console.log("1. 멤버 접근 연산자", hoho.name);
+        console.log("2. 연관 배열 형태", hoho["name"]); // 이 표현법은 문자열이라 얼마든지 다른 값으로 치환가능(prop)
+
+        // hoho.mobile-number = "010-1234-5678";
+        hoho.mobileNumber = "010-1234-5678";
+        hoho["mobile-number"] = "010-1234-5678"; //식별자로 쓸수없는 값조차 식별자로 사용할 수 있다.
+
+        console.log(hoho);
+
+        console.clear();
+
+        // 자바스크립트의 향상된 for문
+        // - 배열, 컬렉션 탐색 용도XX
+        // - 특정 객체의 프로퍼티 목록을 탐색하는 용도O
+        for (var p in hoho) {
+            console.log(p, hoho[p]);
+        }
+
+        console.clear();
+
+        for(var p in window) {
+            console.log(p, window[p]);
+        }
+
+        console.clear();
+
+        var hong = {
+            name: "홍길동",
+            age: 20,
+            hello: function() {
+                alert("안녕하세요");
+            }
+        };
+
+        console.log(hong);
+
+        // 홍길동의 주소 대입
+        // hong.address = "서울시 강남구 역삼동 20번지";
+
+        var address = {
+            sido: "서울시",
+            gugun: "강남구",
+            dong: "역삼동",
+            bunji: "20번지"
+        };
+
+        hong.address = address;
+
+        console.log(hong);
+
+        // 한방에 복합객체를 생성하는 방법
+        var hoho = {
+            name: "호호호",
+            age: 25,
+            address: {
+                sido: "서울시",
+                gugun: "강남구",
+                dong: "역삼동",
+                bunji: "20번지"
+            }
+        };
+
+        console.clear();
+
+        // 변수의 종류
+        // 1. 전역 변수(***)
+        // 2. 지역 변수
+
+        var num = 100;
+
+        // *** 자바스크립트의 전역 변수는 window 객체의 프로퍼티가 된다.
+        console.log(num);
+        console.log(this.num);
+        console.log(window.num);
+        console.log(window["num"]);
+
+        // window.open("ex52_child.htm", "child", "width = 400, height = 300");
+
+        // 함수의 선언 위치 > 전역 > window 객체의 프로퍼티가 된다.
+        function aaa() {
+            alert("aaa");
+        }
+
+        aaa();
+        window.aaa();
+        
+        window.num2 = 200;
+        window.bbb = function() {};
+        
+        for (var p in window) {
+            console.log(p);
+        }
+
+        // console.clear();
+    
+    
+    
+    </script>
+
+
+</head>
+<body>
+    
+    
+
+
+</body>
+</html>

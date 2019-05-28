@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        .header {
+            border: 1px solid #DDD;
+            width: 200px;
+        }
+
+        .content {
+            border: 1px solid #DDD;
+            width: 200px;
+        }
+
+        .content > div:nth-child(1) > span:nth-child(1) {
+            background-image: url(../images/bu_dot2.gif);
+            background-position: 11px 7px;
+            background-repeat: no-repeat;
+            width: 47px;
+        }
+
+        .content > div:nth-child(1) > span:nth-child(2) {
+            float: left;
+            margin-right: 50px;
+        }
+
+        .content > div:nth-child(1) > span:last-child {
+            float: right;
+        }
+
+        .content > div:nth-child(2) > span:nth-child(2) {
+            float: left;
+            margin-right: 50px;
+        }
+
+        .content > div:nth-child(2) > span:last-child {
+            float: right;
+        }
+
+        .content > div:nth-child(3) > span:nth-child(2){
+            float: left;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="item">
+        <div class="header">
+            <img src="../images/h4_rt_leisure.gif">
+        </div>
+        <div class="content">   
+            <div>
+                <span></span>
+                <span>산</span>
+                <span></span>
+                <span>해수욕장</span>
+                <span></span>
+                <span>야구장</span>
+            </div>
+            <div>
+                <span></span>
+                <span>축구장</span>
+                <span></span>
+                <span>공항</span>
+                <span></span>
+                <span>스키장</span>
+            </div>
+            <div>
+                <span></span>    
+                <span>골프장</span>
+            </div>
+            <div style="clear: left;"></div>
+        </div>
+    </div>
+</body>
+</html>

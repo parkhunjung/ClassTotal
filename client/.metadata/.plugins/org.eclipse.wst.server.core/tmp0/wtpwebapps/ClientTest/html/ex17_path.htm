@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- 
+	
+	웹 환경에서 경로 표기법(URI(URL))
+	- 페이지 -> (이동) -> 페이지
+	- 페이지 내부(이미지, 동영상, 다른 리소스 등)	
+	
+	\ : 로컬 (파일) 경로 구분자(file:\\ or C:\ or D:\)
+	/ : 웹 경로 구분자(http:// or https://)
+	
+	1. 상대 경로
+		- . : 현재 폴더(현재 HTML이 위치한 폴더)
+		- .. : 부모 폴더
+		- 현재 위치를 기준으로 상대를 찾는 표현
+		- 길이가 짧다.
+		
+	2. 절대 경로
+		- '/'로 시작
+		- / : 웹사이트의 루트 폴더(≠ 컨텐트 루트 폴더)
+		- '/프로젝트명' == WebContent 폴더
+		- 길이가 길다.
+	
+	(***) : 상대 경로나 절대 경로나 둘다 사용은 또이또이하다. 취향대로 사용하면 될 것
+		
+		
+	------------
+	3. 로컬 경로
+		- 자바에서의 절대 경로
+		- D:\class\client\test.htm
+		
+	4. 외부 경로
+		- 다른 사이트 자원 경로
+		- 
+		
+	
+	-->
+	<h1>상대 경로</h1>
+	
+	<h2>1. 같은 폴더내의 자원 접근 URL</h2>
+	<a href="./ex01.html">1번 예제로 이동하기</a>	
+	
+	<h2>2. 자식 폴더내의 자원 접근 URL</h2>	
+	<!-- WebContent > member > member.htm -->
+	<a href="./member/member.htm">회원 페이지 이동하기</a>
+	
+	<h2>3. 부모 폴더내의 자원 접근 URL</h2>
+	<!-- member 폴더에서 접근을실행함 -->
+	
+	<h2>4. 형제(방계) 폴더내의 자원 접근 URL</h2>
+	<!-- member 폴더에서 접근을실행함 -->
+	
+	<hr>
+	
+	<h1>절대 경로</h1>
+	
+	<h2>1. 같은 폴더내의 자원 접근 URL</h2>
+	<a href="/ClientTest/ex01.html">1번 예제로 이동하기</a>	
+	
+	<h2>2. 자식 폴더내의 자원 접근 URL</h2>	
+	<!-- WebContent > member > member.htm -->
+	<a href="/ClientTest/member/member.htm">회원 페이지 이동하기</a>
+	
+	
+	<h2>3. 부모 폴더내의 자원 접근 URL</h2>
+	<!-- member 폴더에서 접근을실행함 -->
+	
+	<h2>4. 형제(방계) 폴더내의 자원 접근 URL</h2>
+	<!-- member 폴더에서 접근을실행함 -->
+	
+	<h1>로컬 경로</h1>
+	<!-- 쓰면 안되는 표현이라 브라우저가 막아버렸다. 사용안하는 방식(예전에는 사용됐지만 지금은 안된다.) -->
+	<a href = "D:\class\client\ClientTest\WebContent\ex01.html">1번 예제 이동하기</a>
+	
+	
+	<h1>외부 경로</h1>
+	<a href="http://naver.com">네이버</a>
+	
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	#tblList > tr > td{ } /* 이건작동안함 */
+	
+	/* 이둘을 쓴다. */	
+	#tblList > tbody > tr > td { }
+	#tblList td { }
+	
+	#tblList{
+		border: 1px solid #CCC;
+		border-collapse: collapse;
+		width: 800px;
+	}
+	
+	#tblList #col1 {
+		width : 50px;
+	}
+	#tblList #col2 {
+		width : 500px;
+	}
+	#tblList #col3 {
+		width : 100px;
+	}
+	#tblList #col4 {
+		width : 100px;
+	}
+	#tblList #col5 {
+		width : 50px;
+	}
+		
+	#tblList td, #tblList th{
+		border: 1px solid #CCC;
+		color: #444;
+		text-align: center;
+		padding : 3px;
+	}
+	
+	#tblList thead tr:first-child {
+		border-top: 5px solid gray;
+		border-bottom: 5px solid gray;
+	}
+	
+	#tblList, #tblList th, #tblList td {
+		border-right: 0px;
+		border-left: 0px;
+	}
+
+	/* #tblList tbody tr:nth-child(odd){
+		background-color: #eeeeee;
+	} */
+	
+	/* #tblList tr:hover {
+		background-color: #eee;
+	} */
+
+	/* 게시물중 일부를 사용자가 집중해서 봐야해서 표시를 하고 싶다. */
+
+	#tblList:hover tbody> tr:nth-child(1),
+	#tblList:hover tbody> tr:nth-child(8),
+	#tblList:hover tbody> tr:nth-child(12) {
+		background-color: greenyellow;
+	}
+
+
+
+</style>
+</head>
+<body>
+
+	<h1>게시판</h1>
+	
+	<table id="tblList" class="table">
+		<!-- tr>th*5 -->
+		<thead>
+			<tr>
+				<th id="col1">번호</th>
+				<th id="col2">제목</th>
+				<th id="col3">이름</th>
+				<th id="col4">날짜</th>
+				<th id="col5">읽음</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td colspan="5">위의 테이블은 오라클 서버에 저장되어 있습니다.</td>
+			</tr>
+		</tfoot>
+		<!-- (tr>(td{$$$}+(td>lorem5)+(td>lorem1)+(td{2019-04-$$})+(td{$$})))*20 -->
+		<tbody>
+			<tr>
+				<td>001</td>
+				<td>Lorem ipsum dolor sit amet.</td>
+				<td>Lorem.</td>
+				<td>2019-04-01</td>
+				<td>01</td>
+			</tr>
+			<tr>
+				<td>002</td>
+				<td>A iure dolore totam molestias.</td>
+				<td>Eveniet.</td>
+				<td>2019-04-02</td>
+				<td>02</td>
+			</tr>
+			<tr>
+				<td>003</td>
+				<td>Iure eius laudantium voluptatibus adipisci.</td>
+				<td>Dolorum.</td>
+				<td>2019-04-03</td>
+				<td>03</td>
+			</tr>
+			<tr>
+				<td>004</td>
+				<td>Voluptate esse provident laborum rem?</td>
+				<td>Vitae.</td>
+				<td>2019-04-04</td>
+				<td>04</td>
+			</tr>
+			<tr>
+				<td>005</td>
+				<td>Officiis eaque ut perspiciatis quam.</td>
+				<td>Natus.</td>
+				<td>2019-04-05</td>
+				<td>05</td>
+			</tr>
+			<tr>
+				<td>006</td>
+				<td>Laudantium cupiditate quis iste laborum?</td>
+				<td>Quibusdam.</td>
+				<td>2019-04-06</td>
+				<td>06</td>
+			</tr>
+			<tr>
+				<td>007</td>
+				<td>Eius tenetur quidem ab voluptatem.</td>
+				<td>Cumque.</td>
+				<td>2019-04-07</td>
+				<td>07</td>
+			</tr>
+			<tr>
+				<td>008</td>
+				<td>Quibusdam architecto autem culpa quisquam.</td>
+				<td>Eos?</td>
+				<td>2019-04-08</td>
+				<td>08</td>
+			</tr>
+			<tr>
+				<td>009</td>
+				<td>Odit dolor deleniti eaque fuga!</td>
+				<td>Doloremque.</td>
+				<td>2019-04-09</td>
+				<td>09</td>
+			</tr>
+			<tr>
+				<td>010</td>
+				<td>Vel exercitationem veritatis ipsa laudantium.</td>
+				<td>Voluptate.</td>
+				<td>2019-04-10</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>011</td>
+				<td>Nobis explicabo facere vel sit!</td>
+				<td>Veritatis!</td>
+				<td>2019-04-11</td>
+				<td>11</td>
+			</tr>
+			<tr>
+				<td>012</td>
+				<td>Officiis commodi iure maxime debitis!</td>
+				<td>Vitae.</td>
+				<td>2019-04-12</td>
+				<td>12</td>
+			</tr>
+			<tr>
+				<td>013</td>
+				<td>Esse eligendi rerum aliquam nulla.</td>
+				<td>Ad.</td>
+				<td>2019-04-13</td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<td>014</td>
+				<td>Debitis in laudantium totam tempora.</td>
+				<td>Quaerat?</td>
+				<td>2019-04-14</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>015</td>
+				<td>Deserunt fugit molestiae quae placeat!</td>
+				<td>Velit.</td>
+				<td>2019-04-15</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<td>016</td>
+				<td>Dolor assumenda similique laudantium molestiae.</td>
+				<td>Ex!</td>
+				<td>2019-04-16</td>
+				<td>16</td>
+			</tr>
+			<tr>
+				<td>017</td>
+				<td>Temporibus nobis maiores perspiciatis quasi.</td>
+				<td>Odit!</td>
+				<td>2019-04-17</td>
+				<td>17</td>
+			</tr>
+			<tr>
+				<td>018</td>
+				<td>Qui libero ea recusandae perspiciatis.</td>
+				<td>Voluptatum.</td>
+				<td>2019-04-18</td>
+				<td>18</td>
+			</tr>
+			<tr>
+				<td>019</td>
+				<td>Cum excepturi at qui dicta.</td>
+				<td>Quis?</td>
+				<td>2019-04-19</td>
+				<td>19</td>
+			</tr>
+			<tr>
+				<td>020</td>
+				<td>Consectetur libero harum dolorum distinctio.</td>
+				<td>Ea.</td>
+				<td>2019-04-20</td>
+				<td>20</td>
+			</tr>
+		</tbody>
+		
+	</table>
+	
+	
+
+</body>
+</html>

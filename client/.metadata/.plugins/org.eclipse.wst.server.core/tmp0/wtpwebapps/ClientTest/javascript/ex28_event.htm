@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+    .item { border: 1px solid #ccc; 
+            padding: 10px; width: 510px; }
+    
+    .item > input {
+        border: 1px solid #ccc;
+        width: 150px;
+        height: 70px;
+        margin: 15px 7px;
+    }
+    
+    </style>
+
+    <script>
+    
+    window.onload = function() {
+
+    };
+
+    function change1() {
+        document.body.bgColor = "red";
+    }
+    
+    function change2() {
+        document.body.bgColor = "yellow";
+    }
+
+    function change3() {
+        document.body.bgColor = "#BEEEF7";
+    }
+
+    function change123(color) {
+        document.body.bgColor = color;
+    }
+
+    function change4(btn) {
+        document.body.bgColor = btn.value;
+    }
+
+    function change5() {
+        // event.srcElement //this, 이벤트 발생 태그 > 버튼
+        document.body.bgColor = event.srcElement.value;
+    }
+
+    function change6() {
+        // 1. 버튼 구분?
+        if(event.srcElement.name == "btnRed"){
+            document.body.bgColor = "red";
+        } else if(event.srcElement.name == "btnYellow") {
+            document.body.bgColor = "yellow"
+        } else if(event.srcElement.name == "btnBlue") {
+            document.body.bgColor = "#BEEEF7"
+        }
+    }
+
+    function change7() {
+        // alert(event.srcElement.dataset["color"]);
+        document.body.bgColor = event.srcElement.dataset["color"];
+    }
+
+    var colors = [];
+    // colors[0] = "red";
+    colors["btnRed"] = "red";
+    colors["btnYellow"] = "yellow";
+    colors["btnBlue"] = "#BEEEF7";
+
+
+    function change8() {
+        // alert(colors[event.srcElement.name]);
+        document.body.bgColor = colors[event.srcElement.name];
+    }
+
+    function change9() {
+        // alert(event.type);
+        if(event.type == "mouseover") {
+            document.body.bgColor = "red";
+        } else if (event.type == "mouseout") {
+            document.body.bgColor = "white";
+        }
+    }
+
+
+    </script>
+
+</head>
+<body>
+    
+    <form name="form1">
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed" onmouseover="change9();" onmouseout="change9();" >
+            <input type="button" value="노랑" name="btnYellow" onclick="change9();" >
+            <input type="button" value="파랑" name="btnBlue" onclick="change9();" >
+        </div>
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed" onclick="change8();" >
+            <input type="button" value="노랑" name="btnYellow" onclick="change8();" >
+            <input type="button" value="파랑" name="btnBlue" onclick="change8();" >
+        </div>
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed" onclick="change7();" data-color="red">
+            <input type="button" value="노랑" name="btnYellow" onclick="change7();" data-color="yellow">
+            <input type="button" value="파랑" name="btnBlue" onclick="change7();" data-color="#BEEEF7">
+        </div>
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed" onclick="change6();" >
+            <input type="button" value="노랑" name="btnYellow" onclick="change6();" >
+            <input type="button" value="파랑" name="btnBlue" onclick="change6();" >
+        </div>
+        <div class="item">
+            <input type="button" value="red" name="btnRed" onclick="change5();" >
+            <input type="button" value="yellow" name="btnYellow" onclick="change5();" >
+            <input type="button" value="#BEEEF7" name="btnBlue" onclick="change5();" >
+        </div>
+        <div class="item">
+            <input type="button" value="red" name="btnRed" onclick="change4(this);" >
+            <input type="button" value="yellow" name="btnYellow" onclick="change4(this);" >
+            <input type="button" value="#BEEEF7" name="btnBlue" onclick="change4(this);" >
+        </div>
+        <div class="item">
+            <input type="button" value="red" name="btnRed" onclick="change123('red');" >
+            <input type="button" value="yellow" name="btnYellow" onclick="change123('yellow');" >
+            <input type="button" value="blue" name="btnBlue" onclick="change123('#BEEEF7');" >
+        </div>
+        <div class="item">
+            <input type="button" value="red" name="btnRed" onclick="change1();" >
+            <input type="button" value="yellow" name="btnYellow" onclick="change2();" >
+            <input type="button" value="blue" name="btnBlue" onclick="change3();" >
+        </div>
+        <!-- <div class="item">
+            <input type="button" value="" name="btn" >
+            <input type="button" value="" name="btn" >
+            <input type="button" value="" name="btn" >
+        </div> -->
+    </form>
+
+
+</body>
+</html>

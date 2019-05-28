@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    
+    <style>
+        
+        body { margin-bottom: 300px; }
+
+        .one { border: 1px solid black; }
+        .two { background-color: gold; }
+        .three { border-radius: 50%; }
+    
+    
+    </style>
+    
+    <script>
+    
+        // jQuery(document).ready(function() {
+        $(document).ready(function() {
+            $("#btn1").click(function() {
+                // 1. 컨텐츠 조작
+                // - obj.text()
+                // - obj.html()
+
+                // 2. 속성조작
+                // - obj.attr()
+
+                // 3. 엘리먼트 조작
+                // - append()
+                // - prepend()
+                // - remove()
+                // - empty()
+
+                // 4. CSS 조작
+                // - css()
+
+                
+                // 새로 추가되는 요소(<a>)를 문자열로 취급 > 불편..
+                // $("#box1").append("<a></a>").attr("href", "#").text("링크");
+                $("#box1").append("<img src='../images/catty01.png'>");
+
+                // $("#box1 > img:last").click(function() {
+                //     $(this).remove();
+                // });
+            
+                // $(selector) > $("#btn1")
+                // $(BOM object) > $(document)
+                // $(DOM object) > $(document.getElementById("btn1"))
+                // $("태그")
+
+                // 동적으로 태그 생성
+                // 1. innerHTML > html()
+                // 2. createElement() + append() > append() or prepend()
+                // 3. $()
+
+                var cat2 = $("<img src='../images/catty02.png'>").attr("title", "두번째 고양이").css("border-radius", "50%").click(function() {
+                    $(this).remove();
+                });
+
+				$("#box1").append(cat2)
+                
+                var cat3 = $("<img>")
+                                .attr("src","../images/catty03.png")
+                                .attr("title", "세번째 고양이")
+                                .css("border-radius", "50%")
+                                .click(function() {
+                                    $(this).remove();
+                                });
+                
+                $("#box1").prepend(cat3);
+
+            }); //btn1.click
+
+            $("#btn2").click(function() {
+                // DOM
+                // - appendChild()
+                // - removeChild()
+                // jQuery
+                // - append(), prepend()
+                // - remove()
+                // $("#box1").remove();
+                // $("#box1 > img:eq(0)").remove();
+
+                // $("#box1").empty(); //자식삭제
+
+                var className = ".item";
+
+                // $("#box1 > img." + className).remove();
+                $("#box1 > img").remove(className);
+
+            });
+
+            $("#btn3").click(function() {
+
+                // CSS 조작
+                // obj.style.속성명 = "속성값";
+
+                // $("#box2").css("속성명", "속성값");
+                // $("#box2")
+                //     .css("font-size", "3em")
+                //     .css("color", "red")
+                //     .css("text-shadow", "2px 2px 2px gray");
+                
+                // $("#box2").css({
+                //     "font-size" : "3em",
+                //     color : "blue",
+                //     "text-shadow" : "3px 3px 3px gray"
+                // });
+                
+                // CSS 클래스 조작
+                // - obj.className = ".item"
+                // - obj.classList.add("item")
+                // - obj.classList.remove("item")
+
+                // $("#box2").addClass("one");
+                // $("#box2").addClass("two");
+                // $("#box2").addClass("three");
+
+                // $("#box2").removeClass("two");
+
+                $("#box2").toggleClass("two");
+                
+
+            });
+
+
+        }); // ready
+    
+    </script>
+
+
+</head>
+<body>
+    <!--  -->
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+	<hr>
+	<div id="box1">
+        <img src="../images/catty01.png" alt="">
+        <img src="../images/catty02.png" alt="">
+        <img src="../images/catty03.png" class="item">
+        <img src="../images/catty04.png" alt="">
+        <img src="../images/catty05.png" class="item">
+    </div>
+    
+    <hr>
+    
+    <input type="button" value="버튼3" id="btn3">
+    <div id="box2">상자2</div>
+
+    
+</body>
+</html>

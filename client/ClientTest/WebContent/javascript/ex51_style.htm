@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        body {
+            transition: all 1s;
+        }
+
+        #menu {
+            width: 680px;
+            height: 136px;
+            margin: 0px auto;
+            transform: translate(0px, -110px);
+        }
+        
+        #menu img {
+            border: 5px solid white;
+            float: left;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        /* #menu img:hover {
+            transform: translate(0px, 90px);
+            transition: all 1s;
+        } */
+
+
+    </style>
+
+    <script>
+    
+        var items;
+        var colors = ["#A67F62", "#BE4F3B", "#E7C758", "#666666", "#63AFD1"]
+
+        window.onload = function() {
+            items = document.getElementsByClassName("item");
+            
+            for (var i=0; i<items.length; i++){
+                items[i].onclick = function() {
+
+                    // 눌린 메뉴 빼고 나머지를 모두 (0px, 0px)으로 세팅
+                    for(var j=0; j<items.length; j++){
+                        if (items[j] != event.srcElement && items[j].style.transform != "translate(0px, 0px)") {
+                            items[j].style.transform = "translate(0px, 0px)";
+                        }
+                    }
+                    
+                    if (event.srcElement.style.transform != "translate(0px, 90px)"){
+                        event.srcElement.style.transform = "translate(0px, 90px)";
+                        // event.srcElement.style.transition = "all 1s";
+    
+                        document.body.style.backgroundColor = colors[event.srcElement.dataset["no"] - 1];
+                    } else {
+                        event.srcElement.style.transform = "translate(0px, 0px)";
+                        document.body.style.backgroundColor = "white";
+                    }
+                };
+            }
+        
+        
+        }; // onload
+    
+    </script>
+
+
+</head>
+<body>
+
+    <header>
+        <nav id="menu">
+            <img src="../images/rect_icon01.png" class="item" data-no="1">
+            <img src="../images/rect_icon02.png" class="item" data-no="2">
+            <img src="../images/rect_icon03.png" class="item" data-no="3">
+            <img src="../images/rect_icon04.png" class="item" data-no="4">
+            <img src="../images/rect_icon05.png" class="item" data-no="5">
+        </nav>
+    </header>
+    <section>
+
+    </section>
+
+</body>
+</html>

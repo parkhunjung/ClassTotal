@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/my.css">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<style>
+		body { margin-bottom: 300px; }
+
+		#list2, #list3, #list4 {
+			border: 10px solid tomato;
+			width: 800px;
+			text-align: center;
+			padding: 20px;
+		}
+
+		#list3 { border-color: gold; }
+		#list4 { border-color: cornflowerblue; }
+
+	</style>
+	<script>
+		$(document).ready(function() {
+
+			//Interactions > Sortable
+			$("#list1").sortable();
+			$("#list2").sortable({
+				connectWith: ".connectedSortable"
+			});
+
+
+			$("#btn1").click(function() {
+
+				//var items = $("#list2").sortable("option", "items");
+				//console.log(typeof items);
+
+				//console.log($("#list2").children().length);
+
+				// for (var i=0; i<$("#list2").children().length; i++) {
+				// 	console.log($("#list2").children()[i].dataset["no"]);
+				// }
+
+				//forEach 문
+				$("#list2").children().each(function(index, item) {
+					//alert(index + item);
+					$("#result").append(item.dataset["no"] + "<br>");
+				});
+
+			});
+
+			$("#list3, #list4").sortable({
+				connectWith: ".connectedSortable"
+			});
+
+		});//ready
+	</script>
+
+</head>
+<body>
+	<!-- ex19_jqueryui.htm -->
+
+	<h1>목록</h1>
+
+	<ul id="list1">
+		<li>하나</li>
+		<li>둘</li>
+		<li>셋</li>
+		<li>넷</li>
+		<li>다섯</li>
+	</ul>
+
+	<h1>명단</h1>
+
+	<div id="list2" class="connectedSortable">
+		<img src="../images/man_01.png" data-no="0">
+		<img src="../images/man_02.png" data-no="1">
+		<img src="../images/man_03.png" data-no="2">
+		<img src="../images/woman_01.png" data-no="3">
+		<img src="../images/woman_02.png" data-no="4">
+		<img src="../images/woman_03.png" data-no="5">
+	</div>
+	<hr>
+	<input type="button" value="순서 알아보기" id="btn1">
+	<div id="result"></div>
+
+
+
+	<h1>명단</h1>
+
+	<div id="list3" class="connectedSortable">
+		<img src="../images/man_01.png" data-no="0">
+		<img src="../images/man_02.png" data-no="1">
+		<img src="../images/man_03.png" data-no="2">
+	</div>
+	<hr>
+	<div id="list4" class="connectedSortable">
+		<img src="../images/woman_01.png" data-no="3">
+		<img src="../images/woman_02.png" data-no="4">
+		<img src="../images/woman_03.png" data-no="5">
+	</div>
+
+</body>
+</html>

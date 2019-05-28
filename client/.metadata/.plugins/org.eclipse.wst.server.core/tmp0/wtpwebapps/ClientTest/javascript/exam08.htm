@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        #address {
+            border: 1px solid #808080;
+            width: 400px;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        #address tr td {
+            border: 1px solid #808080;
+        }
+
+        #address tr td:nth-child(1) {
+            width: 107px;
+            background-color: #DEDEDE;
+        }
+
+        #address tr:nth-child(1) td:nth-child(2) {
+            text-align: left;
+            padding: 2px 4px;
+        }
+
+
+        .txt {
+            border: 1px solid #808080;
+            margin: 2px 3px;
+            width: 280px;
+        }
+
+        .adrBox {
+            border: 1px solid #808080;
+            width: 53px;
+        }
+
+    
+    </style>
+
+</head>
+<body>
+    
+    <table id="address">
+        <tr>
+            <td>우편번호</td>
+            <td>
+                <input type="text" name="adr1" class="adrBox"> - <input type="text" name="adr2" class="adrBox">
+                <input type="button" value="우편번호검사하기" name="adrCheck" 
+                style="background-color: #DEDEDE; font-size: 13px; text-align: center; border: 1px solid #808080; ">
+            </td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td><input type="text" name="txtBox" class="txt"></td>
+        </tr>
+        <tr>
+            <td>상세주소</td>
+            <td><input type="text" name="txtBox2" class="txt"></div></td>
+        </tr>
+    </table>
+
+    <script>
+        
+        var adrCheck;
+
+        adrCheck = document.all["adrCheck"];
+
+        adrCheck.onclick = function() {
+
+            child = window.open("exam08_sub.htm", "adrCheck", "width= 300, height= 200");
+
+        }
+
+        
+    
+    </script>
+
+
+
+</body>
+</html>

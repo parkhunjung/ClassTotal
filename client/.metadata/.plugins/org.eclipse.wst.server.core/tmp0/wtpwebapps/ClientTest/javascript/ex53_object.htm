@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        
+        // 요구사항] 주소록 항목 객체 x 3개(같은 형식의 객체 3개 필요)
+        var m1 = {
+            name: "홍길동",
+            age: 20
+        };
+
+        var m2 = {
+            name: "아무개",
+            age: 25
+        };
+
+        var m3 = {
+            name: "하하하",
+            aga: 23
+        };
+
+        console.log(m3.age);
+
+        // 자바스크립트에서 클래스(틀)와 유사한 요소를 생성할 수 있다.
+        // -> 객체를 생성하는 함수 정의 -> 생성자 함수(= 클래스 역할)
+        var item = {
+            name: "홍길동",
+            age: 20,
+            hello: function() {
+
+            }
+        };
+
+        function Item(name, age) {
+            this.name = name;
+            this.age = age;
+            this.hello = function() {
+                alert("저는" + this.name + "이고, 나이는 " + this.age + "세 입니다.")
+            };
+        }
+
+        var hong = new Item("홍길동", 20);
+        console.log(hong);
+
+        var lee = new Item("이순신", 20);
+        console.log(lee);
+
+        console.clear();
+
+        // function Date() {}
+
+        var now = new Date();
+        var list = new Array();
+        var obj = new Object();
+
+        console.log(Date);
+        
+        console.log(typeof hong);
+        console.log(typeof lee);
+        console.log(typeof now);
+        console.log(typeof list);
+        console.log(typeof obj);
+
+        console.log(hong.constructor);
+        console.log(lee.constructor);
+        console.log(now.constructor);
+        console.log(list.constructor);
+        console.log(obj.constructor);
+
+        console.log(hong.constructor == lee.constructor);
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

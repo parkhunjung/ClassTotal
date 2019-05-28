@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition: linear 0.1s;
+        }
+    
+    
+    </style>
+
+</head>
+<body>
+    
+
+    <script>
+        var img;
+        var zindex = 21;
+        var delay = 0.1;
+        var list;
+
+
+        for(var i=1; i<=21; i++){
+                img = document.createElement("img");
+
+            if (i < 10) {
+                img.setAttribute("src", "../images/catty0" + i + ".png");
+                img.setAttribute("style", "z-index : " + zindex);
+                zindex--;
+            } else {
+                img.setAttribute("src", "../images/catty" + i + ".png");
+                img.setAttribute("style", "z-index : " + zindex);
+                zindex--;
+            }
+            document.body.appendChild(img);
+        }
+        list = document.getElementsByTagName("img");
+
+        window.addEventListener("mousemove", function() {
+
+            for (var i=0; i<list.length; i++){
+                list[i].style.left = event.clientX - 50 + "px";
+                list[i].style.top = event.clientY - 50 + "px";
+            }
+
+        }); 
+
+    
+    </script>
+
+</body>
+</html>

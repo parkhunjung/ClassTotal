@@ -1,0 +1,98 @@
+package com.test.js;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Ex01 {
+	
+	private static String data;
+	
+	static {
+		data = "안녕하세요. 박헌정입니다. 연락처는 010-1234-5678입니다."
+				+ " 혹시 연락이 안되면 010-9876-5432로 연락주세요."
+				+ " 추가로 이메일 주소는 hong@gmail.com 입니다.";
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		m1();
+		m2();
+	}
+
+	private static void m2() {
+		
+		try {
+			
+			BufferedReader reader = new BufferedReader(new FileReader("com\\test\\js\\naver.html"));
+
+		} catch (Exception e) {
+
+		}
+		
+		
+	}
+
+	private static void m1() {
+		
+		int count = 0;
+		// 자바에서 정규 표현식 사용하기
+		
+		// data에 전화번호가 있는지 확인?(유무)
+		
+		// 사용할 정규 표현식 > 정규식 객체
+		Pattern p = Pattern.compile("[0-9]{3}-[0-9]{3,4}-[0-9]{4}");
+//		Pattern p2 = Pattern.compile("\\d{3}-\\d{3,4}-\\d{4}");
+//		
+//		Pattern p = Pattern.compile("박[가-힣]{2}");
+//		
+		Matcher m = p.matcher(data); //매개변수에 CharSequence 는 문자열을 달라는 소리이다.
+//		
+//		
+//		System.out.println(m.find());
+//		
+//		if(m.find()) {
+//			System.out.println("전화번호를 찾았습니다.");
+//			System.out.println(m.group());
+//		} else {
+//			System.out.println("전화번호가 없습니다.");
+//		}
+//		
+		
+		// 모든 전화번호 찾기
+		while (m.find()) {
+			System.out.println(m.group());
+		}
+		
+		
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

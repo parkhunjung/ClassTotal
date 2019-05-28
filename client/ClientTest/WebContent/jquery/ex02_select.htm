@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    
+    <style>
+    
+        
+    
+    </style>
+    
+    <script>
+    
+        window.onload = function() {
+            
+            // jQuery 함수 + CSS 선택자
+            // 1. 태그 선택자
+            // - div {}
+
+            var result1 = document.getElementsByTagName("div");
+            // result1.style.color = "red";
+            for(var i=0; i<result1.length; i++){
+                result1[i].style.color = "red";
+            }
+
+            // 1. jQuery 함수의 반환값은 무조건 배열이다.
+            // 2. jQuery 함수 반환값에 적용되는 모든 기능은 자동으로 루프 적용
+            var result2 = jQuery("div"); // jQuery는 무조건 1개든 n개든 배열반환이다.
+            console.log(result2);
+            console.log(result2.length);
+
+            // for(var i=0; result2.length; i++){
+            //     result2[i].style.color = "blue";
+            // }
+
+            result2.css("color", "green");
+
+            // 2. id 선택자
+            var box1 = document.getElementById("box1");
+            box1.style.backgroundColor = "yellow";
+
+            var box2 = jQuery("#box2");
+            box2.css("background-color", "pink");
+
+            // function getElementById(id) {
+            //     // 탐색 > 찾았다!!
+            //     return new HTMLDivElement();
+            // }
+
+            // function jQuery(id) {
+            //     // 탐색(Sizzle) > 찾았다!!
+            //     return new jQuery();
+            // }
+
+
+
+            var box3_1 = document.getElementById("box3");
+            var box3_2 = jQuery("#box3")
+
+            console.log(box3_1 == box3_2);
+            
+            // box3_1.style.color = "orange";
+            box3_2.css("color", "purple");
+
+            console.clear();
+            console.log(typeof box3_1);
+            console.log(typeof box3_2);
+
+            console.log(box3_1.constructor);
+            console.log(box3_2.constructor);
+            
+            // box3_1.css("color", "red");
+            // box3_2.style.color = "blue";
+            
+            // HTMLDivElement -> jQuery
+            // jQuery(box3_1).css("color","orange");
+            // box3_2[0].style.color = "blue";
+
+            
+            // 3. 클래스 선택자
+            jQuery(".box").css("font-size", "3em");
+
+            // 4. 그룹 선택자
+            jQuery("#box1, #box4").css("text-decoration", "underline");
+
+            // 5. 자식 선택자
+            // 6. 자손 선택자
+
+            jQuery("ul#list1 > li").css("color", "tomato");
+            jQuery("h1 > span").css("text-decoration", "underline");
+
+            jQuery("#list1 span").css("font-weight", "bold");
+
+            // 7. 형제 선택자
+            // 8. 인접 현제 선택자
+            jQuery("li + li").css("font-style", "italic");
+            jQuery("li ~ li").css("font-style", "italic");
+
+            // 9. CSS3 선택자
+            jQuery("a").css("text-decoration", "none");
+            jQuery("a[title]").css("color", "red");
+            jQuery("a[title=네이버]").css("color", "blue");
+            jQuery("a[href$='.com']").css("font-size", "2em");
+
+            jQuery("li:nth-child(2)").css("visibility", "hidden");
+
+        };
+    
+    </script>
+
+
+</head>
+<body>
+    <!--  -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4">상자4</div>
+    <div id="box5" class="box">상자5</div>
+
+    <hr>
+
+    <h1><span>맛있는</span> 과일</h1>
+    <ul id="list1">
+        <li>사과</li>
+        <li>딸기</li>
+        <li><span>잘익은</span> 귤</li>
+        <li><span>덜익은</span> 파인애플</li>
+        <li>포도</li>
+    </ul>
+
+    <hr>
+
+    <a href="http://google.com">구글</a>
+    <a href="http://naver.com" title="네이버">네이버</a>
+    <a href="http://daum.net">다음</a>
+</body>
+</html>

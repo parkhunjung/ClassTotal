@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+        var btn1, btn2, btn3, txt1;
+        var n = 0;
+        var timer = 0;
+        var colors = ["tomato", "gold", "cornflowerblue", "black", "white"];
+
+        window.onload = function() {
+            btn1 = document.form1.btn1;
+            btn2 = document.form1.btn2;
+            btn3 = document.form1.btn3;
+            txt1 = document.form1.txt1;
+            
+
+            btn1.onclick = function() {
+
+                // 만료시간이 지나는 그순간 앞에있는 함수를 호출하겠다 라는뜻
+                // setTimeout(f1, 만료시간);
+                // setTimeout(function() {
+                //     alert("따르릉");
+                // }, 3000); // 시간은 ms
+
+                // setInterval(function() {
+                //     alert("띵동");
+                // }, 3000);
+                
+                // setInterval(function() {
+                //     txt1.value = (new Date()).toLocaleTimeString();
+                // }, 1000);
+                
+                // test();
+
+                // setInterval(function() {
+                //     txt1.size += 1;
+                // }, 100);
+
+                if (timer == 0) {
+                    timer = setInterval(function() {
+                        txt1.value = n;
+                        n++;
+                    }, 100);
+
+                    console.log(timer);
+                }
+
+            }; //click
+
+            btn2.onclick = function() {
+                // setTimeout() -> clearTimeout()
+                // setInterval() -> clearInterval()
+                clearInterval(timer);
+                timer = 0; //다시 재시작을 할수있게 타이머를 리셋
+
+            }; //click2
+
+            btn3.onclick = function() {
+                setInterval(function() {
+                    document.body.bgColor = colors[n];
+                    n++;
+                    if(n >= colors.length) {
+                        n = 0;
+                    }
+                }, 1000);
+            };
+
+
+        }; //onload
+        
+        // function test() {
+        //     txt1.value = (new Date()).toLocaleTimeString();
+        //     setTimeout(test, 1000);
+        // } //재귀 호출 > 인터벌과 같은효과
+
+
+    </script>
+
+</head>
+<body>
+    
+    <h1>타이머</h1>
+    <p>지정된 시간이 지나면 미리 준비해둔 실행코드를 실행한다. (setTimeOut())</p>
+    <p>지정된 시간이 지날 때마다 반복적으로 미리 준비해둔 실행코드를 실행한다.(setInterval())</p>
+    <form name="form1" action="">
+        <input type="button" value="시작" name="btn1" id="">
+        <input type="button" value="스탑" name="btn2" id="">
+        <hr>
+        <input type="text" name="txt1" id="">
+        <hr>
+        <input type="button" value="버튼" name="btn3" id="">
+        <img src="../images/catty01.png" name="cat1" onclick="change();">
+    </form>
+
+    <script>
+        var cat1;
+        var index = 1;
+
+        function change() {
+
+            if (timer == 0) {
+                timer = setInterval(function() {
+                index++;
+                if (index > 9) {
+                    index = 1;
+                } 
+                document.images["cat1"].src = "../images/catty0" + index + ".png";
+                }, 1000);
+            } else {
+                clearInterval(timer);
+                timer = 0;
+            }
+
+
+        }
+    
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        img {
+            width: 128px; 
+            height: 128px;
+            position: absolute;
+        }
+
+    </style>
+
+    <script>
+
+        var index;
+
+        window.onload = function() {
+
+            // var imgBox = document.createElement("img");
+            // imgBox.setAttribute("src", "../images/m01.png");
+            
+            // document.body.appendChild(imgBox);
+
+            
+
+
+            window.addEventListener("click", function() {
+
+                index = parseInt(Math.random() * 18) + 1;
+
+                alert(index);
+                var imgBox = document.createElement("img");
+                if (index < 10) {
+                    imgBox.setAttribute("src", "../images/m0" + index + ".png");
+                } else {
+                    imgBox.setAttribute("src", "../images/m" + index + ".png");
+                }
+                
+                imgBox.style.left = event.clientX - 50 + "px";
+                imgBox.style.top = event.clientY - 50 + "px";
+
+                document.body.appendChild(imgBox);
+
+
+            });
+
+        };
+    
+    </script>
+
+</head>
+<body>
+    
+
+
+
+</body>
+</html>

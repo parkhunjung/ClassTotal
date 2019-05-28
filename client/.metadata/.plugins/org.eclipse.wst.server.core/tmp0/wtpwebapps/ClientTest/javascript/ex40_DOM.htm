@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+        var btn1, box1;
+
+        window.onload = function() {
+
+            btn1 = document.getElementById("btn1");
+            box1 = document.getElementById("box1");
+
+            // 버튼 클릭
+            // 1. BOM
+            // btn1.onclick = 함수;
+            // btn1.onclick = f1;
+
+            // 2. DOM
+            // btn1.addEventListener(이벤트 종류, 함수); => Listener 무언가를 항상 기다리는
+            // btn1.addEventListener("click", function() {
+            //     alert("click");
+            // });
+
+            // btn1.onclick = f1;
+            // btn1.onclick = f2;
+            // btn1.onclick = null; //BOM - 이벤트 제거
+
+            // btn1.onclick = f1;
+            // btn1.onclick += f2;
+
+            // alert(btn1.onclick);
+            // btn1.onclick = f3;
+
+            // DOM - 하나의 이벤트에 여러 이벤트 함수를 매핑할 수 있다.
+            // 1 : N 관계
+            // -> 이벤트 함수들의 집합 -> Invocation List
+            btn1.addEventListener("click", f1);
+            btn1.addEventListener("click", f2); // 동일 이벤트 + 재사용 > 이벤트 누적
+            
+            // 클릭에 걸려있는 f2함수를 제거해주세요.
+            btn1.removeEventListener("click", f2);
+
+                
+            function f1() {
+                box1.innerHTML += "하나<br>";
+            }
+            
+            function f2() {
+                box1.innerHTML += "둘<br>";
+            }
+
+            // BOM에서 여러 이벤트를 호출하기위한 방법
+            function f3() {
+                f1();
+                f2();
+            }
+
+
+
+
+
+        };
+
+
+        
+
+    
+    </script>
+
+</head>
+<body>
+    
+    <h1>DOM의 이벤트 처리</h1>
+    <input type="button" value="버튼1" id="btn1">
+    <hr>
+    <div id="box1"></div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #event form p input {
+            cursor: pointer;
+        }
+
+    </style>
+    <script>
+    /*
+    Event, 이벤트
+    - BOM에서 조작하는 이벤트 방식
+    - 사용자(사람)와 상호 작용을 하면서 마우스(키보드, 터치, 펜 등)를 조작하면 그에 대한 반응을 정의하는 모델
+    - 대부분 GUI환경의 기본 모델 <> CUI, CLI, Text
+    
+    BOM 이벤트 처리 방식
+    1. 정적 방식
+        - 태그의 속성으로 onXXX 속성을 사용하는 방식
+        - onXXX 속성 : 이벤트 핸들러(Event Handler) - 이벤트를 처리하는 담당자
+    2. 동적 방식
+        - 자바스크립트상에 이벤트를 매핑하는 방식
+        - window.document.form1.btn1.onclick = f1;
+
+    onload
+    - 해당 태그의 내용물이 전부 로딩되고 나면 발생(브라우저 읽고 난 직후)
+    
+    onunload
+    - 해당 태그의 내용물이 사라지기(소멸되기) 직전에 발생
+
+    */
+    
+    //<body onload="init()";
+    // - 페이지 내용물을 초기화해주는 역할로 사용
+    function init() {
+
+        window.document.form1.txt3.value = (new Date()).toLocaleString();
+        // alert('안녕하세요');
+
+        //btn4
+        if((new Date()).getHours() < 12){
+            window.document.form1.btn4.onclick = f4;
+        } else {
+            window.document.form1.btn4.onclick = f5; 
+        }
+    }
+
+    function f4() {
+        window.document.body.bgColor = "gold";
+    }
+
+    function f5() {
+        window.document.body.bgColor = "cornflowerblue";
+    }
+
+    </script>
+
+</head>
+<body onload="init();" onunload="alert('안녕히가세요');">
+
+    <h1 Style="color: tomato">Event</h1>
+
+    <div id="event">
+        <form name="form1">
+            <div><input type="text" name="txt1" placeholder="나이 입력"></div>
+            <div><input type="text" name="txt2"></div>
+            <div><input type="text" name="txt3"></div>
+            <p><input type="button" name="btn1" value="클릭1"></p>
+            <p><input type="button" name="btn2" value="클릭2"></p>
+            <p><input type="button" name="btn2" value="클릭3" onclick="f1();"></p>
+            <p><input type="button" name="btn4" value="클릭4"></p>
+            
+        </form>
+    </div>
+
+    <script>
+    
+    //자바스크립트 코딩 순서(반복 패턴)
+    //1. 이벤트를 매핑할 태그를 검색한다. (BOM or DOM)
+    //2. 해당 태그에 특정 이벤트를 매핑한다.
+    //3. 2번의 이벤트가 발생하면 실행할 코드를 미리 작성한다. (하고 싶은 일.. 자유) > 모든 행동의 주된 목표
+    //3.1 특정 태그를 검색한다 (BOM or DOM)
+    //3.2 3.1태그에 여러가지 조작을 한다. (BOM or DOM)
+
+
+    
+
+    //1. 클릭할 버튼 찾기 + 2. 이벤트 매핑
+    window.document.form1.btn1.onclick = f1;
+    
+    //3. 버튼을 클릭하면 하고 싶은 일 구현
+    function f1() {
+        //3.1 텍스트 박스 검색 + 3.2 조작(값 읽기)
+        // *** JavaScript는 HTML 조작을 쉽게 하기 위해서 HTML의 대부분의 속성을 JavaScript의 프로퍼티(속성)로 제공한다.
+        var age = window.document.form1.txt1.value;
+        // alert(age); 
+
+        if (!isNaN(age)){
+            alert("올바른 나이를 입력했습니다.");
+        } else {
+            alert("나이를 숫자로만 입력하세요.");
+        }
+    }
+
+    //두번째 버튼을 클릭하면 첫번째 텍스트박스의 값을 두번째 텍스트박스에 복사하기
+    window.document.form1.btn2.onclick = f2;
+
+    function f2() {
+
+        var t1 = window.document.form1.txt1.value;
+        window.document.form1.txt2.value = t1;
+    }
+
+    
+
+    // alert("hello");
+
+    </script>
+
+
+</body>
+</html>

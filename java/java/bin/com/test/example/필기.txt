@@ -1,0 +1,18 @@
+패키지, package
+- 클래스를 물리(논리)적으로 분류하는 역할
+- 폴더
+- com.test.example ( "." 상위패키지와 하위패키지를 구분하는 구분자)
+- com.test.example : 3단계 패키지
+- 패키지 명명법
+	a. 전부 영문 소문자만 사용
+	b. 숫자는 사용
+	c. 숫자로 시작x
+	d. 단계 : 최소 3단계 이상 권유
+	e. 단어 선택 : 목적 대표 단어 선택
+	
+-프로젝트
+	-ss.team3.admin
+	-ss.team3.client
+	-ss.team3.ui
+	-ss.team3.ui.input
+	-ss.team3.ui.output

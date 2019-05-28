@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/my.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    
+    <style>
+    
+        #box1 {
+            transform: translate(500px, 250px);
+        }
+        
+        #cat1 {
+            z-index: 1;
+        }
+
+    </style>
+    
+    <script>
+    
+        // jQuery(document).ready(function() {
+        $(document).ready(function() {
+
+            $("#cat1").draggable({
+                cursor: "move",
+                opacity: .3
+            });
+
+            // Interactions > Droppable
+
+            $("#box1").droppable({
+                drop: function() {
+                    // alert("확인");
+                    // alert($(this).attr("id"));
+                    $(this).css("background-color", "tomato");
+                    $("#cat1").draggable({
+                        containment: "#box1"
+                    });
+                }
+            }); //droppable
+
+            $("#cat1").dblclick(function() {
+                $("#box1").css("background-color", "gold")
+                $("#cat1").draggable({
+                    containment: ""
+                });
+            });
+
+        }); //ready
+    
+    </script>
+
+
+</head>
+<body>
+    <!--  -->
+    <img src="../images/catty01.png" id="cat1">
+
+    <div id="box1" class="box yellow big"></div>
+
+
+</body>
+</html>

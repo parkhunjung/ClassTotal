@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- 
+	
+	Link, 링크
+	- <a>, anchor(닻), link
+	- href 속성 : 이동할 URL, reference a hyperlink
+	
+	
+	브라우저
+	- HTML 문서 실행기(뷰어)
+	- Text 뷰어
+	- 이미지 뷰어
+	- 동영상 뷰어
+	- 각종 파일 포맷을 지원함. > 자기가 해석이 가능하면 지가 연다.
+	
+	-->
+	
+	
+	<a href = "http://www.naver.com">네이버(외부 링크)</a>	
+	<br>
+	<a href ="ex13_list.htm">13번 예제(내부 링크)</a>
+	<br>
+	<a href = "https://s.pstatic.net/static/www/mobile/edit/2017/0426/mobile_173734128387.png">네이버 이미지</a>
+	<br>
+	<a href = "필기.txt">필기 내용</a>
+	<br>
+	<a href = "aaa.zip">압축 파일</a>
+	<br>
+	<a href = "http://cafe24.com">카페24</a>
+	
+	
+	<hr>
+	<!-- 
+	
+	a.target 속성
+	- 열거형
+		a. _blank //새창에서 링크열기
+		b. _self //현재창에서 링크열기(default)
+		--------------
+		c. _parent //부모 프레임에서 링크열기
+		d. _top //최상위 프레임에서 링크열기
+		e. 프레임명 //특정 프레임에서 링크열기
+	
+	
+	-->
+	<a href = "ex13_list.htm" target = _self>13번 예제</a>
+	<br>
+	<a href = "ex13_list.htm" target = _blank>13번 예제</a>
+	<br>
+	
+	<hr>
+	
+	<a href ="mailto:hong@gmail.com" >홍길동</a>
+	<br>
+	<a href = "javascript:alert('메롱~');">클릭해보세요</a>
+	<br>
+	<a href = "ex15_link.htm#item2">오라클 보기</a>
+	<br>
+	<a href = "페이지URL#앵커아이디">링크</a>
+	<br>
+	<a href = "페이지URL">링크</a><!-- 해당 페이지로 이동하고 스크롤바를 최상위로 -->
+	<br>
+	<a href = "#앵커아이디">링크</a> <!-- 자기 자신 페이지로 이동하고 스크롤바를 앵커위치로 -->
+	<br>
+	<a href = "#">빈 링크</a><!-- 현재페이지의 상단으로 이동 -->
+	<br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

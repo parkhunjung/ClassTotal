@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 126px;
+            height: 126px;
+            padding: 0px;
+            margin: 0px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #tbl1 td img {
+            width: 126px;
+            height: 126px;
+            display: block;
+        }
+
+        .icon {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition: all .5s;
+        }
+    
+    </style>
+
+    <script>
+        
+        var icons;
+        var img;
+
+        window.onload = function() {
+
+            icons = document.getElementsByClassName("icon");
+
+            for(var i=0; i<icons.length; i++){
+                
+                icons[i].onclick = function() {
+                    // if (icons[j] != event.srcElement){
+                    //     event.srcElement.style.transform = "translate(0px, 0px)";
+                    // } else if (icons[j].srcElement.style.transform != "translate(126px, 126px)"){
+                    //     event.srcElement.style.transform = "translate(126px, 126px)";
+                    // }
+                    var c = event.srcElement;
+                    c.style.transform = "translate(126px, 126px)";
+
+                    function trans() {
+                        c.style.transform = "translate(0px, 0px)";
+                    }
+
+                    // setTimeout(function() {
+                    //     c.style.transform = "translate(0px, 0px)";
+                    // }, 1000);
+                    
+                    setTimeout(trans, 1000);
+
+                }
+
+            }
+
+        }; //onload
+
+    
+    </script>
+
+</head>
+<body>
+    
+
+    <table id="tbl1">
+        <tr>
+            <td><img src="../images/rect_icon01.png" class="icon"></td>
+            <td><img src="../images/rect_icon02.png" class="icon"></td>
+            <td><img src="../images/rect_icon03.png" class="icon"></td>
+            <td><img src="../images/rect_icon04.png" class="icon"></td>
+            <td><img src="../images/rect_icon05.png" class="icon"></td>
+        </tr>
+        <tr>
+            <td><img src="../images/rect_icon06.png" class="icon"></td>
+            <td><img src="../images/rect_icon07.png" class="icon"></td>
+            <td><img src="../images/rect_icon08.png" class="icon"></td>
+            <td><img src="../images/rect_icon09.png" class="icon"></td>
+            <td><img src="../images/rect_icon10.png" class="icon"></td>
+        </tr>
+        <tr>
+            <td><img src="../images/rect_icon11.png" class="icon"></td>
+            <td><img src="../images/rect_icon12.png" class="icon"></td>
+            <td><img src="../images/rect_icon13.png" class="icon"></td>
+            <td><img src="../images/rect_icon14.png" class="icon"></td>
+            <td><img src="../images/rect_icon15.png" class="icon"></td>
+        </tr>
+        <tr>
+            <td><img src="../images/rect_icon16.png" class="icon"></td>
+            <td><img src="../images/rect_icon17.png" class="icon"></td>
+            <td><img src="../images/rect_icon18.png" class="icon"></td>
+            <td><img src="../images/rect_icon01.png" class="icon"></td>
+            <td><img src="../images/rect_icon02.png" class="icon"></td>
+        </tr>
+        <tr>
+            <td><img src="../images/rect_icon03.png" class="icon"></td>
+            <td><img src="../images/rect_icon04.png" class="icon"></td>
+            <td><img src="../images/rect_icon05.png" class="icon"></td>
+            <td><img src="../images/rect_icon06.png" class="icon"></td>
+            <td><img src="../images/rect_icon07.png" class="icon"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

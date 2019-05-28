@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        #content {
+            border: 1px solid #e5e5e5;
+            padding: 5px 5px;
+            width: 540px;
+        }
+
+        #sizeUp {
+            border: 1px solid #e5e5e5;
+            padding: 5px 5px;
+            width: 540px;
+            height: 400px;
+        }
+
+        #bigImg {
+            width: 540px;
+            height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="content">
+        <form name="form1">
+            <img src="../images/img01.jpg" name="img1" id="imgs">
+            <img src="../images/img02.jpg" name="img2" id="imgs">
+            <img src="../images/img03.jpg" name="img3" id="imgs">
+        </form>
+    </div>
+    <div id="sizeUp">
+        <img src="../images/img01.jpg" name="img4" id="bigImg">
+    </div>
+
+
+    <script>
+    
+        var img1, img2, img3;
+
+        img1 = document.images["img1"];
+        img2 = document.images["img2"];
+        img3 = document.images["img3"];
+        
+        img1.onmouseover = function () {
+            img4.src = "../images/img01.jpg";
+        }
+
+        img1.onmouseout = function () {
+            img1.src = "../images/img01.jpg";
+        }
+
+        img2.onmouseover = function () {
+            img4.src = "../images/img02.jpg";
+        }
+
+        img2.onmouseout = function () {
+            img2.src = "../images/img02.jpg";
+        }
+
+        img3.onmouseover = function () {
+            img4.src = "../images/img03.jpg";
+        }
+
+        img3.onmouseout = function () {
+            img3.src = "../images/img03.jpg";
+        }
+
+    
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+
+    <script>
+        /*
+        
+        JavaScript Function
+        - 메소드, 프로시저, 함수
+
+        자바의 메소드
+        public [static] int m1(int num) {
+            
+            return 10;
+        }
+
+        자바스크립트의 함수
+        function m1(num) {
+
+            [return 10;] //써도되고 안써도됨
+        }
+
+
+        */
+        
+        function f1() {
+            console.log('f1');
+        }
+
+        f1();
+        f1();
+
+
+        function f2(name) {
+            console.log("이름", name);
+            console.log(arguments); //내장 배열
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+            console.log(arguments[3]);
+        }
+
+        f2("홍길동");
+        f2();
+        f2("홍길동", 20, "서울시", "학생")
+
+        // undefined : 변수 선언 후 초기화를 하지 않은 상태
+        var num;
+        console.log(num);
+
+        num = null;
+        console.log(num);
+
+        console.log(null == undefined);
+        console.log(100 == "100");
+
+        console.log(null === undefined);
+        console.log(100 !== "100");
+
+        function f3() {
+
+            return 100;
+        }
+
+        console.log(f3());
+        
+        // 함수 호이스팅, function hoisting
+        f4();
+
+        function f4() {
+            console.log("함수 호출");
+        }
+        
+
+
+        // 변수 호이스팅, Variable hoisting
+        console.log("n",n);
+        
+        var n = 200;
+
+        console.log("n",n);
+
+        /*
+        변수의 종류
+        1. 전역 변수. Global Variable
+            - 페이지 전체
+            - <script>에서 직접 선언
+            - 메소드 내에서 선언되지 않은 변수들은 전부 전역 변수 이다.
+
+        2. 지역 변수. Local Variable
+            - 블럭(메소드, 제어문) 내에서 선언 : 자바
+            - 블럭(메소드)내에서 선언 : 자바스크립트 (함수 외에는 모든것이 전역변수 이다.)
+
+        */
+
+        function f5() {
+            var age = 20; // 지역 변수(f5)
+            console.log(age);
+        }
+
+        f5();
+        // console.log(age);
+
+        var isCheck = true;
+
+        if (isCheck) {
+            var address = "서울시";
+            console.log(address);
+        }
+        
+        console.log(address);
+
+        // 자바스크립트는 변수 선언할 때 var 필수가 아니다.
+        // var 없이 선언한 변수는 무조건 전역변수가 된다.
+        var email1 = "hong@naver.com"; //전역 변수
+        email2 = "lee@naver.com"; //전역 변수
+
+        console.log(email2);
+
+        function f6() {
+            var gender1 = "남자"; //지역 변수
+            gender2 = "여자"; //지역 변수X > 전역 변수O
+        }
+
+        f6();
+
+        // console.log(gender1);
+        console.log(gender2);
+
+    </script>
+
+</body>
+</html>

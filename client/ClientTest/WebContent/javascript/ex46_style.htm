@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        #box {
+            border: 5px solid black;
+            width: 250px; 
+            height: 188px;
+            overflow: hidden;
+        }
+
+        #list {
+            width: 2500px;
+            transition-property: transform;
+            transition-timing-function: linear;
+        }
+
+        #list img {
+            float: left;
+        }
+    
+    </style>
+
+    <script>
+    
+        var sel1;
+        var oldX = 0;
+        var newX = 0;
+
+        window.onload = function() {
+
+            sel1 = document.getElementById("sel1");
+
+            sel1.onchange = function() {
+                // alert(sel1.value);
+                newX = sel1.value;
+
+                document.getElementById("list").style.transitionDuration = Math.abs(newX - oldX) + "s";
+
+                document.getElementById("list").style.transform = 
+                "translate(-" + ((sel1.value - 1) * 250) + "px, 0px)";
+
+                oldX = newX;
+
+
+            };
+
+        };
+    
+    </script>
+
+</head>
+<body>
+    
+    <h1>애완 동물</h1>
+
+    <div id="box">
+        <div id="list">
+            <img src="../images/cat01.jpg" alt="">
+            <img src="../images/cat02.jpg" alt="">
+            <img src="../images/cat03.jpg" alt="">
+            <img src="../images/cat04.jpg" alt="">
+            <img src="../images/cat05.jpg" alt="">
+            <img src="../images/dog01.jpg" alt="">
+            <img src="../images/dog02.jpg" alt="">
+            <img src="../images/dog03.jpg" alt="">
+            <img src="../images/dog04.jpg" alt="">
+            <img src="../images/dog05.jpg" alt="">
+        </div>
+    </div>
+    <hr>
+    <select id="sel1">
+        <option value="1">고양이1</option>
+        <option value="2">고양이2</option>
+        <option value="3">고양이3</option>
+        <option value="4">고양이4</option>
+        <option value="5">고양이5</option>
+        <option value="6">강아지1</option>
+        <option value="7">강아지2</option>
+        <option value="8">강아지3</option>
+        <option value="9">강아지4</option>
+        <option value="10">강아지5</option>
+    </select>
+
+</body>
+</html>

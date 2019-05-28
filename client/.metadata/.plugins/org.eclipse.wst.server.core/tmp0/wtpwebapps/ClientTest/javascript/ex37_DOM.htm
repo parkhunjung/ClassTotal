@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        
+        div { border: 1px solid black; padding: 15px; margin: 15px; }
+        #n7 {
+            border: 10px solid black;
+        }
+
+        .check { background-color: tomato; }
+
+    </style>
+
+    <script>
+    
+        window.onload = function() {
+
+            document.getElementById("btn1").onclick = function () {
+
+                // 나를 기준으로 다른 태그(노드)를 검색하는 도구
+                // Axis 표현 - DOM의 검색 도구 중 하나
+
+                // 나
+                var n7 = document.getElementById("n7");
+
+                // DOM > 문서의 모든 태그(속성,PCDATA,주석,엔티티 등)를 인식 + 트리구조
+                // 특정 노드 접근 > 태그? 속성? 주석? 
+                // DOM 트리를 구성하는 요소
+                // 1. 태그(1)
+                // 2. 속성(2)
+                // 3. PCDATA(3)
+                // 4. 주석(8)
+                // 5. 선언문(13)
+
+                // 위의 구성요소에게 물어볼 수 있는 프로퍼티
+                // 1. nodeName
+                // 2. nodeType
+                // 3. nodevalue
+
+                // 태그
+                console.log(n7.nodeName); // 태그명 반환
+                console.log(n7.nodeType); // 1
+                console.log(n7.nodeValue); // null(100%)
+
+                // 자식 접근 프로퍼티
+                // - firstChild 첫번째 자식 (=childNodes[0])
+                // - lastChild 마지막 자식 (=childNodes[childeNodes.length-1])
+                // - childNodes 자식노드들
+                // - children 자식 태그 노드들(***)
+
+                //주석
+                console.log(n7.firstChild.nodeName); //#comment - 사용안함 (nodeType 을 씀)
+                console.log(n7.firstChild.nodeType); //8
+                console.log(n7.firstChild.nodeValue); //주석의 내용을 반환
+                
+                //PCDATA
+                console.log(n7.firstChild.nodeName); //#text - 사용안함 (nodeType 을 씀)
+                console.log(n7.firstChild.nodeType); //3
+                console.log(n7.firstChild.nodeValue); //주석의 내용을 반환
+
+                // 첫번째 자식 태그
+                console.clear();
+                console.log(n7.childNodes[3].nodeName);
+                console.log(n7.childNodes[3].nodeType);
+                console.log(n7.childNodes[3].nodeValue);
+
+                // n7.childNodes[3].className = "check";
+
+                // 막내 자식 태그
+                // n7.childNodes[7].className = "check";
+
+                // 자식 태그들을 모두 찾아주세요.
+                // for (var i=0; i<n7.childNodes.length; i++){
+
+                //     if (n7.childNodes[i].nodeType == 1 && n7.childNodes[i].nodeName == "DIV") {
+                //         console.log("-----------------------");
+                //         console.log(i, n7.childNodes[i].nodeName);
+                //         console.log(i, n7.childNodes[i].nodeType);
+                //         console.log(i, n7.childNodes[i].nodeValue);
+                //     }
+                // }
+
+                console.log(n7.childNodes.length);
+                console.log(n7.children.length);
+
+                for (var i=0; i<n7.children.length; i++){
+                    console.log(n7.children[i].nodeName);
+                }
+
+                // n7의 손자
+                n7.children[2].children[0].className ="check";
+
+
+                console.clear();
+
+                // 부모 노드
+                console.log(n7.parentNode); // 권장 표현방식
+                console.log(n7.parentElement);
+
+                console.log(n7.parentNode.nodeName);
+                console.log(n7.parentNode.nodeType);
+                console.log(n7.parentNode.nodeValue);
+                console.log(n7.parentNode.id); // 부모
+                console.log(n7.parentNode.parentNode.id); // 할아버지
+                console.log(n7.parentNode.parentNode.parentNode.nodeName); //증조
+                console.log(n7.parentNode.parentNode.parentNode.parentNode.nodeName); //고조
+                console.log(n7.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName); //document
+                // DOM에서는 최상위 노드가 document 객체
+
+                console.clear();
+
+                // 친형제 노드 접근하기
+                // 1. 바로 위의 형제노드 : previousSibling
+                // 2. 바로 아래 형제노드 : nextSibling
+
+                console.log(n7.previousSibling.previousSibling.nodeName);
+                console.log(n7.previousSibling.previousSibling.nodeType);
+                console.log(n7.previousSibling.previousSibling.nodeValue);
+
+                n7.previousSibling.previousSibling.className = "check";
+
+                // n7.previousElementSibling //태그들 중 형제노드
+                n7.nextElementSibling.className = "check";
+
+            };
+
+        };
+    
+    </script>
+
+</head>
+<body>
+    
+        <input type="button" value="버튼1" id="btn1">
+        <hr>
+        <div id="n1">
+            할아버지
+            <div id="n2">
+                큰아버지
+                <div id="n5">
+                    사촌
+                </div>
+            </div>
+            <div id="n3">
+                부모
+                <div id="n6">
+                    형    
+                </div>
+                <div id="n7">A<!-- 나(n7) -->
+                    나
+                    <div id="n10">
+                        첫째 자식
+                    </div>
+                    <hr>
+                    <div id="n11">
+                        둘째 자식
+                        <div id="n13">
+                            손자
+                        </div>
+                    </div>
+                    <div id="n12">
+                        막내 자식
+                    </div>
+                </div>
+                <div id="n8">
+                    동생
+                </div>
+            </div>
+            <div id="n4">
+                작은 아빠
+                <div id="n9">
+                    사촌
+                </div>
+            </div>
+        </div>
+    
+
+</body>
+</html>

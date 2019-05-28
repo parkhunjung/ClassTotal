@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        body {
+            padding-bottom: 500px;
+        }
+
+        .box {
+            border:1px solid black;
+            width: 500px;
+            height: 300px;
+            margin: 20px;
+        }
+
+        #box1 {
+            background-image: 
+                url(../images/catty01.png), 
+                url(../images/catty02.png), 
+                url(../images/catty03.png);
+            background-repeat: no-repeat;
+            background-position: 
+                left top,
+                right top,
+                left bottom;
+        }
+
+        #box2 {
+            background-image: url(../images/cat01_big.jpg);
+            /* background-size: 500px 300px; */
+            /* background-size: 100% 100%; */
+            /* background-size: 250px auto; 원래있는 오토가 생략된 모습 안써도 자동이다. */
+            /* background-size: 250px; */
+            background-size: auto 300px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #box3 {
+            background-image: url(../images/cat03_big.jpg);
+            /* background-size: 100% auto; */
+
+            /* 
+            contain : 배경 이미지의 단축(짧은축)을 100%로 출력되게 하는 속성, 반복되는 영역이 일부 생김 + no-repeat
+            cover : 배경 이미지의 장축(긴축)을 100%로 출력되게 하는 속성
+            */
+            /* background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center; */
+
+            background-size: cover;
+            background-position: center center;
+        }
+
+        /* 풀 사이즈 배경 이미지 */
+        html {
+            background-image: url(../images/wall34.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="box1" class="box">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur nesciunt aspernatur optio iusto voluptas laudantium magnam autem, quasi et suscipit error illum incidunt sit, omnis, dolorem harum maxime veritatis? Amet.</div>
+    <div id="box2" class="box">Incidunt magni, eos molestiae corrupti voluptas, fugit illum delectus facere distinctio architecto rerum aut voluptate quibusdam itaque consequatur quis optio pariatur exercitationem ducimus repellendus quisquam! Ducimus, aperiam? Possimus, animi voluptatum?</div>
+    <div id="box3" class="box">Repudiandae mollitia facilis ratione perferendis harum soluta eaque consequuntur, veniam non saepe. Veniam sint soluta saepe magni odio, recusandae reprehenderit ad repellendus iusto a adipisci ea laboriosam? Omnis, dicta eos!</div>
+    
+
+
+</body>
+</html>

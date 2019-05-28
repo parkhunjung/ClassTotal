@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <script>
+        
+        function use(add1, add2, add3) {
+
+            opener.document.all["adr1"].value = add1;
+            opener.document.all["adr2"].value = add2;
+            opener.document.all["txtBox"].value = add3;
+
+            opener.document.all["txtBox2"].focus();
+
+
+            window.close(); 
+
+        }
+    
+    </script>
+
+</head>
+<body>
+    <div>
+        <input type="button" value="서울시 동대문구 회기동" name="address" onclick="use('100', '200', '서울시 동대문구 회기동');">
+    </div>
+    <div>
+        <input type="button" value="서울시 동대문구 휘경동" name="address" onclick="use('300', '400', '서울시 동대문구 휘경동');">
+    </div>
+    <div>
+        <input type="button" value="서울시 강남구 테헤란로" name="address" onclick="use('500', '600', '서울시 강남구 테헤란로');">
+    </div>
+    
+
+
+</body>
+</html>

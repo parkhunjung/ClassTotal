@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	
+	선택자 조건으로 사용하는 다른 태그
+	1. 부모 O, 자식 X
+	2. 형 O, 동생 X
+	
+	7. 형제 선택자, Sibling Selector
+	- 선택자 ~ 선택자
+	- 자손 선택자
+	
+	8. 인접 형제 선택자, Adjacent Sibling Selector
+	- 선택자 + 선택자
+	- 자식 선택자
+	
+	*/
+	
+	span + p{
+		color : red;
+	}
+	
+	/* p +  span {
+		color : orange;
+	} */
+	
+	span ~ p { color : green; }
+	p ~ span { color : orange; }
+	
+</style>
+</head>
+<body>
+
+	<p>p</p>
+	<div>div</div>
+	<span>span</span>
+	<p>p**</p>
+	<p>p</p>
+	<div>div</div>
+	<p>p</p>
+	<span>span</span>
+	<p>p**</p>
+
+</body>
+</html>

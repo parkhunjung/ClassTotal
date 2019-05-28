@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    #card {
+        border: 0px solid black;
+        width: 700px;
+        margin: 10px auto;
+    }
+
+    .box1 {
+        border: 10px solid black;
+        width: 126px;
+        height: 126px;
+        float: left;
+        margin-left: -10px;
+        overflow: hidden;
+    }
+
+    .box2 {
+        border: 10px solid black;
+        width: 126px;
+        height: 126px;
+        float: left;
+        margin-left: -10px;
+    }
+
+    .box3 {
+        border: 10px solid black;
+        width: 126px;
+        height: 126px;
+        float: left;
+        margin-left: -10px;
+    }
+
+    .box4 {
+        border: 10px solid black;
+        width: 126px;
+        height: 126px;
+        float: left;
+        margin-left: -10px;
+        overflow: hidden;
+    }
+
+    .box5 {
+        border: 10px solid black;
+        width: 126px;
+        height: 126px;
+        float: left;
+        margin-left: -10px;
+    }
+
+    #card .box1 img {
+        transform: translate(-150px, 0px);
+        transition: transform 0.7s;
+    }
+
+    #card .box1:hover img {
+        transform: translate(0px, 0px);
+    }
+
+    #card .box2 img {
+        opacity: 0; 
+        transition: opacity .5s;
+    }
+
+    #card .box2:hover img {
+        opacity: 1;
+    }
+
+    #card .box3 img {
+        transform: scale(0, 0); 
+        transition: transform .5s;
+    }
+
+    #card .box3:hover img {
+        transform: scale(1, 1);
+    }
+
+    #card .box4 img {
+        transform: translate(0px, -126px) rotate(-360deg) scale(0, 0); 
+        transition: transform .5s;
+    }
+
+    #card .box4:hover img {
+        transform: translate(0px, 0px) rotate(0deg) scale(1, 1);
+    }
+
+    @keyframes roll {
+        0% { transform: scale(.1, 1); opacity: .1; }
+        10% { transform: scale(-.2, 1); opacity: .2; }
+        20% { transform: scale(.3, 1); opacity: .3; }
+        30% { transform: scale(-.4, 1); opacity: .4; }
+        40% { transform: scale(.5, 1); opacity: .5; }
+        50% { transform: scale(-.6, 1); opacity: .6; }
+        60% { transform: scale(.7, 1); opacity: .7; }
+        70% { transform: scale(-.8, 1); opacity: .8; }
+        80% { transform: scale(.9, 1); opacity: .9; }
+        90% { transform: scale(-.9, 1); opacity: 1; }
+        100% { transform: scale(1, 1); opacity: 1; }
+           
+    }
+
+    #card .box5 img {
+        opacity: 0;
+    }
+
+    #card .box5:hover img {
+        animation-name: roll;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div id="card">
+        <div class="box1"><img src="../images/rect_icon01.png" alt=""></div>
+        <div class="box1"><img src="../images/rect_icon02.png" alt=""></div>
+        <div class="box1"><img src="../images/rect_icon03.png" alt=""></div>
+        <div class="box1"><img src="../images/rect_icon04.png" alt=""></div>
+        <div class="box1"><img src="../images/rect_icon05.png" alt=""></div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div id="card">
+        <div class="box2"><img src="../images/rect_icon01.png" alt=""></div>
+        <div class="box2"><img src="../images/rect_icon02.png" alt=""></div>
+        <div class="box2"><img src="../images/rect_icon03.png" alt=""></div>
+        <div class="box2"><img src="../images/rect_icon04.png" alt=""></div>
+        <div class="box2"><img src="../images/rect_icon05.png" alt=""></div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div id="card">
+        <div class="box3"><img src="../images/rect_icon01.png" alt=""></div>
+        <div class="box3"><img src="../images/rect_icon02.png" alt=""></div>
+        <div class="box3"><img src="../images/rect_icon03.png" alt=""></div>
+        <div class="box3"><img src="../images/rect_icon04.png" alt=""></div>
+        <div class="box3"><img src="../images/rect_icon05.png" alt=""></div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div id="card">
+        <div class="box4"><img src="../images/rect_icon01.png" alt=""></div>
+        <div class="box4"><img src="../images/rect_icon02.png" alt=""></div>
+        <div class="box4"><img src="../images/rect_icon03.png" alt=""></div>
+        <div class="box4"><img src="../images/rect_icon04.png" alt=""></div>
+        <div class="box4"><img src="../images/rect_icon05.png" alt=""></div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div id="card">
+        <div class="box5"><img src="../images/rect_icon01.png" alt=""></div>
+        <div class="box5"><img src="../images/rect_icon02.png" alt=""></div>
+        <div class="box5"><img src="../images/rect_icon03.png" alt=""></div>
+        <div class="box5"><img src="../images/rect_icon04.png" alt=""></div>
+        <div class="box5"><img src="../images/rect_icon05.png" alt=""></div>
+        <div style="clear: both;"></div>
+    </div>
+
+</body>
+</html>

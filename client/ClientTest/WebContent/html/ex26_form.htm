@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+	
+	<form>, 폼태그
+	HTML Form + HTML Input Control
+	- 입력 양식
+	- 클라이언트(사용자)로부터 입력장치(키보드, 마우스 등)를 통해서 데이터 입력받는 역할 > 서버로 전송
+	- ex) 텍스트 박스, 버튼, 라디오 버튼, 체크박스, 파일 업로드, 셀렉트 등..
+	- 프로그래밍 기능과 밀접한 관계
+	
+	1. <form> 태그
+		- 모든 입력 양식을 담는 컨테이너
+		- 스스로 랜더링 결과를 만들지 않는다.(화면에 안보임)
+		- <form> 외부에 존재하는 입력 컨트롤 값은 서버에 전송이 안된다.(반드시 내부에 존재)
+		
+		a. action 속성
+			- 데이터 수신할 서버측의 프로그램 주소(URL)
+				- 서버측 프로그래밍 언어 작성
+				- ex) 자바 언어 > Servlet, JSP, Spring 등..
+		
+		b. method 속성
+			- 데이터 전달 방식
+			a. GET
+				- 데이터를 전송할 URL에 붙여서 전송한다.
+				- 노출이 된다.
+				- http://localhost:8090/ClientTest/html/ex26_ok.jsp?id=hnog&pwd=1234
+				- URL(256자 제한) > GET 데이터도 길면 짤린다. > 요즘엔 거의 제한이 없다.
+				- URL > 한글 허용 안함 > 한글 같은 데이터 전송용으로는 고민? > 숫자,영문자단어(식별자) 전송등
+				- URL?이름=값&이름=값&이름=값
+				- ?이름=값 //QueryString or Parameter
+				
+			b. POST
+				- 패킷의 본문에 넣어서 전송한다.
+				- 노출이 안된다.
+				- 데이터의 전송 길이 무제한(파일 업로드)
+				- 보내는 데이터 종류 : 모든 형태 가능
+				
+	-->
+	
+	<h1>사용자 데이터 입력</h1>
+	
+	
+	<!-- <div> : 아무 기능(의미)이 없는 블럭태그 -->
+	<!-- <div> : 아무 기능(의미)이 없는 인라인태그 -->
+	<form action="ex26_ok.jsp" method ="post">
+		<div>영역 태그</div>
+		<div>
+			아이디 : <input type="text" name="id">
+		</div>
+		<div>
+			비밀번호 : <input type="password" name="pwd">
+		</div>
+		<div>
+			<input type="submit">
+		</div>		
+	</form>
+	
+	<h1>네이버 검색</h1>
+	
+	<form method="get" action="https://search.naver.com/search.naver">
+		검색어 : <input type="text" name="query">
+		<br>
+		<input type="submit">
+	</form>
+		
+		
+	
+	
+	
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    
+    <style>
+    
+        body { padding-bottom: 500px; }
+
+        #box1 {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            overflow: hidden;
+        }
+
+        #cats .cat {
+            
+        }
+    
+    </style>
+    
+    <script>
+    
+        $(document).ready(function() {
+
+            // var btn1 = document.getElementById("btn1");
+            // var $btn1 = $("#btn1");
+            // var $btn2 = $("#btn2");
+
+            $("#btn1").click(function() {
+
+                // jQuery Effect Function
+                // 1. hide(time), show(time), toggle(time)
+                // 2. fadeOut(), fadeIn(), fadeToggle()
+                // 3. slideUp(), slideDown(), slideToggle()
+                // 4. animate()
+
+                // $("#box1").hide(3000);
+                // $("#box1").fadeOut(2000);
+                $("#box1").slideUp(2000);
+
+            }); // btn1.click
+            
+            $("#btn2").click(function() {
+                // $("#box1").show(500);
+                // $("#box1").fadeIn(2000);
+                $("#box1").slideDown(2000);
+            });
+
+            $("#btn3").click(function() {
+                // $("#box1").toggle(1000);
+                // $("#box1").fadeToggle(2000);
+                $("#box1").slideToggle(2000);
+            });
+
+
+            $("#cats .cat").click(function() {
+                // $("#cats .cat").hide("slow");
+                $(this).hide("slow");
+            });
+
+
+            $("#btn4").click(function() {
+                // $("#box1").animate({
+                //     width: 0,
+                //     height: 0,
+                //     opacity: 0
+                // }, 1000);
+                // $("#box1").animate({
+                //     width: "toggle",
+                //     height: "toggle",
+                //     opacity: "toggle"
+                // }, 1000);
+
+                // $("#box1").animate({
+                //     width: "+=100px"
+                // }, 1000);
+                
+                // jQuery 함수의 대부분은 현재 객체를 반환한다.(*****)
+                // $("#box1")
+                //     .hide(1000)
+                //     .show(1000)
+                //     .slideUp(1000)
+                //     .slideDown(1000)
+                //     .fadeOut(1000)
+                //     .fadeIn(1000)
+                //     .animate({
+                //         width: "+=200px"
+                //     }, 1000);
+
+                // 콜백 함수 지원 (CallBack)
+                // - 사용자가 직접 호출하지 않고, 시스템(환경)에 의해서 호출하는 함수
+                $(".cat:eq(0)").hide(3000, function() {
+                    $(".cat:eq(1)").hide(3000,function() {
+                        $(".cat:eq(2)").hide(3000);
+                    });
+                });
+
+            }); //btn4 
+
+            $("#btn5").click(function() {
+                $(".cat").stop();
+            });
+
+
+        }); //ready
+    
+    </script>
+
+
+</head>
+<body>
+    <!--  -->
+    <h1>jQuery Effect - 애니메이션 구현(transition, animate)</h1>
+    
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <input type="button" value="버튼4(animate())" id="btn4">
+    <input type="button" value="버튼5" id="btn5">
+    <hr>
+    <div id="box1">상자1</div>
+
+    <hr>
+    <div id="cats">
+        <img src="../images/catty01.png" class="cat">
+        <img src="../images/catty02.png" class="cat">
+        <img src="../images/catty03.png" class="cat">
+        <img src="../images/catty04.png" class="cat">
+        <img src="../images/catty05.png" class="cat">
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        #tblInfo {
+            border: 1px solid #808080;
+            width: 400px;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        #tblInfo tr td {
+            border: 1px solid #808080;
+        }
+
+        #tblInfo tr td:nth-child(1) {
+            width: 80px;
+            background-color: #EEEEEE;
+            font-weight: bold;
+            padding: 3px 3px;
+        }
+
+        #tblInfo tr td:nth-child(2) {
+            text-align: left;
+            padding: 3px 3px;
+        }
+
+        .txtJumin {
+            border: 1px solid #808080;
+            width: 80px;
+        }
+
+        .txtBirth {
+            border: 1px solid #808080;
+            width: 50px;
+        }
+    
+    </style>
+</head>
+<body>
+    <h2>회원 가입</h2>
+    <table id="tblInfo">
+        <tr>
+            <td>주민번호</td>
+            <td>
+                <input type="text" name="jumin1" class="txtJumin"> - <input type="text" name="jumin2" class="txtJumin">
+            </td>
+        </tr>
+        <tr>
+            <td>생년월일</td>
+            <td>
+                <input type="text" name="year" class="txtBirth"> 년 
+                <input type="text" name="month" class="txtBirth"> 월 
+                <input type="text" name="day" class="txtBirth"> 일
+            </td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <input type="radio" name="gender" > 남자
+                <input type="radio" name="gender" > 여자
+            </td>
+        </tr>
+    </table>
+
+    <script>
+    
+    var jumin1, jumin2, year, month, day, gender;
+
+    jumin1 = document.all["jumin1"];
+    jumin2 = document.all["jumin2"];
+    year = document.all["year"];
+    month = document.all["month"];
+    day = document.all["day"];
+    gender = document.all["gender"];
+    
+
+    jumin1.onkeyup = function() {
+        // alert(jumin1.value);
+        if(jumin1.value.length == 6) {
+            year.value = "19" + jumin1.value.substring(0, 2);
+            month.value = jumin1.value.substring(2, 4);
+            day.value = jumin1.value.substring(4);
+
+            jumin2.focus();
+        }
+
+    };
+    
+    jumin2.onkeyup = function() {
+        if(jumin2.value.substring(0, 1)%2 != 0) {
+            gender[0].checked = true;
+        } else {
+            gender[1].checked = true;
+        }
+    };
+    
+    
+    </script>
+
+</body>
+</html>

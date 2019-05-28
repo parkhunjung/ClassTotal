@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #content {
+            border: 10px solid black;
+            width: 1200px;
+            column-count: 3;
+            column-width: 400px;
+            column-gap: 0px; 
+        }
+
+        #content span> img.big {
+            width : 400px;
+        }
+
+        #content span> img.middle {
+            width : 200px;
+        }
+
+        
+
+        #content > span:hover > img {
+            opacity: 1;
+        }
+
+        #content span img {
+            display: block;
+            float: left;
+            border-radius: 20px;
+            opacity: .2;
+            transition: all 1s;
+        }
+
+        #content span:hover img {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="content">
+        <span><img src="../images/cat02.jpg" class="big"></span>
+        <span><img src="../images/dog02.jpg" class="middle"></span>
+        <span><img src="../images/cat04.jpg" class="middle"></span>
+        <span><img src="../images/cat04.jpg" class="middle"></span>
+        <span><img src="../images/cat01.jpg" class="middle"></span>
+        <span><img src="../images/dog01.jpg" class="big"></span>
+        <span><img src="../images/cat03.jpg" class="big"></span>
+        <span><img src="../images/dog05.jpg" class="middle"></span>
+        <span><img src="../images/cat05.jpg" class="middle"></span>        
+    </div>
+    
+</body>
+</html>

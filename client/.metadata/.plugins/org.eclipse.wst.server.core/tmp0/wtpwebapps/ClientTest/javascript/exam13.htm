@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        
+        #all {
+            width: 800px;
+            margin: 50px auto;
+        }
+
+        #content {
+            border: 1px solid #808080;
+            width: 450px;
+            height: 140px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        #content img {
+            float: left;
+            border: 0px solid black;
+            width: 60px;
+            height: 80px;
+            margin: 5px 0px;
+            margin-top: 30px;
+            font-size: 80px;
+            text-align: center;
+        }
+
+        #content img:nth-child(1) {
+            margin-left: 25px;
+        }
+
+        #content span {
+            float: left;
+            font-size: 80px;
+            margin-bottom: 40px;
+        }
+
+        #timeBox {
+            width: 450px;
+            margin: 10px auto;
+            padding-left: 50px;
+        }
+
+        #timeBox > input {
+            width: 130px;
+            height: 50px;
+            
+        }
+
+        input {
+            cursor: pointer;
+        }
+
+        input:disabled {
+            cursor: not-allowed;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <form name="timeForm">
+        <div id="all">
+            <div id="content">
+                <img src="../images/0.png" name="minuteTen"><img src="../images/0.png" name="minuteOne"><span>:</span>
+                <img src="../images/0.png" name="secondTen"><img src="../images/0.png" name="secondOne"><span>:</span>
+                <img src="../images/0.png" name="miliSecondTen"><img src="../images/0.png" name="miliSecondOne">
+            </div>
+            <div id="timeBox">
+                <input type="button" value="시작" name="start" id="" >
+                <input type="button" value="멈춤" name="stop" id=""  disabled>
+                <input type="button" value="종료" name="fin" id=""  disabled>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        var minute, second, miliSecond;
+        var start, stop, fin;
+        var timer = 0;
+        var n = 0;
+
+        // minuteTen = document.timeForm.minuteTen;
+        // minuteOne = document.timeForm.minuteOne;
+        // secondTen = document.timeForm.secondTen;
+        // secondOne = document.timeForm.secondOne;
+        // miliSecondTen = document.timeForm.miliSecondTen;
+        // miliSecondOne = document.timeForm.miliSecondOne;
+
+        start = document.timeForm.start;
+        stop = document.timeForm.stop;
+        fin = document.timeForm.fin;
+        
+        start.onclick = function() {
+
+            start.disabled = true;
+            stop.disabled = false;
+            fin.disabled = false;
+
+            if (timer == 0) {
+                timer = setInterval(function() {
+                    
+                    document.all["miliSecondTen"].src = "../images/" + resetNumber(n%100).substr(0, 1) + ".png";
+                    document.all["miliSecondOne"].src = "../images/" + resetNumber(n%100).substr(1, 1) + ".png";
+
+                    document.all["secondTen"].src = "../images/" + resetNumber(n/100%60).substr(0, 1) + ".png";
+                    document.all["secondOne"].src = "../images/" + resetNumber(n/100%60).substr(1, 1) + ".png";
+                    
+                    document.all["minuteTen"].src = "../images/" + resetNumber(n/100/60%60).substr(0, 1) + ".png";
+                    document.all["minuteOne"].src = "../images/" + resetNumber(n/100/60%60).substr(1, 1) + ".png";
+                    
+                    n++;
+                }, 10);
+            }// timer
+
+        } //start
+
+        stop.onclick = function() {
+
+            start.disabled = false;
+            stop.disabled = true;
+            fin.disabled = false;
+
+            clearInterval(timer);
+            timer = 0;
+
+        }
+
+        fin.onclick = function() {
+
+            start.disabled = false;
+            stop.disabled = true;
+            fin.disabled = true;
+
+            clearInterval(timer);
+            timer = 0;
+            document.all["minuteTen"].src = "../images/0.png"
+            document.all["minuteOne"].src = "../images/0.png"
+            document.all["secondTen"].src = "../images/0.png"
+            document.all["secondOne"].src = "../images/0.png"
+            document.all["miliSecondTen"].src = "../images/0.png"
+            document.all["miliSecondOne"].src = "../images/0.png"
+            n = 0;
+
+        }
+
+        function resetNumber(num) {
+            if (num < 10) {
+                return "0" + num;
+            } else {
+                return "" + num;
+            }
+        }
+
+    
+    </script>
+
+</body>
+</html>

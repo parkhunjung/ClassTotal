@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    /*
+    window
+        - screen
+        - location
+
+    location 객체
+    - 현재 window가 보고 있는 페이지 URL과 관련 객체
+
+    */
+    
+    // window.location
+    // window.document
+    // window.screen
+    // window만 생략가능 
+    
+    // console.log(location.href);
+
+    function test() {
+        location.href = "http://www.naver.com"; // 사용 빈도 가장 높음!!!!!!!!!!
+    }
+    
+    console.log(location.host); // naver.com:8090
+    console.log(location.hostname); // naver.com
+    console.log(location.protocol); // http
+    console.log(location.port); // 8090
+
+    function move() {
+        // document.all.txtURL
+        // location.href = document.all["txtURL"].value; // <a target="_self"
+        window.open(document.all["txtURL"].value, "move", ""); // <a target = "_blank"
+
+    }
+
+    function move2(sel) {
+        // alert(sel.value);
+        if (sel.value != "") {
+            location.href = sel.value;
+        }
+    }
+
+    </script>
+</head>
+<body>
+    
+    <input type="button" value="클릭" onclick="test();" name="" id="">
+    <hr>
+    <input type="url" name="txtURL" id="">
+    <input type="button" value="이동하기" onclick="move();" name="" id="">
+    <hr>
+    <!-- this는 자기자신을 가리킬때 사용하는 인자값. 이름이 없어도된다. 찾을필요가없기때문 -->
+    <select onchange="move2(this);" name="" id="">
+        <option value="">사이트를 선택하세요.</option>
+        <option value="http://naver.com">네이버</option>
+        <option value="http://google.com">구글</option>
+        <option value="http://daum.net">다음</option>
+    </select>
+
+</body>
+</html>

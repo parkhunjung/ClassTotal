@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            padding-bottom: 500px;
+        }
+
+        .box {
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+        }
+
+        /* 
+        transition(단순조작) -> animation(세밀조작)
+        */
+        @keyframes key1 {
+            /* 어떤 속성 + 어떤 변화값 = 정의 */
+            from {
+                width: 150px;
+                background: tomato;
+            }
+            to {
+                width: 300px;
+                background: skyblue;
+            }
+        }
+
+        #box1 {
+            background: tomato;
+            animation-name: key1;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+        }
+
+        #box2 {
+            background: tomato;
+            animation-name: key1;
+            animation-duration: 9s;
+        }
+
+        #box3 {
+            background: tomato;
+        }
+
+        #box3:hover {
+            animation-name: key1; /* 트리거 역할 : 이 값이 지정되는 순간 애니메이션 시작 */
+            animation-duration: 5s;
+        }
+
+        @keyframes key2 {
+            /* from {} ~ to {} */
+            /* 0% {} ~ 100% {} */
+            /* 0% {
+                background: cornflowerblue;
+                width: 150px;
+            }
+            25% {
+                background: green;
+            }
+            50% {
+                background: gold;
+            }
+            75% {
+                background: black;
+            }
+            100% {
+                background: tomato;
+                width: 300px;
+            } */
+            0% {
+                background: cornflowerblue;
+                width: 150px;
+            }
+            70% {
+                background: green;
+            }
+            80% {
+                background: gold;
+            }
+            90% {
+                background: black;
+            }
+            100% {
+                background: tomato;
+                width: 300px;
+            }
+        }
+
+        #box4 {
+            background: cornflowerblue;
+            animation-name: key2;
+            animation-duration: 3s;
+        }
+
+        @keyframes key3 {
+            /* from {
+                left: 0px;
+                top: 0px;
+            }
+            to {
+                left: 300px;
+                top: 200px;
+            } */
+            0% { left: 0px; top: 0px; }
+            25% { left: 300px; top: 0px; }
+            50% { left: 300px; top: 300px; }
+            75% { left: 0px; top: 300px; }
+            100% { left: 0px; top: 0px; }
+
+        }
+
+        #box5 {
+            background-color: burlywood;
+            position: relative;
+            left: 0px;
+            top: 0px;
+            animation-name: key3;
+            animation-duration: 3s;
+        }
+
+        @keyframes key6 {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(720deg) scale(2, 2)}
+            50% { transform: rotate(-360deg) scale(.5, .5); }
+            75% { transform: rotate(360deg) scale(.2, .2); }
+            100% { transform: rotate(0deg) scale(1, 1); }
+        }
+
+        #box6 {
+            background: lightgreen;
+            animation-name: key6;
+            animation-duration: 3s;
+        }
+
+        @keyframes key7 {
+            0% { transform: translate(0px, 0px); }
+            25% { transform: translate(300px, 0px); }
+            50% { transform: translate(300px, 300px); }
+            75% { transform: translate(0px, 300px); }
+            100% { transform: translate(0px, 0px); }
+        }
+
+        #box7 {
+            background: brown;
+            animation-name: key7; /* 프레임정의 */
+            animation-duration: 1s; /* 1회당 소요 시간 */
+            animation-iteration-count: 3; /* 애니메이션 반복 횟수 */
+            animation-direction: alternate; /* 프레임 재생 방향 */
+            animation-timing-function: linear; /* 속도 제어 */
+            animation-delay: 3s; /* 처음 시작 지연 시간 */
+        }
+
+        @keyframes keyCat {
+            0% { transform: translate(0px, 0px); }
+            40% { transform: translate(0px, -300px) rotate(0deg); }
+            50% { transform: translate(0px, -300px) rotate(360deg); }
+            60% { transform: translate(0px, -300px) rotate(0deg); }
+            100% { transform: translate(0px, 0px); }
+        }
+
+        .cat {
+            animation-name: keyCat;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+        }
+
+        .cat:nth-child(1) { animation-delay: 0s; }
+        .cat:nth-child(2) { animation-delay: 0.3s; }
+        .cat:nth-child(3) { animation-delay: 0.6s; }
+        .cat:nth-child(4) { animation-delay: 0.9s; }
+        .cat:nth-child(5) { animation-delay: 1.2s; }
+
+        @keyframes keyBtn {
+            0% { transform: translate(0px, 0px); }
+            25% { transform: translate(5px, 0px); }
+            50% { transform: translate(0px, 0px); }
+            75% { transform: translate(-5px, 0px); }
+            100% { transform: translate(0px, 0px); }
+        }
+
+        .btn:hover {
+            animation: keyBtn .05s 3 alternate;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="box1" class="box"></div>
+    <div id="box2" class="box"></div>
+    <div id="box3" class="box"></div>
+    <div id="box4" class="box"></div>
+    <div id="box5" class="box"></div>
+    <div id="box6" class="box">상자</div>
+    <div id="box7" class="box"></div>
+    <div id="box8" class="box"></div>
+    <div id="box9" class="box"></div>
+    <div id="box10" class="box"></div>
+
+    <h1>고양이</h1>
+    <div>
+        <img src="../images/catty01.png" class="cat">
+        <img src="../images/catty02.png" class="cat">
+        <img src="../images/catty03.png" class="cat">
+        <img src="../images/catty04.png" class="cat">
+        <img src="../images/catty05.png" class="cat">
+    </div>
+
+    <h1>버튼</h1>
+
+    <input type="button" class="btn" value="글쓰기">
+    <input type="button" class="btn" value="수정하기">
+    <input type="button" class="btn" value="삭제하기">
+
+</body>
+</html>

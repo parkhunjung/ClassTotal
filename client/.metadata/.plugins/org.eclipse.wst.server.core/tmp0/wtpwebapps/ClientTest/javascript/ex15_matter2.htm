@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        #data {
+            width: 450px; 
+            margin: 0px auto;
+        }
+
+        #data div {
+            margin-bottom: 15px;
+        }
+
+        .btn { 
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <form name="form1">
+        <div id="data">
+            <h1>데이터 입력</h1>
+            <div>이름 : <input type="text" name="name1"></div>
+            <div>나이 : <input type="text" name="age"></div>
+            <div>별명 : <input type="text" name="nick"></div>
+            <span><input type="button" name="longBtn" value="Long" class="btn"></span>
+            <span><input type="button" name="shortBtn" value="Short" class="btn"></span>
+        </div>
+    </form>
+
+    <script>
+    
+    var longBtn, shortBtn, name1, age, nick;
+
+    longBtn = window.document.form1.longBtn;
+    shortBtn = window.document.form1.shortBtn;
+
+    name1 =  window.document.form1.name1;
+    age =  window.document.form1.age;
+    nick =  window.document.form1.nick;
+
+    longBtn.onclick = bigSize;
+    shortBtn.onclick = shortSize;
+
+    function bigSize() {
+        name1.size = 50;
+        age.size= 50;
+        nick.size= 50;
+    }
+
+    function shortSize() {
+        name1.size = 20;
+        age.size= 20;
+        nick.size= 20;
+    }
+
+    </script>
+
+</body>
+</html>

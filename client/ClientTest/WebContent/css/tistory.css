@@ -1,0 +1,17 @@
+.tistory {
+		width: 90%;	
+		font-weight: bold;
+		background-color: #D8D8D8;
+		border-left: 10px solid #FF8224;	
+		border-righht: 10px solid #FF8224;
+		margin: 1.5em 10px;	
+		padding: 0.5em 10px;
+		quotes:"\201C""\201D""\2018""\2019";
+	}
+	.tistory:before {
+		color: #FF8224;	
+		content: open-quote;	
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.4em;		
+	}

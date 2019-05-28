@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        #img1 {
+            position: absolute;
+        }
+    
+    </style>
+    <script>
+    
+        // A. Drag 객체에 직접 이벤트를 매핑하는 경우
+        // B. window 객체에 이벤트를 매핑하는 경우(*** 사용)
+    
+        var img1;
+        var isDown = false;
+        var imgX, imgY;
+
+
+        window.onload = function() {
+            img1 = document.getElementById("img1");
+
+            // img1.onmousedown = function() {
+            //     isDown = true;
+            // };
+            // img1.onmouseup = function() {
+            //     isDown = false;
+            // };
+            // img1.onmousemove = function() {
+            //     if (isDown){
+            //         img1.style.left = event.clientX + "px";
+            //         img1.style.top = event.clientY + "px";
+            //     }
+            // };
+
+            document.getElementById("txt1").onkeydown = function() {
+                // 숫자만 입력
+                if (event.keyCode < 48 || event.keyCode > 57) {
+                    event.srcElement.style.backgroundColor = "tomato";
+
+                    event.preventDefault();
+                    return false;
+                }
+            };
+
+            document.getElementById("btn1").onclick = function() {
+                event.preventDefault();
+                return false;
+            };
+
+        
+        }; //window.load
+        
+        window.onmousedown = function() {
+            
+            // alert(event.srcElement.nodeName);
+
+            if (event.srcElement.nodeName == "IMG"){
+                isDown = true;
+                // alert(event.offsetX);
+                // alert(event.offsetY);
+                imgX = event.offsetX;
+                imgY = event.offsetY;
+            }
+
+        };
+        window.onmouseup = function() {
+            isDown = false;
+        };
+        window.onmousemove = function() {
+            if (isDown){
+                img1.style.left = event.clientX - imgX + "px";
+                img1.style.top = event.clientY - imgY + "px";
+
+                // 고스트 이미지 제거
+                event.preventDefault(); // 현재 일어나는 기본 상황을 없었던 일로 해라
+                return false; // 현재 일어나는 기본 상황을 없었던 일로 해라
+            }
+        };
+
+    </script>
+</head>
+<body oncontextmenu="event.preventDefault(); return false;">
+    
+    <h1>Drag & Drop</h1>
+
+    <img src="../images/catty01.png" id="img1">
+
+    <input type="text" name="" id="txt1">
+    <input type="button" value="버튼" id="btn1">
+
+
+
+</body>
+</html>

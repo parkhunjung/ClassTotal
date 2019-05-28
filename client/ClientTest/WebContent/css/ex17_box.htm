@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	/* 
+	박스 모델
+	1. 테두리 (객체 크기에 포함이 되지 않는다.)
+	2. 너비, 높이 (블럭 태그에만 적용한다. 높이는 절대 단위만 사용(상대 단위 사용 비권장))
+	3. 여백
+		a. padding
+			- 덧대는 것, 메워 넣는 것, 패드(속, 충전재)
+		
+		b. margin
+			- 여백
+	
+	- 객체의 크기에 영향을 미치는 존재는 [width, height, padding, border] 이다.		
+	
+	*/
+	
+	.box {
+		width: 200px;
+		height: 200px;
+		border: 10px solid black;
+	
+	}
+	
+	#box2 {
+		/* padding: 40px; */
+		/* padding-top: 30px;
+		padding-bottom: 50px;
+		padding-right:10px;
+		padding-left: 10px; */
+		padding: 30px 10px; /* 안쪽 여백 */
+		height: auto;
+		
+		margin: 30px 0px; /* 바깥쪽 여백 */
+	}
+	
+	#txt1{
+		outline: none;
+		/* outline: 10px solid red; */
+		
+		width: 200px;
+		background-color: blue;
+		color: white;
+		border: 0px;
+		padding: 5px;
+	}
+	
+	.txts {
+		outline: none;
+		border: 5px solid #999;
+		padding: 3px;
+	}
+	
+	.txts:focus{
+		/* background-color: gold; */
+		/* border: 5px solid red; */
+		outline: 1px solid red;
+	}
+	
+	#box1 {
+		word-break: break-all;
+		margin-bottom: 20px;
+	}
+	
+	#todo {
+		margin: 30px 0px;
+	}
+	
+	#todo li {
+		margin: 15px 0px;
+	}
+	
+		
+</style>
+</head>
+<body>
+	
+	<div id="box1" class="box">
+		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	</div>
+	<div id="box2" class="box">상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2</div>
+	<div id="box3" class="box">상자3</div>
+	
+	<hr>
+	
+	<input type="text" id="txt1" autocomplete="off">
+	
+	<h1>border vs outline</h1>
+	
+	<input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts"><input type="text" class="txts">
+	
+	<h1>오늘의 할일</h1>
+	
+	<ul id="todo">
+		<li>여행 일정 세우기</li>
+		<li>마트 가서 장보기</li>
+		<li>잠자기</li>
+		<li>일어나기</li>
+	</ul>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+    
+        
+
+    </style>
+
+</head>
+<body>
+    
+    <form name="catForm">
+        <img src="../images/catty01.png" name="cat1" id="imgs">
+        <img src="../images/catty02.png" name="cat2" id="imgs">
+        <img src="../images/catty03.png" name="cat3" id="imgs">
+        <img src="../images/catty04.png" name="cat4" id="imgs">
+        <img src="../images/catty05.png" name="cat5" id="imgs">
+    </form>
+
+    <script>
+        
+        var cat1, cat2, cat3, cat4, cat5;
+
+        cat1 = document.images["cat1"];
+        cat2 = document.images["cat2"];
+        cat3 = document.images["cat3"];
+        cat4 = document.images["cat4"];
+        cat5 = document.images["cat5"];
+        
+        cat1.onmouseover = function(event) {
+            cat1.width = cat1.width+2;
+            cat1.height = cat1.height+2;
+        }
+
+        cat2.onmouseover = function(event) {
+            cat2.width = cat2.width+2;
+            cat2.height = cat2.height+2;
+        }
+
+        cat3.onmouseover = function(event) {
+            cat3.width = cat3.width+2;
+            cat3.height = cat3.height+2;
+        }
+
+        cat4.onmouseover = function(event) {
+            cat4.width = cat4.width+2;
+            cat4.height = cat4.height+2;
+        }
+
+        cat5.onmouseover = function(event) {
+            cat5.width = cat5.width+2;
+            cat5.height = cat5.height+2;
+        }
+
+        cat1.onclick = function() {
+            if(confirm("원래대로 되돌리시겠습니까?")) {
+                cat1.width = 128;
+                cat1.height = 128;
+            }
+        }
+        
+        cat2.onclick = function() {
+            if(confirm("원래대로 되돌리시겠습니까?")) {
+                cat2.width = 128;
+                cat2.height = 128;
+            }
+        }
+
+        cat3.onclick = function() {
+            if(confirm("원래대로 되돌리시겠습니까?")) {
+                cat3.width = 128;
+                cat3.height = 128;
+            }
+        }
+
+        cat4.onclick = function() {
+            if(confirm("원래대로 되돌리시겠습니까?")) {
+                cat4.width = 128;
+                cat4.height = 128;
+            }
+        }
+
+        cat5.onclick = function() {
+            if(confirm("원래대로 되돌리시겠습니까?")) {
+                cat5.width = 128;
+                cat5.height = 128;
+            }
+        }
+
+        window.onkeydown = function() {
+
+            if (event.keyCode == 39) {
+                cat1.width = cat1.width +2;
+                cat1.height = cat1.height +2;
+            } else if (event.keyCode == 37) {
+                cat1.width = cat1.width -2;
+                cat1.height = cat1.height -2;
+                if(cat1.width < 1 && cat1.height < 1) {
+                    alert("더이상 작아질 수 없습니다.")
+                    cat1.width = 1;
+                    cat1.height = 1;
+                }
+            }
+
+        }
+    
+    </script>
+
+</body>
+</html>

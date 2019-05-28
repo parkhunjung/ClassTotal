@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <h1>셀렉트 박스(단일선택, 다중선택)</h1>
+
+    <label for="">애완동물 : </label>
+    <select name="sel1" size="7" multiple>
+        <!-- sel1.selectedIndex는 이 옵션의 순서. (제로베이스) 현재 0 ~ 5번까지  ** 보통 value를 건드릴수 없을때 사용함 ** -->
+        <option value="-1">선택하세요.</option>
+        <option value="1">강아지</option>
+        <option value="2">고양이</option>
+        <option value="3">병아리</option>
+        <option value="4">타조</option>
+        <option value="5">반달곰</option>
+    </select>
+    <hr>
+    <input type="button" value="버튼1" name="btn1">
+    <input type="button" value="버튼2" name="btn2">
+    <input type="button" value="버튼3" name="btn3">
+    <input type="button" value="버튼4" name="btn4">
+    <input type="button" value="버튼5" name="btn5">
+
+    <script>
+        var sel1 = document.all["sel1"];
+        var btn1 = document.all["btn1"];
+        var btn2 = document.all["btn2"];
+        var btn3 = document.all["btn3"];
+        var btn4 = document.all["btn4"];
+        var btn5 = document.all["btn5"];
+
+        btn1.onclick = function() {
+            // 셀렉트 박스 선택값? > 모든 입력 컨트롤 > 값 > value
+            
+            // 읽기
+            // if (sel1.value != -1) {
+            //     alert(sel1.value);
+            // } else {
+            //     alert("애완동물을 선택하세요.");
+            // }
+
+            // 쓰기
+            sel1.value = 3; //txt1.value = "3";
+        };
+
+        btn2.onclick = function() {
+            // 선택항목 > value
+            // alert(sel1.selectedIndex); //********** 굉장히 중요한 속성
+            sel1.selectedIndex = 0;
+        };
+
+        btn3.onclick = function() {
+            // <option>을 동적 생성
+            var op = new Option(); //<option> 태그 생성
+            op.value = 6; // <option value="6">
+            op.text = "너구리"; //<option value="6">너구리</option>
+
+            var isDuplcate = false;
+
+            for (var i=0; i<sel1.options.length; i++){
+                // alert(sel1.options[i].text);
+                if (sel1.options[i].text == "너구리") {
+                    isDuplcate = true;
+                    break;
+                }
+            }
+            if(!isDuplcate){
+                sel1.options.add(op);
+            }
+        };
+
+        btn4.onclick = function() {
+            // 삭제할 option의 index
+            // sel1.options.remove(3);
+
+            // 선택한 항목을 삭제
+            sel1.options.remove(sel1.selectedIndex);
+
+        };
+
+        btn5.onclick = function() {
+            // alert(sel1.value);
+            for(var i=0; i<sel1.options.length; i++){
+                // alert(sel1.options[i].selected);
+                if(sel1.options[i].selected){
+                    alert(sel1.options[i].text);
+                }
+            }
+        };
+
+    
+    </script>
+
+
+
+</body>
+</html>

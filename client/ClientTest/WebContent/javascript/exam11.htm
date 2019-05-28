@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        .box {
+            width: 100px;
+            height: 235px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        #content {
+            width: 500px;
+            margin: 10px auto;
+        }
+        
+        .txtBox {
+            border: 1px solid #888;
+            width : 100px;
+            border-radius: 3px;
+            padding: 5px 5px;
+            text-align: center;
+            background-color: white;
+
+        }
+
+        #tbl tr td:nth-child(2) div {
+            margin: 8px 5px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="content">
+        <h1>학생명단</h1>
+        <table id="tbl">
+            <tr>
+                <td>
+                    <select name="leftList" size="11" class="box">
+                        <option value="1">강부경</option>
+                        <option value="2">김동성</option>
+                        <option value="3">김병준</option>
+                        <option value="4">김정아</option>
+                        <option value="5">김찬미</option>
+                        <option value="6">박준우</option>
+                        <option value="7">박헌정</option>
+                        <option value="8">배세훈</option>
+                        <option value="9">설유경</option>
+                        <option value="10">안상현</option>
+                        <option value="11">최다빈</option>
+                    </select>
+                </td>
+                <td>
+                    <div>
+                        <input type="button" value="Add >" name="Add" class="txtBox">
+                    </div>
+                    <div>
+                        <input type="button" value="< Remove" name="Remove" class="txtBox">
+                    </div>
+                    <div>
+                        <input type="button" value="Add All >>" name="AddAll" class="txtBox">
+                    </div>
+                    <div>
+                        <input type="button" value="<< Remove All" name="RemoveAll" class="txtBox">
+                    </div>
+                </td>
+                <td>
+                    <select name="rightList" size="11" class="box">
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+    var leftList, rightList;
+    var Add, Remove, AddAll, RemoveAll;
+
+    leftList = document.all["leftList"];
+    rightList = document.all["rightList"];
+    Add = document.all["Add"];
+    Remove = document.all["Remove"];
+    AddAll = document.all["AddAll"];
+    RemoveAll = document.all["RemoveAll"];
+
+    Add.onclick = function () {
+        moveOne(leftList, rightList);
+    }
+
+    Remove.onclick = function() {
+        moveOne(rightList, leftList);
+    }
+
+    function moveOne(left, right) {
+        var selOption = left.options[left.selectedIndex];
+        right.options.add(new Option(selOption.text, selOption.value));
+        left.options.remove(selOption.index);
+    }
+
+    AddAll.onclick = function() {
+        moveAll(leftList, rightList);
+    }
+    
+    RemoveAll.onclick = function() {
+        moveAll(rightList, leftList);
+    }
+
+    function moveAll(left, right) {
+        for (var i=0; i<left.options.length; i++){
+            var op = left.options[i];
+            right.options.add(new Option(op.text, op.value));
+        }
+
+        var count = left.options.length;
+
+        for (i=0; i<count; i++){
+            left.options.remove(0);
+        }
+        
+    }
+
+    </script>
+
+
+</body>
+</html>

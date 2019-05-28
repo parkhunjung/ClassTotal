@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	/* 
+	박스 모델, Box Model
+	- CSS(HTML)는 모든 태그를 사각형 형태로 랜더링(출력) 한다.
+	1. 테두리(border)
+		- 모든 태그는 자신의 영역을 가진다.
+		- 그 영역은 반드시 사각형 형태를 가진다.
+		- 일부 요소들은 이미 사각 테두리를 가진다.(테이블, 컨트롤 등)
+		- 모든 태그는 테두리 속성을 사용해서 시각적인 테두리를 가질 수 있다.
+		
+	2. 너비, 높이(width, height)
+	3. 여백(padding, margin)
+	
+	*/
+	
+	#box2{
+		/* 접두어가 일치하는 속성끼리 > 그룹 속성을 제공한다. */
+		border-color: black; /* 선 색상 */
+		border-width: 1px; /* 선 두께 */
+		border-style: solid; /* 선 형태(solid, dotted, dashed) */		
+	}
+	
+	#box1{
+		border: 10px solid red;
+		border-width: 20px;
+		/* border-width : 10px 30px 50px 70px; */ /* 12시기준 시계방향 순서top,right,bottom,left */
+		border-width : 10px 30px; /* 12시(6시), 3시(9시)  */		
+		
+		border-color: blue orange green;
+		border-style: solid dashed dotted;
+				
+	}
+	
+	#box3{
+		/* border-top: 10px solid blue;  */
+		border-top-color : blue;
+		border-top-style : solid;
+		border-bottom : 10px solid gold;
+		border-left : 10px solid green;
+		border-right : 10px solid orange;
+		
+		background: url("../images/catty01.png") no-repeat center center;
+		
+	}
+	
+	
+	#txt1{
+		background-color: cornflowerblue;
+		border-color: gray;
+		border-width: 1px;
+		border-style: solid;
+		color: white;
+	}
+	h1 {
+		border-left: 15px solid #999999;
+		background-color: #EEEEEE; 
+	}
+	
+	#price1{
+		color: #777777;
+		text-decoration: line-through;
+	}
+	
+	#price2{
+		color:red;
+	}
+	
+	#price1, #price2 {
+		text-align: right;
+		border: 0px;
+		border-bottom: 1px solid #AAA;
+		outline: none;	
+	}
+	
+	
+</style>
+</head>
+<body>
+	
+	<h1>박스 모델</h1>
+	
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	
+	<img src="../images/catty01.png"> <br>
+	
+	<input type="radio">
+	<hr>
+	<input type="text" id="txt1">
+	
+	<hr>
+	
+	할인 전 가격(원) : <input type="text" id="price1" size="5">
+	
+	<hr>
+	
+	할인 후 가격(원) : <input type="text" id="price2" size="5">
+	
+	
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

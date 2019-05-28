@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        #txt1 {
+            outline: none;
+            width: 500px;
+            height: 300px;
+        }
+
+        html, body { height: 100%; }
+
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    
+    <h1>마우스 관련 이벤트</h1>
+
+    <form name="form1">
+        <textarea name="txt1" id="txt1"></textarea>
+        <hr>
+        <input type="button" value="test" name = "btn1">
+        <hr>
+        <input type="text" id="txt2">
+    </form>
+
+    <script>
+        /*
+        마우스 관련 이벤트
+        - onmouseXXX
+        1. onmouseover : 해당 객체의 영역 위에 마우스 커서가 진입하는 순간
+        2. onmouseout : 해당 객체의 영역에서 마우스 커서가 벗어나는 순간
+        3. onmousedown : 해당 객체의 영역내에 마우스 버튼을 누르는 순간
+        4. onmouseup : 해당 객체의 영역내에 마우스 버튼을 떼는 순간
+        5. onmousemove : 해당 객체의 영역내에 마우스 커서를 움직이는 순간
+        */
+        var txt1 = window.document.form1.txt1;
+
+        txt1.onmouseover = f1;
+        txt1.onmouseout = f2;
+        txt1.onmousedown = f3;
+        txt1.onmouseup = f4;
+        txt1.onmousemove = f5;
+        // txt1.onclick = f6;
+
+        function f1() {
+            // window.document.body.bgColor = "tomato";
+            // window.document.form1.txt1.value = 
+            // "마우스 진입 : " 
+            // + event.buttons 
+            // + "\r\n" 
+            // + window.document.form1.txt1.value;
+        }
+
+        function f2() {
+            // window.document.body.bgColor = "white";
+        }
+
+        function f3(event) {
+            // window.document.body.bgColor = "yellow";
+
+            //마우스 다운 = 버튼 누른다. > 어떤 버튼?
+
+            // window.document.form1.txt1.value = 
+            // "마우스 진입 : " 
+            // + event.buttons 
+            // + "\r\n" 
+            // + window.document.form1.txt1.value;
+
+            if (event.buttons == 2) {
+                // alert("오른쪽 클릭 금지!");
+            }
+
+            /*
+            마우스 커서의 좌표
+            1. x,y
+            - 문서의 좌측 상단을 기준으로 삼는다.
+            - 비표준(MS)
+
+            2. clientX, clientY
+            - 문서의 좌측 상단을 기준
+            - 표준
+            - 가장 많이 사용(= absolute)
+
+            3. screenX, screenY
+            - 모니터 좌측 상단을 기준
+
+            4. offsetX, offsetY
+            - 이벤트를 발생한 객체의 좌측 상단 기준
+            - 많이 사용(= relative)
+            */
+
+            var txt1 = window.document.form1.txt1;
+
+            // txt1.value = event.clientX + ":" + event.clientY;
+            // txt1.value = event.screenX + ":" + event.screenY;
+            // txt1.value = event.offsetX + ":" + event.offsetY;
+
+
+        }
+
+        function f4() {
+            // window.document.body.bgColor = "black";
+        }
+
+        var colors = ["red", "orange", "yellow", "green", "blue" ];
+        var index = 0;
+
+        function f5(event) {
+
+            // window.document.body.bgColor = colors[index];
+            // index++;
+            // if(index >= colors.length) index = 0;
+            var txt1 = window.document.form1.txt1;
+
+            txt1.value = event.offsetX + ":" + event.offsetY + "\r\n" + txt1.value;
+
+            if(event.offsetX < 100 && event.offsetY < 100) {
+                window.document.body.bgColor = 'gold';
+            } else if (event.offsetX > 400 && event.offsetY > 200) {
+                window.document.body.bgColor = 'tomato';
+            } else {
+                window.document.body.bgColor = 'white';
+            }
+
+        }
+
+
+        //body 태그에 이벤트 매핑
+        window.document.body.onmousemove = f6;
+
+        function f6(event) {
+            window.document.form1.txt2.size = event.offsetX / 10;
+        }
+
+
+    </script>
+
+
+</body>
+</html>

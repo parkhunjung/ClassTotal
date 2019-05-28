@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- 
+	
+	****************
+	인라인 태그 vs 블럭 태그
+	- 모든 태그는 위의 두 분류 중 하나에 속한다.
+	
+	인라인 태그, Inline Tag
+	- 자신의 내용물과 다른 태그의 내용물을 같은 라인에 출력한다.
+	- 내용물의 크기가 해당 태그의 영역이라고 생각한다.
+	
+	블럭태그, Block Tag
+	- 자신의 내용물과 다른 태그의 내용물을 다른 라인에 출력한다.
+	- 본인 내용물을 출력하기 위해서 라인을 독점한다.
+	
+	
+	-->
+	
+	<a href = "#">첫번째 링크</a>
+	<a href = "#" style = "background-color:yellow">두번째 링크</a>
+	<a href = "#">세번째 링크</a>
+	<p style = "background-color:yellow;">문단입니다.</p>
+	<b>볼드</b>
+	<i>이탤릭</i>
+	<code>int a = 10;</code>	
+	<h1>제목입니다.</h1>
+	
+	텍스트
+	<ol>
+		<li>
+		항목
+		</li>
+	</ol>
+	텍스트
+	
+	<hr>
+		
+	
+	
+	
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

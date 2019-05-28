@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- 
+	<img>, Image
+	- 이미지를 출력하는 태그
+	- 단독 태그
+	- 인라인 태그
+	
+	img.src 속성, Source
+	- 이미지가 위치한 URL(상대,절대,외부)
+	
+	img.alt 속성, Alternate Text
+	- 대체 텍스트
+	- 장애인용 사이트
+	- 메타 데이터
+	
+	-->
+	<h1>고양이</h1>
+	<img src = "images/cat01.jpgg" alt = "냐옹이">
+	<img src = "/ClientTest/images/cat02.jpg">
+	<img src = "https://s.pstatic.net/static/www/mobile/edit/2017/0427/mobile_101734614282.png">
+	
+	<h1>강아지</h1>
+	<img src = "images/dog01.jpg">
+	<img src = "images/dog01.jpg" width="250" height="188"> <!-- 크기는 명시적으로 사용하는것이 좋다 속도가 더 빠름 -->
+	<img src = "images/dog01.jpg" width="500" height="376">
+	<img src = "images/dog01.jpg" width="125" height="94">
+	<img src = "images/dog01.jpg" width="500"> <!-- 알아서 종횡비를 유지해준다.(자동으로 height = 376) -->
+	<img src = "images/dog01.jpg" height="376" title = "강아지 오형제"> <!-- 알아서 종횡비를 유지해준다.(자동으로 width = 500) -->
+	
+	<hr>
+	
+	<h1>링크</h1>
+	
+	<a href = "#">고양이</a><br>
+	<a href = "#"><img src = "images/catty01.png"></a><br> <!-- 이미지 링크 -->
+	<a href = "#"><img src = "images/catty01.png" style ="border:0px solid purple;"></a><br> <!-- 예전 브라우저 -->
+	
+	<!-- 
+	
+	웹에서 사용 가능한 이미지 파일의 포맷
+	- jpg(jpeg), gif, png 
+	
+	이미지 포맷
+	1. 래스터 방식
+		- 비트맵 이미지
+		- 우리가 흔히 사용하는 이미지 포맷
+		- 이미지 = 점들의 집합
+		- 확대/축소에 효율이 낮음(품질 저하)
+		- 사진, 색이많음, 디테일한 묘사
+		a. jpg(jpeg)
+			- 사진 표현
+			- 압축률 높음(== 손실율 발생)
+			- 16만 색상 지원
+		b. gif
+			- 비손실 압축
+			- 최대 256 색상 지원
+			- 아이콘, 그래프에 사용
+			- 투명 레이어 지원
+			- 애니메이션 > Animated GIF
+		c. png
+			- 비손실 압축
+			- jpg + gif
+		
+		
+	2. 벡터 방식
+		- 플래시, 일러스트레이터, 코렐 드로우 등..
+		- 이미지 = 수학 공식
+		- 확대/축소에 효율이 높음(품질 일정)
+		- 단순한 이미지(아이콘, 그래프)
+		- 폰트
+		- SVG(HTML5)
+		
+	-->
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 데이터 수신 + DB작업 페이지 -->
+    <!--
+    
+    업무 코드
+    1. 데이터 가져오기
+    2. DB Insert
+    3. 안내 멘트
+        3.1 정적 메시지
+        3.2 동적 메시지
+
+    -->
+
+    글쓰기가 완료되었습니다.<br>
+    <a href="">목록으로 이동하기</a>
+
+    <script>
+    // alert("글쓰기가 완료되었습니다.")
+    // location.href = "list.htm"
+
+    alert("글쓰기가 실패했습니다. 다시 확인하고 작성하세요.");
+    // location.href = "ex24_a.htm";
+    history.back();
+    </script>
+
+</body>
+</html>

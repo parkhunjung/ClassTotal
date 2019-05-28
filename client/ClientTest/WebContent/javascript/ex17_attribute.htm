@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div { margin-bottom: 10px; }
+        label { display: inline-block; width: 110px; text-align: right; }
+
+        .txtRed { background: tomato; }
+        .txtBlue { background: cornflowerblue; }
+        .big { font-size: 3em; }
+        .wide { width: 500px; }
+
+    </style>
+    <script>
+        
+        var txt1, pw1, txt2, cb1, rb1, btn1;
+
+        window.onload = init;
+
+        function init() {
+            txt1 = window.document.form1.txt1;
+            pw1 = window.document.form1.pw1;
+            txt2 = window.document.form1.txt2;
+            cb1 = window.document.form1.cb1;
+            rb1 = window.document.form1.rb1;
+            btn1 = window.document.form1.btn1;
+            
+            btn1.onclick = test;
+        }
+
+
+        function test() {
+            // alert("click");
+
+            //JavaScript로 HTML 태그의 속성을 제어하기
+            // - 태그의 속성을 이름 변경없이 프로퍼티로 제공한다.
+            // - 대부분의 속성은 읽기/쓰기를 지원한다.(일부 일기 or 쓰기만 지원하는 경우도 있다.)
+            // - 태그의 속성명이 JavaScript의 식별자로 적합하지 않은 경우 > 캐멀 표기법 제공(두단어 이상의 조합)
+
+            //<inout value="">
+            // txt1.value = "홍길동";
+            //alert(txt1.size); //읽기
+            // txt1.size = "100"; //쓰기
+            // alert(txt1.readOnly);
+
+            //HTML 속성값의 패턴
+            //1. 숫자 > 숫자 
+            // txt1.size = 10;
+
+            //2. 열거형 > 문자열
+            // <p align="right"
+            // p1.align = "left"
+
+            //3. 색상
+            // window.document.body.bgColor = "tomato";
+            // window.document.body.bgColor = "#FF00FF";
+
+            //4. 플래그 > 논리형
+            //<input readOnly>
+            // txt1.readOnly = true;
+
+            // cb1.disabled = true;
+
+            //텍스트 박스
+            // <input type = "text" name = "txt1" id="txt1" class="txt" size="10" maxlength="100" value="" readOnly disabled title="풍선도움말" placeholder="안내 멘트">
+
+
+            // txt1.maxLength = 10;
+            // txt1.title="하하하";
+
+            // txt1.className = "txtRed";
+            // txt1.className = "txtBlue";
+            
+            // if( pw1.type == "password")
+            //     pw1.type = "text";
+            // else 
+            //     pw1.type = "password";
+
+            // alert(txt1.constructor);
+            // alert(rb1.constructor);
+
+            //다른 이름을 가진 여러개의 컨트롤에게 같은 행동을 해야되는 경우
+            // window.document.form1.data1.readOnly = true;
+            // window.document.form1.data2.readOnly = true;
+            // window.document.form1.data3.readOnly = true;
+
+            //같은 이름을 가진 여러개의 컨트롤에게 같은 행동을 해야되는 경우
+            // var data =  window.document.form1.data;
+
+            // for (var i=0; i<data.length; i++){
+            //     data[i].readOnly = true;
+            // }
+            for(var i=1; i<=3; i++){
+                window.document.form1["data" + i].readOnly = true;
+            }
+
+        }
+        
+
+    </script>
+</head>
+<body>
+    <!-- ex17_attribute.htm -->
+    <h1>Attribute</h1>
+
+    <form name="form1">
+
+        <div><label>Text :</label> <input type="text" name="txt1"></div>
+        <div><label>Password :</label> <input type="password" name="pw1"></div>
+        <div><label>TextArea :</label> <textarea name="txt2"></textarea></div>
+        <div><label>CheckBox :</label> <input type="checkbox" name="cb1"></div>
+        <div>
+                <label>Radio Button : </label>
+                <input type="radio" name="rb1">
+                <input type="radio" name="rb1">
+        </div>
+
+        <div>
+            <input type="text" name="data1"><br>
+            <input type="text" name="data2"><br>
+            <input type="text" name="data3"><br>
+        </div>
+
+        <div>
+            <input type="text" name="data"><br>
+            <input type="text" name="data"><br>
+            <input type="text" name="data"><br>
+        </div>
+
+        <div><input type="button" value="Test" name="btn1"></div>
+
+    </form>
+
+</body>
+</html>

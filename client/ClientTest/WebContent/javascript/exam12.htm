@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        
+        #all {
+            width: 800px;
+            margin: 50px auto;
+        }
+
+        #content {
+            border: 1px solid #808080;
+            width: 450px;
+            height: 140px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .time {
+            border: 0px solid black;
+            width: 120px;
+            height: 100px;
+            margin: 5px 7px;
+            margin-top: 15px;
+            font-size: 80px;
+            text-align: center;
+        }
+
+        #content > span {
+            font-size: 80px;
+        }
+
+        #timeBox {
+            width: 450px;
+            margin: 10px auto;
+            padding-left: 50px;
+        }
+
+        #timeBox > input {
+            width: 130px;
+            height: 50px;
+            
+        }
+
+        input {
+            cursor: pointer;
+        }
+
+        input:disabled {
+            cursor: not-allowed;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <form name="timeForm">
+        <div id="all">
+            <div id="content">
+                <input type="text" value="00" name="minute" class="time"><span>:</span>
+                <input type="text" value="00" name="second" class="time"><span>:</span>
+                <input type="text" value="00" name="miliSecond" class="time">
+            </div>
+            <div id="timeBox">
+                <input type="button" value="시작" name="start" id="" >
+                <input type="button" value="멈춤" name="stop" id=""  disabled>
+                <input type="button" value="종료" name="fin" id=""  disabled>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        var minute, second, miliSecond;
+        var start, stop, fin;
+        var timer = 0;
+        var n = 0;
+
+        minute = document.timeForm.minute;
+        second = document.timeForm.second;
+        miliSecond = document.timeForm.miliSecond;
+
+        start = document.timeForm.start;
+        stop = document.timeForm.stop;
+        fin = document.timeForm.fin;
+        
+        start.onclick = function() {
+
+            start.disabled = true;
+            stop.disabled = false;
+            fin.disabled = false;
+
+            if (timer == 0) {
+                timer = setInterval(function() {
+                    if (parseInt(n%100) < 10) {
+                        miliSecond.value = "0" + parseInt(n%100);
+                    } else {
+                        miliSecond.value = parseInt(n%100);
+                    }
+                    n++;
+
+                    if (n >= 100) {
+                        if(parseInt(n/100)%60 < 10) {
+                            second.value = "0" + parseInt(n/100)%60;
+                        } else {
+                            second.value = parseInt(n/100)%60;
+                        }
+
+                        if(parseInt(n/100/60)%60 < 10) {
+                            minute.value = "0" + parseInt(n/100/60)%60;
+                        } else {
+                            minute.value = parseInt(n/100/60)%60;
+                        }
+                    }
+                }, 10);
+            }
+
+        } //start
+
+        stop.onclick = function() {
+
+            start.disabled = false;
+            stop.disabled = true;
+            fin.disabled = false;
+
+            clearInterval(timer);
+            timer = 0;
+
+        }
+
+        fin.onclick = function() {
+
+            start.disabled = false;
+            stop.disabled = true;
+            fin.disabled = true;
+
+            clearInterval(timer);
+            timer = 0;
+            minute.value = "00";
+            second.value = "00";
+            miliSecond.value = "00";
+            n = 0;
+
+        }
+
+    
+    </script>
+
+</body>
+</html>

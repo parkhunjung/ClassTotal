@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bootstrap</title>
+	
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/bootstrap.js"></script>
+
+	<style>
+        
+        body { margin-bottom: 300px; }
+
+	</style>
+	<script>
+		$(document).ready(function() {
+
+		});
+	</script>
+
+</head>
+<body>
+	<!--  
+		ex21_bootstrap.htm
+		1. http://getbootstrap.com : 공홈
+		2. http://bootstrapk.com : 한국어
+
+		jQuery + jQuery UI
+		1. 자바스크립트 편하게
+		2. 디자인 틀 : jQuery 함수(css(), btn1.button())
+
+		jQuery + Bootstrap
+		1. 자바스크립트 편하게
+		2. 디자인 틀 : CSS 클래스 제공 + jQuery 함수
+
+	-->
+	<div class="container">
+
+		<h1>Bootstrap</h1>
+		<p>문단입니다.</p>
+
+		<h2>버튼 디자인(종류)</h2>
+		<input type="button" value="버튼입니다.">
+		<input type="button" value="버튼입니다." class="btn">
+		<input type="button" value="버튼입니다." class="btn btn-default">
+		<input type="button" value="버튼입니다." class="btn btn-warning">
+		<input type="button" value="버튼입니다." class="btn btn-info">
+		<input type="button" value="버튼입니다." class="btn btn-success">
+		<input type="button" value="버튼입니다." class="btn btn-danger">
+		<input type="button" value="버튼입니다." class="btn btn-primary">
+
+		<h2>버튼의 크기</h2>
+		<input type="button" value="버튼입니다." class="btn btn-default btn-xs">
+		<input type="button" value="버튼입니다." class="btn btn-default btn-sm">
+		<input type="button" value="버튼입니다." class="btn btn-default">
+		<input type="button" value="버튼입니다." class="btn btn-default btn-lg">
+
+
+		<h2>테이블</h2>
+
+		<!-- <table id="tbl1" class="table"> -->
+		<!-- <table id="tbl1" class="table table-bordered"> -->
+		<!-- <table id="tbl1" class="table table-striped"> -->
+		<!-- <table id="tbl1" class="table table-condensed"> -->
+		<!-- <table id="tbl1" class="table table-hover"> -->
+		<table id="tbl1" class="table table-condensed table-bordered table-hover">
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>성별</th>
+				<th>주소</th>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>홍길동</td>
+				<td>20</td>
+				<td>남자</td>
+				<td>서울시 강남구 역삼동</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>호호호</td>
+				<td>22</td>
+				<td>여자</td>
+				<td>서울시 강동구 길동</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>아무개</td>
+				<td>25</td>
+				<td>남자</td>
+				<td>서울시 강서구 둔촌동</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>홍길동</td>
+				<td>20</td>
+				<td>남자</td>
+				<td>서울시 강남구 역삼동</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>호호호</td>
+				<td>22</td>
+				<td>여자</td>
+				<td>서울시 강동구 길동</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>아무개</td>
+				<td>25</td>
+				<td>남자</td>
+				<td>서울시 강서구 둔촌동</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>홍길동</td>
+				<td>20</td>
+				<td>남자</td>
+				<td>서울시 강남구 역삼동</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>호호호</td>
+				<td>22</td>
+				<td>여자</td>
+				<td>서울시 강동구 길동</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>아무개</td>
+				<td>25</td>
+				<td>남자</td>
+				<td>서울시 강서구 둔촌동</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>홍길동</td>
+				<td>20</td>
+				<td>남자</td>
+				<td>서울시 강남구 역삼동</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>호호호</td>
+				<td>22</td>
+				<td>여자</td>
+				<td>서울시 강동구 길동</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>아무개</td>
+				<td>25</td>
+				<td>남자</td>
+				<td>서울시 강서구 둔촌동</td>
+			</tr>
+		</table>
+
+
+		<h2>폼</h2>
+		
+		<table class="table table-bordered">
+			<tr>
+				<th style="width: 150px;">텍스트 박스</th>
+				<td><input type="text" class="form-control" id=""></td>
+            </tr>
+            <tr>
+				<th style="width: 150px;">암호 박스</th>
+				<td><input type="password" class="form-control" id=""></td>
+            </tr>
+            <tr>
+				<th style="width: 150px;">다중 라인 박스</th>
+				<td><textarea style="height: 200px;" class="form-control"></textarea></td>
+            </tr>
+            <tr>
+				<th style="width: 150px;">셀렉트 박스</th>
+				<td>
+                    <select name="" id="" class="form-control">
+                        <option value="">항목</option>
+                        <option value="">항목</option>
+                        <option value="">항목</option>
+                        <option value="">항목</option>
+                        <option value="">항목</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+				<th style="width: 150px;">체크박스</th>
+				<td>
+                    <input type="checkbox" class="form-control" id="">
+                </td>
+            </tr>
+            <tr>
+				<th style="width: 150px;">파일</th>
+				<td><input type="file" class="form-control" id=""></td>
+            </tr>
+        </table>
+        
+        <h2>텍스트 관련</h2>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempore, nobis quibusdam culpa cum minus qui blanditiis dolores consequuntur repudiandae eligendi quidem cupiditate? Suscipit veniam nemo autem sapiente recusandae animi.</p>
+
+        <blockquote>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum omnis impedit dicta nemo voluptates quaerat amet, pariatur velit commodi beatae consequatur officia excepturi doloremque corporis quia odio ab nostrum similique!</blockquote>
+        
+        <h2>정의 목록</h2>
+
+        <dl>
+            <dt>용어</dt>
+            <dd>용어에 대한 설명입니다.</dd>
+            <dt>Lorem.</dt>
+            <dd>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem velit voluptatem architecto odit inventore laborum quaerat eveniet! Magni, cumque quo.</dd>
+            <dt>Distinctio.</dt>
+            <dd>Tempore veritatis, fugiat eligendi, magni consectetur voluptates aliquam quae culpa quibusdam distinctio sapiente. Perspiciatis laborum illo libero ullam dicta quo.</dd>
+            <dt>Vitae.</dt>
+            <dd>Repudiandae omnis consequuntur nisi tenetur illo eveniet eaque rerum, repellendus cum doloribus esse est ea animi reprehenderit aperiam, corporis ipsum!</dd>
+            <dt>Distinctio!</dt>
+            <dd>Exercitationem cupiditate sequi minima harum. Mollitia recusandae rem, culpa asperiores dolore iusto magni a maiores, dolores ex harum consequuntur voluptatem.</dd>
+            <dt>Quos.</dt>
+            <dd>Quod et adipisci culpa hic ullam reprehenderit, quibusdam nostrum mollitia ipsum. Quod quia, perferendis iste odio saepe laudantium beatae expedita?</dd>
+        </dl>
+
+        <h2>프로그래밍 코드</h2>
+        <p>태그를 공부합니다. <code>&lt;table&gt;</code>태그는 테이블을 생성합니다</p>
+        <p>자바를 공부합니다. <code>int a = 10;</code>과 같은 문장은 변수와 데이터를 생성합니다.</p>
+
+
+        <h2>키보드 단축키</h2>
+
+        <p>이클립스의 실행은 <kbd>Ctrl + F11</kbd>로 합니다.</p>
+
+        <h2>Preformatted Text</h2>
+
+        <pre>
+class Test {
+    public <span style="color: cornflowerblue;">static</span> void main(String[] args) {
+        System.out.<span style="color: tomato">println</span>("안녕하세요.");
+    }
+}</pre>
+
+    <h2>텍스트 색상-글자색</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi hic inventore earum. Corrupti aliquam alias ipsa! Iure quam sunt eum incidunt delectus iste aperiam, ipsa voluptate. Sit, cupiditate facere?</p>
+    <p class="text-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi hic inventore earum. Corrupti aliquam alias ipsa! Iure quam sunt eum incidunt delectus iste aperiam, ipsa voluptate. Sit, cupiditate facere?</p>
+    <p class="text-success">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi hic inventore earum. Corrupti aliquam alias ipsa! Iure quam sunt eum incidunt delectus iste aperiam, ipsa voluptate. Sit, cupiditate facere?</p>
+    <p class="text-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi hic inventore earum. Corrupti aliquam alias ipsa! Iure quam sunt eum incidunt delectus iste aperiam, ipsa voluptate. Sit, cupiditate facere?</p>
+    <p class="text-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi hic inventore earum. Corrupti aliquam alias ipsa! Iure quam sunt eum incidunt delectus iste aperiam, ipsa voluptate. Sit, cupiditate facere?</p>
+    <p class="text-danger">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi hic inventore earum. Corrupti aliquam alias ipsa! Iure quam sunt eum incidunt delectus iste aperiam, ipsa voluptate. Sit, cupiditate facere?</p>
+
+    <h2>텍스트 색상-배경색</h2>
+    <p class="bg-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi hic inventore earum. Corrupti aliquam alias ipsa! Iure quam sunt eum incidunt delectus iste aperiam, ipsa voluptate. Sit, cupiditate facere?</p>
+    <p class="text-success bg-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi hic inventore earum. Corrupti aliquam alias ipsa! Iure quam sunt eum incidunt delectus iste aperiam, ipsa voluptate. Sit, cupiditate facere?</p>
+
+    <table>
+        <tr>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>Dolorum atque quibusdam aspernatur sunt?</td>
+            <td>Facilis quia incidunt expedita impedit!</td>
+            <td>Excepturi laborum corrupti a dolor?</td>
+            <td>Maiores, laborum accusamus. Suscipit, quasi!</td>
+        </tr>
+        <tr class="success">
+            <td>Quis laboriosam ratione dolorem esse.</td>
+            <td>Itaque incidunt nihil molestias omnis.</td>
+            <td>Deleniti, repellendus sunt? Voluptates, facere!</td>
+            <td>Ipsa illo fugiat voluptates cumque?</td>
+            <td>Molestias obcaecati ea alias iure?</td>
+        </tr>
+        <tr class="info">
+            <td>Nemo ex itaque blanditiis atque.</td>
+            <td>Quasi cum pariatur rerum libero.</td>
+            <td>Ut mollitia illum atque nesciunt.</td>
+            <td>Veniam pariatur molestiae placeat tempore.</td>
+            <td>Dolore officia nemo porro quibusdam?</td>
+        </tr>
+        <tr class="warning">
+            <td>Excepturi, nisi neque. Repudiandae, ea!</td>
+            <td>Ex ipsam adipisci eum quis.</td>
+            <td>Quis perferendis harum ab dolorem.</td>
+            <td>Officiis unde id quis? Hic.</td>
+            <td>Accusantium optio libero tenetur! Nisi?</td>
+        </tr>
+        <tr>
+            <td>Dolorum ipsa repudiandae sed fugit?</td>
+            <td>Consequuntur corrupti itaque dignissimos accusamus.</td>
+            <td>Dolorum quaerat inventore consectetur praesentium.</td>
+            <td>Corporis eum consectetur veniam qui?</td>
+            <td>Minus atque dolorum quos. Fuga.</td>
+        </tr>
+        <tr>
+            <td>Corporis possimus veniam illum excepturi?</td>
+            <td>Harum ex impedit voluptatem quidem?</td>
+            <td>Sit perferendis voluptatem consectetur consequuntur.</td>
+            <td>Optio cum dolores esse voluptatibus.</td>
+            <td>Sapiente illo consequuntur libero aperiam?</td>
+        </tr>
+        <tr>
+            <td>Facilis delectus accusantium nesciunt dicta?</td>
+            <td>Natus necessitatibus amet obcaecati quibusdam.</td>
+            <td>Iure similique vero hic quam!</td>
+            <td>Iure minima ex expedita aut.</td>
+            <td>Fugit libero est expedita quia.</td>
+        </tr>
+        <tr>
+            <td>Officiis rem molestiae aliquid corporis?</td>
+            <td>Soluta delectus minus maxime similique?</td>
+            <td>Reprehenderit esse deleniti enim nemo.</td>
+            <td>Blanditiis, aliquid tenetur. Veniam, iste.</td>
+            <td>Consequuntur deleniti magnam ad veritatis!</td>
+        </tr>
+        <tr>
+            <td>Totam aliquid maxime non inventore?</td>
+            <td>Facere deleniti porro ea quam.</td>
+            <td>Dolorem, voluptatem. Aliquid, assumenda deserunt.</td>
+            <td>Debitis neque fugit ullam doloribus.</td>
+            <td>Impedit nostrum recusandae nesciunt repudiandae.</td>
+        </tr>
+        <tr>
+            <td>Ipsam molestiae tempora reiciendis laudantium.</td>
+            <td>At illum aut beatae unde!</td>
+            <td>Laboriosam possimus accusamus iure! Atque.</td>
+            <td>Quaerat optio est quasi asperiores?</td>
+            <td>Reprehenderit at est vero soluta.</td>
+        </tr>
+        <tr>
+            <td>Ad, itaque! Accusamus, asperiores nemo!</td>
+            <td>At amet et dignissimos eum?</td>
+            <td>Eum tempore fuga pariatur voluptatem!</td>
+            <td>Laborum voluptates tenetur amet neque.</td>
+            <td>Blanditiis voluptatum sint odio beatae?</td>
+        </tr>
+        <tr>
+            <td>Illo, qui eius. Velit, eius!</td>
+            <td>Aliquam consectetur odit ipsa quae.</td>
+            <td>Fuga eius nobis corporis impedit!</td>
+            <td>Debitis, ab! Itaque, excepturi deserunt.</td>
+            <td>Qui nobis eum earum vel.</td>
+        </tr>
+        <tr>
+            <td>Necessitatibus iusto quas sit dignissimos.</td>
+            <td>Neque, a. Voluptatum, quam aperiam?</td>
+            <td>Optio necessitatibus quos id quam?</td>
+            <td>Rerum incidunt officiis culpa velit?</td>
+            <td>Fugiat soluta saepe cupiditate quo!</td>
+        </tr>
+        <tr>
+            <td>Aut minus vero dolor magni.</td>
+            <td>Vitae, fugiat reiciendis. Molestias, quibusdam!</td>
+            <td>Dignissimos veritatis corporis tempora ea?</td>
+            <td>Blanditiis praesentium quae natus error.</td>
+            <td>Necessitatibus animi eius sed sapiente.</td>
+        </tr>
+        <tr>
+            <td>Aspernatur culpa explicabo dolorum cum?</td>
+            <td>Adipisci sequi ad dicta error!</td>
+            <td>Repellendus nisi impedit debitis repudiandae?</td>
+            <td>Illum sed blanditiis veritatis cumque?</td>
+            <td>Possimus modi ullam illo corrupti.</td>
+        </tr>
+        <tr>
+            <td>Ipsam dicta nemo consequatur delectus!</td>
+            <td>Sequi pariatur voluptatem a quo.</td>
+            <td>Dicta ut suscipit obcaecati assumenda!</td>
+            <td>Ducimus illo maiores accusantium nam?</td>
+            <td>Quos dolorum provident velit nobis.</td>
+        </tr>
+        <tr>
+            <td>Quidem laudantium beatae nisi voluptatum.</td>
+            <td>Temporibus at corporis ad magnam!</td>
+            <td>Aspernatur quod voluptas exercitationem placeat!</td>
+            <td>Molestias cumque recusandae voluptatem sunt!</td>
+            <td>Eos fugiat quaerat beatae saepe.</td>
+        </tr>
+        <tr>
+            <td>Amet, vitae. A, eligendi inventore?</td>
+            <td>Explicabo quos omnis placeat aliquam.</td>
+            <td>Sed culpa tenetur ex sit?</td>
+            <td>Nemo itaque odit temporibus molestias.</td>
+            <td>Cum enim ea velit provident.</td>
+        </tr>
+        <tr>
+            <td>Quos exercitationem sint repudiandae porro.</td>
+            <td>Ducimus sint reiciendis quaerat tenetur.</td>
+            <td>Veniam harum quidem iure fuga!</td>
+            <td>Eos ipsam minima asperiores dolores.</td>
+            <td>Iusto, a. Alias, dignissimos consequuntur.</td>
+        </tr>
+        <tr>
+            <td>Velit maxime odit dolorum quasi?</td>
+            <td>Quaerat doloremque ullam rem unde?</td>
+            <td>Consectetur aliquid cupiditate suscipit dignissimos!</td>
+            <td>Labore rerum similique nemo assumenda.</td>
+            <td>Temporibus molestias consequuntur enim perspiciatis.</td>
+        </tr>
+    </table>
+    
+    <h2>이미지</h2>
+
+    <p><img src="../images/cat01.jpg" class="img-thumbnail"></p>
+    <p><img src="../images/cat01.jpg" class="img-circle"></p>
+    <p><img src="../images/cat01.jpg" class="img-rounded"></p>
+    
+    </div><!-- container -->
+
+</body>
+</html>

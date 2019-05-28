@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        body { padding-bottom: 400px; }
+
+        .box {
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+        }
+
+        #box1 {
+            /* 모서리를 둥글게 만들어주는 것 */
+            /* 상대값은 사각형과 상관없는 값을준다. */
+            border-radius: 100px;
+        }
+
+        #box2 {
+            height: 300px;
+            border-radius: 150px;
+        }
+
+        #box3 {
+            /* 절대값으로 주었을땐 세로너비(타원) */
+            /* 절대값은 사각형의 모습에 관계가 있다 */
+            border-radius: 50%;
+        }
+
+        #box4 {
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%; 
+            border-top-right-radius: 20%;
+            border-bottom-left-radius: 20%;
+        }
+
+        #box5 {
+            border-radius: 30px;
+            padding: 25px 10px;
+        }
+
+        #list > img {
+            border-radius: 30px;
+        }
+
+        #list > img:hover {
+            border-radius: 0;
+        }
+
+        #list:hover > img {
+            border-radius: 0;
+        }
+
+        #id {
+            border: 1px solid gray;
+            /* padding: 4px;
+            padding-left: 10px;
+            padding-right: 10px; */
+            /* 위아래, 좌우 순서 */
+            padding: 4px 8px;
+            outline: none;
+            border-radius: 4px;
+        }
+
+        #btn1 {
+            background-color: slategray;
+            border: 0px;
+            padding: 5px 15px;
+            color: white;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        #btn1:hover {
+            box-shadow: 0px 0px 2px #555;
+            cursor: pointer;
+            color: gold;
+        }
+
+        #tbl1 {
+            border: 0px solid black;
+            /* 기본값 : border-collapse: separate */
+            /* border-collapse: collapse;  분리되어있지 않으면 radius를 주지 못한다. */
+            width:500px;
+            /* border-radius: 10px; */
+            /* transform: rotate(35deg); */
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            padding: 5px;
+            /* border-radius: 10px; */
+            transform: rotate(35deg);
+
+        }
+
+        #tbl1 tr:nth-child(1) > td:first-child {
+            border-top-left-radius: 10px;
+        }
+        
+        #tbl1 tr:first-child > td:last-child {
+            border-top-right-radius: 10px;
+        }
+
+        #tbl1 tr:last-child > td:first-child{
+            border-bottom-left-radius: 10px;
+        }
+
+        #tbl1 tr:last-child > td:last-child{
+            border-bottom-right-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- (div#box$.box>lorem)*3 -->
+    <div id="box1" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero autem expedita debitis atque architecto totam inventore dignissimos quos quaerat magni reiciendis dolore ab, repudiandae sequi nobis temporibus in corrupti. Deleniti!</div>
+    <div id="box2" class="box">Necessitatibus magni ab assumenda consequatur consectetur voluptas est aperiam voluptatum ullam repellat quasi, quisquam nemo temporibus cumque ea nostrum quis autem quos dolores libero. Dignissimos illum id aliquid incidunt nobis?</div>
+    <div id="box3" class="box">Dolor commodi perferendis sit porro! Error iste ex, reprehenderit, a ea blanditiis voluptatum cum odio nesciunt ipsum aliquam totam, excepturi autem dolorem quasi minus sequi assumenda sit quaerat nulla laborum.</div>
+    <div id="box4" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sunt fuga ad nemo repellat quo. Cupiditate inventore officia tempore, rem tenetur reprehenderit magni corrupti, vel quaerat, ratione vero commodi in.</div>
+    <div id="box5" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, saepe aspernatur dolore exercitationem sit nihil aliquid doloremque rem reprehenderit alias illo corporis suscipit, quas nostrum eum repudiandae quisquam quaerat fugit.</div>
+
+    <div id="list">
+        <img src="../images/dog01.jpg" alt="">
+        <img src="../images/dog02.jpg" alt="">
+        <img src="../images/dog03.jpg" alt="">
+        <img src="../images/dog04.jpg" alt="">
+        <img src="../images/dog05.jpg" alt="">
+    </div>
+
+    <h1>회원 가입</h1>
+    
+    아이디 : <input type="text" id="id">
+
+    <hr></hr>
+
+    <input type="button" value="가입하기" id="btn1">
+
+    <h1>테이블</h1>
+
+    <!-- table#tbl1>tr*20>td{Data}*5 -->
+    <table id="tbl1">
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

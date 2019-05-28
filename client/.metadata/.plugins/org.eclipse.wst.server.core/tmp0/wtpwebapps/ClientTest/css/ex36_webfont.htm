@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        /* 
+        웹 폰트, Web Font
+        1. 예전 방식
+            - *.eof
+        2. CSS3 웹 폰트
+            - 서버상의 폰트 파일을 클라이언트에게 제공
+            - 폰트 포맷 변경이 불필요
+
+        */
+
+        @font-face { font-family: 'Handon3gyeopsal600g'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal600g.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+        /* 웹 폰트 선언 */
+        @font-face {
+            font-family: jeju; /* 내가 정의한 폰트명 */
+            src: url("../images/JejuHallasan.ttf")
+        }
+
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Pen+Script" rel="stylesheet">
+
+        #p1 {
+            font-family: jeju;
+        }
+
+        #p2 {
+            font-family: 'Nanum Pen Script', cursive;
+        }
+
+        #p3 {
+            font-family: Handon3gyeopsal600g;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <p id="p1">[아시아경제 한승곤 기자] 가수 겸 배우 박유천(33)이 마약 투약 사실을 인정한 가운데 과거 그의 다리에 난 상처에 대중의 관심이 쏠리고 있다.
+
+            한 사진 속 공개된 그의 다리는 상처 투성이다. 대중은 이 상처가 마약을 했을 때 자신의 신체에 벌레가 보여 긁다가 생긴 상처인 ‘메스버그’ 아니냐는 의혹을 제기하고 있다. 파문이 확산하자 박 씨 측은 해당 상처에 대해 ‘대상포진’이라고 해명했다.
+            
+            2일 방송된 MBC ‘섹션TV 연예통신’는 최근 마약 투약 혐의로 구속된 박유천 ‘메스버그’ 의혹에 대해 다뤘다.</p>
+    
+    <p id="p2">이날 김희준 변호사는 박 씨 형량에 대해 가중 처벌 가능성이 있다고 언급했다. 김 변호사는 “다리털에서 마약 양성반응이 나왔고, 그동안 황하나 씨의 진술을 뒷받침할 수 있는 CCTV 영상자료나 계좌내역 등 객관적인 사실이 많이 나왔다”면서 “명백한 증거로 더 이상의 부인은 힘들었을 것”이라고 말했다.
+
+            박유천 형량에 대해서는 “마약류관리에 관한 법률상 투약행위 법정 5년 이하, 매매 행위는 10년 이하로 되어 있다. 여러 번 투약과 매매를 했기 때문에 (형량이 가장 무거운 죄의) 2분의 1 가중 처벌이 된다. 구체적인 선고 형량은 15년 이내 범위 내에서 정해질 것으로 예상된다”고 설명했다.
+            </p>
+
+    <p id="p3">이날 김희준 변호사는 박 씨 형량에 대해 가중 처벌 가능성이 있다고 언급했다. 김 변호사는 “다리털에서 마약 양성반응이 나왔고, 그동안 황하나 씨의 진술을 뒷받침할 수 있는 CCTV 영상자료나 계좌내역 등 객관적인 사실이 많이 나왔다”면서 “명백한 증거로 더 이상의 부인은 힘들었을 것”이라고 말했다.
+
+            박유천 형량에 대해서는 “마약류관리에 관한 법률상 투약행위 법정 5년 이하, 매매 행위는 10년 이하로 되어 있다. 여러 번 투약과 매매를 했기 때문에 (형량이 가장 무거운 죄의) 2분의 1 가중 처벌이 된다. 구체적인 선고 형량은 15년 이내 범위 내에서 정해질 것으로 예상된다”고 설명했다.
+            </p>
+
+</body>
+</html>

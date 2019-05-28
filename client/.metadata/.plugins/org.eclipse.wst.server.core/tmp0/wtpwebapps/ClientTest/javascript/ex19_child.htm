@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        
+        function f1() {
+            // window.close();
+            window.document.form1.elements[0].value = "Close Window";
+        }
+
+        function use() {
+            // 1. 사용 가능한 아이디를 부모창에 복사하기
+            // 2. 창닫기
+
+            // 자식창이 부모창의 window 객체를 참조하는 방법
+            // opener - 부모창의 window 객체
+            opener.document.form1.txtID.value = window.document.form1.txtID.value;
+
+            window.close();
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <h1>자식창</h1>
+
+    <form name="form1">
+        <input type="button" value="창닫기" onclick="f1();">
+        <hr>
+        아이디 : <input type="text" name="txtID">
+        <input type="button" value="중복 검사">
+        <input type="button" value="사용하기" name="btnUse" onclick="use();">
+    </form>
+
+</body>
+</html>

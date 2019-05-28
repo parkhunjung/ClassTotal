@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- 테이블 병합(셀 병합) -->
+	
+	<h1>셀 병합</h1>
+	
+	<table border = "1" width="500">
+	<tr>
+		<td colspan = "5" align = "center">큰 제목</td>
+	</tr>
+	<tr>
+		<td rowspan = "4">6</td>
+		<td>7</td>
+		<td>8</td>
+		<td>9</td>
+		<td>10</td>
+	</tr>
+	<tr>
+		<td>12</td>
+		<td>13</td>
+		<td>14</td>
+		<td>15</td>
+	</tr>
+	<tr>
+		<td>17</td>
+		<td rowspan = "2">18</td>
+		<td>19</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>22</td>
+		<td>24</td>
+		<td>25</td>
+	</tr>
+	</table>
+
+	<hr>
+	
+	
+	<h1>세로로 인접한 셀끼리 병합</h1>
+	
+	<table border = "1" width="200" height="200">
+	<tr>
+		<td rowspan = "2">1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>4</td>
+	</tr>
+	</table>
+
+	<hr>
+	
+	<h1>가로로 인접한 셀끼리 병합</h1>
+	
+	<table border = "1" width="200" height="200">
+	<tr>
+		<td colspan="3">1</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+		<td>7</td>
+		<td>8</td>		
+	</tr>
+	</table>
+	
+	<hr>
+	
+	<h1>가로로 인접한 셀끼리 병합</h1>
+	
+	<table border = "1" width="200" height="200">
+	<tr>
+		<td>1</td>
+		<td colspan = "2">2</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+		<td>7</td>
+		<td>8</td>		
+	</tr>
+	</table>
+	
+	
+	<hr>
+	
+	<h1>가로로 인접한 셀끼리 병합</h1>
+	
+	<table border = "1" width="200" height="200">
+	<tr>
+		<td colspan="2">1</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	</table>
+	
+	<hr>
+	
+	
+	<!-- 모든 <tr>내의 <td>개수는 동일해야 한다. -->
+	
+	<h1>원본</h1>
+	
+	<table border = "1" width="200" height="200">
+	<tr>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	</table>
+
+	<hr>
+	
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

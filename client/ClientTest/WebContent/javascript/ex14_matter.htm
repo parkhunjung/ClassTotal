@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #memo {
+            width: 450px;
+            border: 0px solid black;
+            margin: 0px auto;
+        }
+
+
+        #txt {
+            display: block;
+            border: 1px solid #666;
+            width: 400px;
+            height: 300px;
+            resize: none;
+            /* margin: 0px auto; */
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <form name="form1">
+        <div id="memo">
+            <h1>메모장</h1>
+            <div>
+                <textarea name="txt" id="txt" placeholder="메모를 입력하세요."></textarea>
+            </div>
+            <div>금지어 : 바보, 멍청이</div>
+        </div>
+    </form>
+    <script>
+        var txt;
+        var word = ["바보", "멍청이"];
+
+        txt = window.document.form1.txt;
+
+        txt.onkeyup = f1;
+
+        function f1(event) {
+            for(var i=0; i<word.length; i++){
+                if((txt.value.indexOf(word[i]) > -1)) {
+                    window.document.body.bgColor = "tomato";
+                    // break;
+                } else {
+                    window.document.body.bgColor = "white";
+                }
+            }
+        }
+    
+    </script>
+
+</body>
+</html>

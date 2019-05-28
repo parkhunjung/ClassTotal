@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+	<!-- ClientTest > WebContent > regular > ex01.htm -->
+	<!--  
+	
+	Regular Expression, 정규 표현식(정규식)
+	- 대다수 편집기(Editplus, Visual Studio Code, Eclipse 등)들과
+		대다수 프로그래밍 언어(Java, SQL, JavaScript)에서 지원한다.
+	- 패턴에 일치하는 문자열을 검색하는 표현식
+	
+	
+	
+	정규 표현식 구성 요소(문법)
+	
+	1. 모든 문자
+		ex) "a" -> a
+		ex) "test" -> test
+	
+	2. 임의의 문자(1개)
+		- .
+		- 와일드 카드(모든 문자)
+		ex) "." -> 모든 문자를 검색
+		ex) "..." -> 임의의 문자 3개
+		ex) "te..st" -> teaast, tezzst, te홍길st
+		ex) "..A.." -> abAcd, 12A한글
+		ex) ".길동" -> 홍길동, 김길동, 박길동, 길동	
+	
+	3. 앞의 요소에 출현 횟수를 지정
+		3.1 표현없음
+			- 출현 횟수 : 1
+			- 생략 불가능, 중복 불가능
+			ex) "abc" : abc
+		
+		
+		3.2 ?
+			- 출현 횟수 : 0 - 1
+			- 생략 가능, 중복 불가능
+            ex) "a?bc" -> abc, bc, aabc(X)
+            ex) "a?bc?" -> abc, bc, ab, b
+            ex) "a?b?c? -> abc, bc, ac, ab, a, b, c
+            ex) "(ab)?c" -> abc, c
+            ex) "(ab)?(cd)?" -> abcd, ab, cd
+            ex) ".길동" -> 3글자
+            ex) ".?길동" -> 2-3글자
+			
+		3.3 +
+			- 출현 횟수 : 1 -  무한대
+			- 생략 불가능, 중복 가능
+			ex) "a+bc" -> bc(X), abc, aabc, aaaaabc, aaaaaaaaaaaaaaabc, aaaaaaaaaaaa(X)
+			ex) "a?b+c?" -> b, ab, bc, abc, bbbbbbbbbbbbbbbb, abbbbbbbc,  ac(X)
+			ex) "a(bc)+" -> abc, abcbc, abcbcbcbcbcbcbc
+			
+		
+        3.4 *
+            - 출현 횟수 : 0 - 무한대
+            - 생략 가능, 중복 가능
+            ex) "a*bc" : bc, abc, aabc, aaabc, aaaaaaaaaaaaaaaaabc .....
+            ex) "a*b*c" : a, b, c, ab, bc, ac, abc, aaabbbcc....
+		
+		
+		4. 앞의 요소에 출현 횟수를 지정(확장)
+			- 3번의 표현은 한계가 있음(세밀한 출현 범위를 지정하기 힘들다.)
+			ex) "홍홍홍길동" or "홍홍길동" or "홍길동" : "홍+길동"
+			
+			4.1 {n}
+				- 고정 횟수 출현
+				- n : 출현 횟수
+				ex) "a{3}bc" : aaabc
+				ex) "a{1}bc" : abc
+				ex) "a{5}bc" : aaaaabc
+				ex) ".{5}" : 임의의 연속된 5문자
+			
+			4.2 {n, m}
+				- n회 이상 - m회 이하
+				- n : 최소, m : 최대
+				ex) "a{1,3}bc" : abc, aabc, aaabc
+				ex) "홍{1,3}길동" = "홍?홍?홍길동"
+				
+			4.3 {n,}
+				- n회 이상 - 무한대
+				ex) "a{3,}bc" : aaabc, aaaaabc, aaaaaaaaabc ..
+				
+			4.4 
+				- "a" = "a{1}"
+				- "a+" = "a{1,}"
+				- "a?" = "a{0, 1}"
+				- "a*" = "a{0,}"
+			
+		5. [요소 목록]
+			- [] 안에 나열된 요소들 중 하나를 선택
+			- choice(or)
+			ex) "[abc]" : a, b, c
+			ex) "[abc]de" : ade, bde, cde
+			ex) "[김이박최정홍]?길동" : 김길동, 이길동, 박길동, 최길동, 정길동, 홍길동, 길동
+			ex) "[김이박최정홍]+길동"
+			ex) "[김이박최정홍]*길동" : 김박최길동
+			ex) "[김이박최정홍]{3,5}길동" : 김이홍길동, 홍길동(X)
+			ex) "[(010)(011)(019)]-1234-5678" : 010-1234-5678, 011-1234-5678, 019-1234-5678
+			
+			- 숫자만 검색(2-4자리) 
+			ex) [0123456789]{2,4}
+			ex) [1085347912]{2,4} //순서는 의미없으나 보기가안좋음 
+			ex) [24680]{2,}
+			
+			- 주민번호 검색
+				: 숫자 6자리-숫자 7자리
+			ex) [0123456789]{6} - [0123456789]{7}
+			
+			- 전화번호 검색
+			ex) [0123456789]{3}-[0123456789]{3,4}-[0123456789]{4}
+			
+			- 영소문자 검색
+			ex) [abcdefghijklmnopqrstuvwxyz]{3,10}
+			ex) <[abcdefghijklmnopqrstuvwxyz]{1,}>
+			
+			- 영대문자 검색
+			ex) [ABCDEFGHIJKLMNOPQRSTUVWXYZ]{3,}
+			
+			- 영어와 숫자로 조합된 단어 검색(3 -  10자리)
+			ex) [ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789]
+			ex) [A-Za-z0-9], [a-zA-Z0-9]
+			
+			- 범위 표현(문자 코드가 순서대로 나열되었을때만 사용)
+			- 숫자 검색
+			ex) [0-9] = [0123456789]
+			ex) [0-9] <> [24680]
+			ex) [5-9] = [56789]
+			ex) [0-9]{6}-[0-9]{7}
+			ex) [0-9]{3}-[0-9]{3,4}-[0-9]{4}
+			
+			- 영대소문자
+			ex) [a-z] = [abcdefghijklmnopqrstuvwxyz]
+			ex) [A-Z] = [ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+			
+			- 한글?
+			ex) [가-힣]{3,5}
+			
+			
+			
+	-->
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

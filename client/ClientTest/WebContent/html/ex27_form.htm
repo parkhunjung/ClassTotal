@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+	
+	<form> 하위 컨트롤
+	- 입력 양식(입력 도구, 컨트롤, 태그)
+	
+	<input> 태그
+	- 인라인 태그
+	- 단독 태그
+	- input.type 속성 : 입력 컨트롤의 종류 지정
+	- input.name : 식별자
+	- input.id : 식별자 CSS, JavaScript 사용
+	- input.class : 식별자 CSS, JavaScript 사용
+	- input.size : 길이(문자 개수)ss
+	- input.maxlength : 최대입력 길이(문자 개수) + 유효성 검사
+	- input.value : 입력 컨트롤의 입력값(현재값)
+	- input.readonly : 읽기 전용(전원 On + 입력기능 비활성화) + 서버 전송됨
+	- input.disabled : 비활성화(전원 Off + 입력기능 비활성화) + 서버 전송 안됨
+	- input.accesskey : 바로가기(니모닉, Nemonic)
+	- input.autofocus : 자동 포커스(활성화)
+	- input.autocomplete : 자동완성 끄기,켜기
+	
+	
+	니모닉(Nemonic) : Alt + 조합키
+	단축키(Access Key) : Alt + Ctrl + shift + 조합키
+	
+	
+	-->
+	
+	<h1>입력 컨트롤</h1>
+	
+	<form>
+		<label for="txt1">텍스트 박스(단일 라인) :</label> <input type="text" name="txt1" id="txt1" class="txts" 
+									size="20" maxlength="5" value="" 
+									onclick="//alert(this.value);" accesskey="s"
+									autocomplete="off">
+		<hr>
+		<!-- 
+			암호상자, Masked Text Box
+			- 모든 속성이 텍스트 박스와 동일
+			- 단, value 는 사용하지말것(****)
+		-->
+		텍스트 박스(암호 상자) : <input type="password">						
+		
+		<hr>
+		<!-- 
+			다중 라인 텍스트 박스
+			- textarea.cols : 가로너비(컬럼 수)
+			- textarea.rows : 세로높이(행 수)
+			- 대다수 속성은 텍스트 박스와 유사
+			- maxlength 속성이 없다. // 다량 텍스트를 입력 용도라 맥스길이가 없다.
+			- value 속성이 없다.
+		-->				
+		텍스트 박스(다중 라인) : <textarea rows="10" cols="80" style="resize:none; outline:none;">기본값</textarea>
+		
+		<hr>
+		
+		<!-- 
+			체크박스
+			- 논리값 입력
+			- 단일 선택 or 다중 선택
+		-->
+		체크 박스 : <input type = "checkbox">
+		<hr>
+		
+		<h1>약관</h1>
+		<p>설명...</p>
+		<input type="checkbox" id="cb1"> <label for="cb1">약관에 동의합니다.</label>
+		<br>
+		<input type="submit" value="다음 단계로" disabled>
+		
+		<hr>
+		
+		<h1>취미 선택</h1>
+		
+		<input type="checkbox"> 독서
+		<input type="checkbox"> 수영
+		<input type="checkbox" checked> 컴퓨터
+		<input type="checkbox"checked> 영화보기
+		<input type="checkbox"> 낮잠자기
+		<input type="checkbox"> 개발하기
+		<input type="checkbox"> 등산
+		<input type="checkbox"> 먹기
+		
+		<hr>
+		
+		<!-- 
+			라디오버튼
+		-->
+		
+		라디오 버튼 : 
+		<input type="radio" name="ok"> 동의함
+ 		<input type="radio" name="ok" checked> 동의안함
+		
+		<hr>
+		
+		<!-- 
+			셀렉트 박스
+			- 콤보 박스, 드랍 다운 리스트 등..
+			- 단일 선택 or 다중 선택
+			
+		-->
+		
+		셀렉트 박스 : 
+		<select name="sel1">
+			<option value="1">강아지</option>
+			<option value="2" selected>고양이</option>
+			<option value="3">병아리</option>
+		</select>
+		
+		<hr>
+		
+		셀렉트 박스 : 
+		<select name="sel2" size="5" multiple>
+			<option value="1">강아지</option>
+			<option value="2">고양이</option>
+			<option value="3">병아리</option>
+		</select>
+		
+		<hr>
+		
+		셀렉트 박스 : 
+		<select name="sel3">
+			<option>★포유류</option>
+			<option value="1">강아지</option>
+			<option value="2">고양이</option>
+			<option value="3">병아리</option>
+			
+			<option>★파충류</option>
+			<option value="4">이구아나</option>
+			<option value="5">거북이</option>
+			
+			<option>★절지류</option>
+			<option value="6">사슴벌레</option>
+			<option value="7">매미</option>
+			<option value="8">장수풍뎅이</option>
+		</select>
+		
+		<hr>
+		
+		셀렉트 박스 : 
+		<select name="sel4">
+			<optgroup label="포유류">
+				<option value="1">강아지</option>
+				<option value="2">고양이</option>
+				<option value="3">병아리</option>
+			</optgroup>
+			
+			<optgroup label="파충류">
+				<option value="4">이구아나</option>
+				<option value="5">거북이</option>
+			</optgroup>
+			
+			<optgroup label="절지류">
+				<option value="6">사슴벌레</option>
+				<option value="7">매미</option>
+				<option value="8">장수풍뎅이</option>
+			</optgroup>
+		</select>
+		
+		<hr>
+		
+		<!-- 
+			파일업로드
+			- 첨부 파일 선택
+			- Open Dialog Box 호출
+			- 전송 데이터 : 해당 파일 + 이름 + 경로(X)
+		-->
+		
+		파일선택 : <input type="file">
+		
+		<hr>
+		
+		<!-- 
+			히든 태그		
+			- 개발자용
+			- 전송은 해야되지만 사용자에게 보여지지 않아야할 데이터
+			- 프로그램 처리에 필요한 내부 데이터 용
+		-->
+		
+		히든 태그 : <input type="hidden" name="seq" value="20">
+		
+		<hr>
+		
+		<!-- 
+			버튼류
+		-->
+		전송 버튼 : <input type="submit" value="데이터 전송하기">
+		<br>
+		취소 버튼 : <input type="reset">
+		<br>		
+		이미지 버튼 : <input type="image" src="../images/catty01.png">
+		<br>
+		그냥 버튼 : <input type="button" value="그냥 버튼" 
+						onclick="this.form.reset(); //this.form.submit();">
+		<br>
+		그냥 버튼 : <button type="button">그냥 버튼</button>
+		
+		
+		<hr>						
+		<input type="submit">							
+		
+	</form>
+	
+	
+	
+	
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        jQuery 설치 방법
+        1. 파일을 직접 서버에 복사 + 참조
+        2. 파일을 외부 서버로부터 복사 + 참조 *** 굉장히 많이 쓰는 방법
+            - CDN > (외부 환경을 받는 방법)
+    -->
+
+    <script src="js/jquery-1.12.4.js"></script> <!-- import 구문은 import 구문으로만 냅둔다. 더이상 건드리지 않는다. 항상 위에서 코딩 -->
+    <!-- <script
+    src="https://code.jquery.com/jquery-1.12.4.js"
+    integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous">
+    </script> -->
+
+    <script>
+        // console.log(jQuery); 간단한 확인법
+        /*
+        jQuery
+        - http://jQuery.com
+        - 자바스크립트 라이브러리 or 프레임워크
+        - 자바스크립트를 기반으로 하는 작업의 생산성 & 유지보수성 강화 지원..
+        - 모든 문법이 자바스크립트로 되어 있다. (*********)
+
+        jQuery 특징
+        1. 코드량 감소 + 품질 좋음
+        2. 경량 : Only 32KB
+        3. CSS3 선택자 지원
+        4. 크로스 브라우징 지원
+
+        jQuery 설치
+        1. 직접 설치(*.js)
+        2. CDN 설치
+
+        jQuery 함수를 사용해서 태그를 검색하는 기능 (******)
+
+        */
+    </script>
+
+</head>
+<body>
+    
+    <input type="button" value="버튼" id="btn1">
+
+    <script>
+    
+    // 1. BOM - BOM 트리 사용
+    var btn1_1 = window.document.all["btn1"];
+
+    // 2. DOM - get 메소드 or DOM 트리 사용
+    var btn1_2 = document.getElementById("btn1");
+    
+    //3. jQuery - CSS 선택자 사용
+    var btn1_3 = jQuery("#btn1");
+    btn1_3.css("color", "red");
+
+    </script>
+
+</body>
+</html>

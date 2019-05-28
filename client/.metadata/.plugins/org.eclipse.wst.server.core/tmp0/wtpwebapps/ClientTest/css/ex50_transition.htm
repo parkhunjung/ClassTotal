@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+        transition, 전환
+        - 객체의 속성(상태)값이 변화되는 과정을 시간 순서대로 보여주는 제어
+        - 수치형 속성만 가능(숫자, 색상)
+        */
+        body { padding-bottom: 500px }
+        #box {
+            border: 10px solid black;
+            background-color: tomato;
+            width: 200px;
+            height: 200px;
+
+            transition-property: all; /* CSS 속성명 */
+            transition-duration: 0.25s; /* s, ms */
+        }
+
+        #box:hover {
+            /* width: 500px;
+            height: 500px;
+            background-color:gold;
+            font-size: 10em;
+            font-family: 궁서체; */
+            /* border-color: blue;
+            border-width: 50px;
+            border-style: dashed; */
+            /* padding: 50px; */
+            /* box-shadow: 15px 15px 5px #555; */
+            border-radius: 50%;
+
+        }
+
+        #cat > img {
+            opacity: .2;
+        }
+
+        #cat > img:hover {
+            opacity: 1;
+            transition: opacity, 1s;
+        }
+
+        #cat2 {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            transition: all 1s;
+        }
+
+        #cat1:hover + #cat2 {
+            left:500px;
+        }
+
+        #control > div {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+
+        #cat3 {
+            position: relative;
+            left: 200px;
+            top: -300px;
+            transition: all 1s;
+        }
+
+        #control > div:nth-child(1):hover ~ #cat3{ top: -600px; }
+        #control > div:nth-child(2):hover ~ #cat3{ top: 0px; }
+        #control > div:nth-child(3):hover ~ #cat3{ left: 0px; }
+        #control > div:nth-child(4):hover ~ #cat3{ left: 400px; }
+        
+        #dog1 {
+            transition: all 1s;
+        }
+        
+        #dog1:hover {
+            transform: scale(10, 10) rotate(3600deg) translate(-1000px, 0px);
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="box">상자1</div>
+
+    <h1>고양이</h1>
+
+    <div id="cat">
+        <img src="../images/catty01.png" alt="">
+        <img src="../images/catty02.png" alt="">
+        <img src="../images/catty03.png" alt="">
+        <img src="../images/catty04.png" alt="">
+        <img src="../images/catty05.png" alt="">
+    </div>
+
+    <hr>
+
+    <img src="../images/catty01.png" id="cat1">
+    <img src="../images/catty02.png" id="cat2">
+
+    <hr>
+
+    <div id="control">
+        <div>Up</div>
+        <div>Down</div>
+        <div>Left</div>
+        <div>Right</div>
+        <img src="../images/catty02.png" id="cat3">
+    </div>
+
+    <h1>transform + transition</h1>
+
+    <img src="../images/dog01.jpg" id="dog1">
+
+</body>
+</html>

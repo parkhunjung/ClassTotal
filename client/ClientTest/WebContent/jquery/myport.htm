@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <style>
+    
+        body, html {
+            /* background: #e6b9f0; */
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            display: block;
+        }
+        
+        .total {
+            display: block;
+            width: 40px;
+            height: 20px;
+            position: fixed;
+            left: 93%;
+            top: 5%;
+            transform: translate(-50%, -50%);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .total span {
+            display: block;
+            width: 40px;
+            height: 7px;
+            background-color: rgba(128, 128, 128, 1);
+            color: transparent;
+            position: fixed;
+            top: 50%;
+            transform: translate(0, -50%);
+            transition: all .05s;
+        }
+
+        .total span:before,
+        .total span:after {
+            content: "";
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 7px;
+            background-color: rgba(128, 128, 128, 1);
+            transition: all .05s;
+        }
+
+        .total span:before {
+            top: -13px;
+        }
+
+        .total span:after {
+            top: 13px;
+        }
+
+        .total.on span {
+            background: rgba(128, 128, 128, 0)
+        }
+
+        .total.on span:before {
+            top: 0px;
+            transform: rotate(45deg);
+        }
+
+        .total.on span:after {
+            top: 0px;
+            transform: rotate(-45deg);
+        }
+
+        .barMenu {
+            color: #808080;
+            position: absolute;
+            left: -100%;
+            top: 60%;
+        }
+
+        .barMenu li {
+            list-style: none;
+            display: none;
+            margin-top: 14px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .header {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            background-image: url("../images/wall05.jpg");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #txtInfo {
+            border: 0px;
+            background: transparent;
+            text-align: center;
+            margin: 0px auto;
+            font-size: 36px;
+            color: white;
+            width: 100%;
+        }
+
+        #aboutTitle {
+            margin-left: 6vw;
+            margin-right: 12vw;
+            width: 25vw;
+            box-sizing: border-box;
+            text-align: center;
+            align-self: center;
+        }
+
+        .hedding {
+            position: relative;
+            display: inline-block;
+            margin: 30px 0;
+        }
+
+        .hedding:after {
+            content: "";
+            top: 100%;
+            height: 2px;
+            width: 50px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background: #7b7cd4;
+        }
+
+        section {
+            display: block;
+        }
+
+        #aboutText {
+            font-family: Noto Sans KR,sans-serif;
+            margin-bottom: 4rem;
+            margin-top: 4rem;
+            box-sizing: border-box;
+            padding: 1rem;
+            margin-right: 8vw;
+            width: 100%;
+        }
+
+
+
+    </style>
+    
+    <script>
+    
+        // jQuery(document).ready(function() {
+        $(document).ready(function() {
+            var submenu = $(".barMenu > li");
+
+            $(".total > div").click(function() {
+                // $(".barMenu li").css("opacity", "1");
+
+                // $(".barMenu > li").toggle().css("opacity", "1");
+                $(".total").toggleClass("on")
+
+                if (submenu.is(":visible")) {
+                    submenu.slideUp(100);
+                } else {
+                    submenu.slideDown(100);
+                    $(".barMenu li").css("opacity", "1");
+                }
+                
+            });
+
+        });
+    
+    </script>
+
+
+</head>
+<body>
+    <!--  -->
+    <div class="HomaPageLayout">
+        <div class="bar">
+            <div class="total">
+                <div style="width: 43px; height: 50px;">
+                    <span></span>
+                </div>
+                <ul class="barMenu">
+                    <li id="item1">Home</li>
+                    <li id="item2">About</li>
+                    <li id="item3">Skills</li>
+                    <li id="item4">Project</li>
+                    <li id="item5">Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="header">
+                <input type="text" value="개발자 포트폴리오" id="txtInfo">
+        </div>
+        <div class="About">
+            <span id="aboutTitle">
+                <h2 class="hedding">About Me</h2>
+            </span>
+            <div id="aboutText">
+                <h2>잘하는 개발자</h2>
+                <section>
+                    <p>어릴때 부터 호기심이 많은 성격에 만들어 보았던 간단한 계산기 프로그램으로 무언가를 만드는 것의 재미를 느끼게 되었고 그때부터 개발자를 꿈꾸게 되었습니다. 그래서 대학교도 컴퓨터공학과를 가게 되었고 자연스럽게 많은것을 개발하게 될 수 있었습니다. 그 중 Javascript가 가지고 있는 가능성과 다양성에 매력을 느끼게 되어 웹 어플리케이션 개발자가 되기 위해 많은 노력을 하고 있습니다.</p>
+                    <p>저는 제 목표를 '잘하는' 개발자로 삼아서 더 공부하고 있습니다. 경력을 쌓은 개발자는 경력만 쌓이면 자연스럽게 되지만 '잘하는'개발자는 경력뿐만 아니라 매일 공부하여 개발자로써 더 높은 곳을 바라보고 있기 때문입니다 . 저는 계속 공부하여 '잘하는'개발자로써 남고 싶습니다.</p>
+                </section>                
+            </div>
+        </div>
+        <div id="skills"></div>
+    </div>
+</body>
+</html>

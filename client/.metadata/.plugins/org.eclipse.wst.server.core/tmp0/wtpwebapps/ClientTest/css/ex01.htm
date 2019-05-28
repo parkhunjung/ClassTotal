@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+	/*CSS 주석*/
+	div { color:blue; }
+	
+	
+	/* <style>태그 내부에 CSS 작성하는 방법 -> 내부 스타일 시트 */
+	h2 { color: green; }
+	
+</style>
+<link rel = "stylesheet" href = "ex01.css">
+</head>
+<body>
+
+<!-- 
+
+	CSS, Cascading, Style Sheet
+	- 스타일 시트
+	- HTML 페이지의 태그(**)에 서식을 적용하는 언어
+	- 디자인 담당 언어
+	- 독립 사용 불가능 -> HTML 문서와 함께 사용
+	
+	CSS 특징
+	1. 골격(태그 + 데이터)과 서식 코드 완전 분리
+		- 골격 : HTML 담당
+		- 서식 : CSS 담당
+	2. 1번 때문 재사용 가능
+	3. 서식 기능 확장
+		a. 기능 확장 = HTML 기능(소량) + CSS 추가 기능(대량)
+
+
+	CSS를 HTML 페이지에 적용하는 방법
+	- 아래 3가지 모두 HTML에서 서식을 적용하는 작업
+	
+	1. Inline Style Sheet, 인라인 스타일 시트
+		- 모든 태그에 style 속성을 사용해서 적용
+		- style="CSS 구문"
+		- 적용 범위 : 해당 태그
+		- 장점 : 가독성 높음(***)
+		- 단점 : 재사용이 불가능(해당 태그만 1회 적용)
+		
+	2. Embeded Style Sheet, 내부 스타일 시트
+		- 페이지 상단에 <style> 태그 내부에 작성
+		- 적용 범위 : 한 페이지(해당 페이지)
+		- 장점 : 재사용 가능(***)
+		- 단점 : 가독성 낮음
+		
+	3. External Style Sheet, 외부 스타일 시트
+		- 별도의 *.css를 만들어서 작성 -> <link> 태그 사용
+		- 적용 범위 : 모든 페이지
+		- 장점 : 재사용 가장 높음(***)
+		- 단점 : 가독성 가장 낮음
+
+ -->
+ 
+ <!-- 
+ 요구사항] '안녕하세요' x 5번 출력 
+ 추가사항] 글자색 : 빨간색
+ 수정사항] 글자색 -> 파란색으로 변경
+ -->
+ <h1>HTML 작성</h1>
+ 
+ <p><font color = "blue">안녕하세요.</font></p>
+ <p><font color = "blue">안녕하세요.</font></p> 
+ <p><font color = "blue">안녕하세요.</font></p>
+ <p><font color = "blue">안녕하세요.</font></p>
+ <p><font color = "blue">안녕하세요.</font></p>
+ 
+ <h1>CSS 작성</h1>
+ <div>반갑습니다.</div>
+ <div>반갑습니다.</div>
+ <div>반갑습니다.</div>
+ <div>반갑습니다.</div>
+ <div>반갑습니다.</div>
+ 
+ <hr>
+ 
+ 
+ <h1>인라인 스타일 시트</h1>
+ <h1 style="color:red;">인라인 스타일 시트</h1>
+ <h1 style="color:red;">인라인 스타일 시트</h1>
+ 
+ 
+ <h2>내부 스타일 시트</h2>
+ <h2>내부 스타일 시트</h2>
+ <h2>내부 스타일 시트</h2>
+ 
+ 
+ <h3>외부 스타일 시트입니다.</h3>
+ <h3>외부 스타일 시트입니다.</h3>
+ <h3>외부 스타일 시트입니다.</h3>
+ 
+
+</body>
+</html>

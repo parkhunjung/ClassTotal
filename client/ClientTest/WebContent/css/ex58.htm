@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #card {
+            border: 0px solid black;
+            width: 152px;
+            height: 252px;
+            overflow: hidden;
+        }
+
+        #innerbox{
+            border:0px solid black;
+            width: 800px;
+        }
+
+
+        .item {
+            border: 1px solid #444;
+            width: 150px;
+            height: 250px;
+            float: left;
+            transition: all 2s;
+            border-radius: 3px;
+        }
+
+        #card:hover .item  {
+            transform: translate(-608px, 0px);
+        }
+
+        .item  img {
+            display: block;
+            margin: 15px auto;
+        }
+
+        .item  div {
+           padding-left: 15px;
+        }   
+
+    </style>
+</head>
+<body>
+    <div id="card">
+        <div id="innerbox">
+            <div class="item">
+                <img src="../images/rect_icon01.png" alt="">
+                <div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+            </div>
+            <div class="item">
+                <img src="../images/rect_icon02.png" alt="">
+                <div>Expedita, aliquam blanditiis! Magnam, vero.</div>
+            </div>
+            <div class="item">
+                <img src="../images/rect_icon03.png" alt="">
+                <div>Sit, odio saepe? Tempore, consequatur?</div>
+            </div>
+            <div class="item">
+                <img src="../images/rect_icon04.png" alt="">
+                <div>Cupiditate sunt ducimus blanditiis ad!</div>
+            </div>
+            <div class="item">
+                <img src="../images/rect_icon05.png" alt="">
+                <div>Reprehenderit laborum et voluptate molestias.</div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+
+</body>
+</html>

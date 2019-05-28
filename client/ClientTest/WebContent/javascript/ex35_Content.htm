@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+    
+    </style>
+
+</head>
+<body>
+    
+    <div id="filelist">
+        <div><input type="button" value="첨부파일 갯수 추가하기" name="" id="btnAdd"></div>
+        <hr>
+        <div><label>첨부 파일 : </label><input type="file" name="" id=""></div>
+        <div id="filesublist"></div> <!-- 새롭게 추가할내용을 새로운 박스안에 넣는것이 제일좋다. -->
+    </div>
+
+    <h1>테이블</h1>
+
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+    <script>
+    
+        document.getElementById("btnAdd").onclick = test;
+        
+        
+        function test() {
+            
+            // 추가하기 버튼 클릭
+            document.getElementById("filesublist").innerHTML += 
+            "<div><lable> 첨부 파일 : </label><input type = 'file'></div>";
+
+            // document.getElementById("btnAdd").onclick = test;
+        
+        };
+
+        var cells = document.getElementsByTagName("td");
+
+        for (var i=0; i<cells.length; i++){
+            cells[i].onclick = function() {
+                // alert("클릭" + i);
+                // event.srcElement.bgColor = "gold";
+                event.srcElement.innerText = "O";
+            };
+        }
+        
+
+    </script>
+
+
+
+</body>
+</html>

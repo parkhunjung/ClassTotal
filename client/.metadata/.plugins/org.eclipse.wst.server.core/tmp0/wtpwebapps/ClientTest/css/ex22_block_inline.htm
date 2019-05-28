@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	/* 
+	
+	블럭 태그
+	- 자신의 영역내에 자신의 내용물만 출력 > 라인 독점
+	- 너비 100%, 높이 내용물만큼
+	- 너비, 높이 사용자 지정 가능
+	- padding, margin 조절 가능
+	
+	
+	인라인 태그
+	- 자신의 내용과 다른 요소의 내용을 한줄에 출력
+	- 너비 내용물만큼, 높이 내용물만큼
+	- 너비, 높이 사용자 지정 불가능
+	- padding, margin 조절 가능(단, 좌우만 지정이 가능하다.)
+	
+	
+	*/
+	
+	
+	.box, .link{
+		border: 0px solid black;
+	}
+	
+	#box2{ width: 200px; height: 200px; padding: 50px; }
+	#link2{ width: 200px; height: 200px; padding: 0px; margin: 50px; }
+	
+	a { color: red; text-decoration: none; border-bottom: 1px dashed red; padding-bottom: 1px;}
+	
+</style>
+</head>
+<body>
+
+	<h1>블럭 태그</h1>
+
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	
+	<h1>인라인 태그</h1>
+	
+	문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.
+	<img src="../images/bullet04.png"><a href="http://naver.com" style="margin-left: 3px">네이버 링크</a>
+	문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.
+	<a href="#" id="link1" class="link">링크1</a>
+	<a href="#" id="link2" class="link">링크2</a>
+	<a href="#" id="link3" class="link">링크3</a>
+	문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.문자열입니다.
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bootstrap</title>
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/bootstrap.js"></script>
+
+	<style>
+		body { margin-bottom: 600px; }
+	</style>
+	<script>
+		$(document).ready(function() {
+
+		});
+	</script>
+
+</head>
+<body>
+	<!-- ex22_bootstrap.htm -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Bootstrap Example</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio totam illum tenetur sit. Quidem nobis inventore voluptatum, eveniet voluptas placeat iusto pariatur amet illum, beatae ipsa sit qui, commodi facilis!</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<section>
+			<p>나머지 내용입니다.</p>
+			<p>나머지 내용입니다.</p>
+			<p>나머지 내용입니다.</p>
+			<p>나머지 내용입니다.</p>
+			<p>나머지 내용입니다.</p>
+		</section>
+
+		<h2>Wells</h2>
+
+		<div class="well">소규모의 독립된 영역을 만들고자 할 때 사용</div>
+		<div class="well well-sm">소규모의 독립된 영역을 만들고자 할 때 사용</div>
+		<div class="well well-lg">소규모의 독립된 영역을 만들고자 할 때 사용</div>
+		<pre>소규모의 독립된 영역을 만들고자 할 때 사용</pre>
+
+
+		<h2>Alerts</h2>
+
+		<div class="alert alert-success">
+			<strong>Java</strong>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, voluptate! Dicta quaerat repellendus alias saepe ab eveniet, sequi aliquam vitae placeat, assumenda illo temporibus iste. Eum placeat beatae rem quae.
+		</div>
+
+		<div class="alert alert-info">
+			<strong>Java</strong>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, voluptate! Dicta quaerat repellendus alias saepe ab eveniet, sequi aliquam vitae placeat, assumenda illo temporibus iste. Eum placeat beatae rem quae.
+		</div>
+
+		<div class="alert alert-warning">
+			<strong>Java</strong>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, voluptate! Dicta quaerat repellendus alias saepe ab eveniet, sequi aliquam vitae placeat, assumenda illo temporibus iste. Eum placeat beatae rem quae.
+		</div>
+
+		<div class="alert alert-danger">
+			<strong>Java</strong>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, voluptate! Dicta quaerat repellendus alias saepe ab eveniet, sequi aliquam vitae placeat, assumenda illo temporibus iste. Eum placeat beatae rem quae.
+		</div>
+
+		<div class="alert alert-danger alert-dismissable fade in">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>주의사항!!!</strong>
+			반드시 사진은 20cm x 20cm 미만으로 첨부해야 합니다.
+		</div>
+
+
+		<h2>아이콘</h2>
+
+		<p id="p1">
+			<span class="glyphicon glyphicon-home"></span>
+			<span class="glyphicon glyphicon-camera"></span>
+			<img src="../images/bullet01.png">
+		</p>
+
+		<style>
+			#p1 > img { width: 100px; }
+			#p1 > span { font-size: 100px; color: gold; }
+		</style>
+		<hr>
+
+		<h2><span class="
+			glyphicon glyphicon-text-size"></span> HTML 학습 사이트</h2>
+
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium sit aspernatur voluptatem commodi voluptatibus explicabo exercitationem, perferendis vel magnam inventore similique, provident quidem beatae doloremque adipisci eaque impedit hic maxime.</p>
+
+		<div class="alert alert-danger">
+			<strong><span class="glyphicon glyphicon-alert"></span> 공부할 때 주의점!!</strong>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat exercitationem mollitia voluptatibus? Ut eum maxime, expedita autem nisi natus consectetur adipisci reiciendis sed voluptates! Nam commodi reprehenderit minima excepturi ipsam?
+		</div>
+
+		<p><input type="button" value="Search" class="btn btn-primary"></p>
+
+		<p><button class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button></p>
+
+
+		<h2>배지, Badges</h2>
+
+		<ul>
+			<li>Java <span class="badge">5</span></li>
+			<li>Oracle </li>
+			<li>JDBC <span class="badge">22</span></li>
+			<li>HTML <span class="badge">1</span></li>
+		</ul>
+
+		<button class="btn btn-danger">
+			<span class="glyphicon glyphicon-trash"></span>
+			Remove Items
+			<span class="badge">3</span>
+		</button>
+
+
+		<h2>Label</h2>
+
+		<p>반갑습니다. 방금 가입했습니다~ <span class="label label-default">new</span></p>
+		<p>반갑습니다. 방금 가입했습니다~ <span class="label label-primary">new</span></p>
+		<p>반갑습니다. 방금 가입했습니다~ <span class="label label-success">new</span></p>
+		<p>반갑습니다. 방금 가입했습니다~ <span class="label label-info">new</span></p>
+		<p>반갑습니다. 방금 가입했습니다~ <span class="label label-warning">new</span></p>
+		<p>반갑습니다. 방금 가입했습니다~ <span class="label label-danger">new</span></p>
+
+
+		<h2>Pagination, 페이지바</h2>
+
+		<ul class="pagination">
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li class="active"><a href="#">5</a></li>
+			<li><a href="#">6</a></li>
+			<li><a href="#">7</a></li>
+			<li class="disabled"><a href="#">8</a></li>
+			<li><a href="#">9</a></li>
+			<li><a href="#">10</a></li>
+		</ul>
+
+		<h2>Pager</h2>
+
+		<ul class="pager">
+            <li><a href="#"><span class="glyphicon glyphicon-backward"> 이전 페이지</span></a></li>
+            <li><a href="#">다음 페이지 <span class="glyphicon glyphicon-forward"></span></a></li>
+        </ul>
+        
+        <h2>List</h2>
+
+        <ul class="list-group" style="width: 400px;">
+            <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
+            <li class="list-group-item">Quaerat veritatis aperiam minima magnam!</li>
+            <li class="list-group-item">Veniam alias tempore atque labore. <span class="badge">12</span></li>
+            <li class="list-group-item">Impedit itaque odio deserunt optio!</li>
+            <li class="list-group-item">Ad earum harum magni. Omnis.</li>
+            <li class="list-group-item">Consequatur, saepe? Dicta, explicabo officiis? <span class="badge">22</span></li>
+            <li class="list-group-item">Aperiam alias minima debitis fugiat. <span class="badge">7</span></li>
+            <li class="list-group-item">Quam voluptatibus consequuntur est animi. <span class="label label-info" style="float:right;">notice</span></li>
+            <li class="list-group-item">Reiciendis est earum nostrum vero.</li>
+            <li class="list-group-item">Quasi dolor unde in mollitia.</li>
+        </ul>
+
+
+	</div><!-- container-->
+
+</body>
+</html>

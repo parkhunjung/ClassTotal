@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        .box {
+            width: 700px;
+            height: 500px;
+            margin: 30px;
+        }
+
+        #box1 {
+            /* 
+            배경색
+            1. solid color : 단색
+            2. gradient : 색의 변화를 시각적으로 표현
+                - 선형 linear-gradient
+                - 원형 radial-gradient
+            */
+            background: linear-gradient(red, blue); 
+        }
+
+        #box2 {
+            /* background: linear-gradient(to right, red, yellow); */
+            background: linear-gradient(0deg, red, yellow);
+        }
+
+        #box3 {
+            background: linear-gradient(red, yellow, blue);
+        }
+
+        #box4 {
+            background: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0,0 ,0));
+        }
+
+        #box5 {
+            background: radial-gradient(circle, red, yellow, blue, green, pink);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="box1" class="box"></div>
+    <div id="box2" class="box"></div>
+    <div id="box3" class="box"></div>
+    <div id="box4" class="box"></div>
+    <div id="box5" class="box"></div>
+
+
+</body>
+</html>

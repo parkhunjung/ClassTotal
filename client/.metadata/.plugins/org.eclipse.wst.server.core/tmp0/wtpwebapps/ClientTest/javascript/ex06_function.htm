@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    </style>
+    <script>
+    
+    </script>
+</head>
+<body>
+    <script>
+        
+    // 형변환, Type Casting
+    //  - 대부분의 상황에서 자바스크립트 자동으로 형변환을 한다. > 암시적 형변환
+    //  - ex) "100" * 2 => 200
+
+    // 형변환 함수
+    // 1. int parseInt() ***
+    // 2. float parseFloat()
+
+    var n1 = 3.14;
+    console.log(parseInt(n1));
+    
+    // 반올림을 하지않고 버린다.
+    n1 = 3.99;
+    console.log(parseInt(n1));
+    
+    //Math 함수를 통해 올림,반올림,내림 전부 가능
+    console.log(Math.round(n1)); //반올림
+    console.log(Math.ceil(n1)); //무조건올림
+    console.log(Math.floor(n1)); //무조건내림
+
+    var n2 = "100";
+    console.log(n2);
+    console.log(typeof n2);
+    
+    var n3 = parseInt(n2);
+    console.log(n3);
+    console.log(typeof n3);
+
+    var n4 = "100점";
+    console.log(parseInt(n4));
+
+    n4 = "100점입니다. 우하하 200점"; //처음 숫자를 만낫을때 연속된 아라비아숫자만을 찾아서 그것만을 출력해준다.
+    console.log(parseInt(n4));
+
+    n4 = "오늘 시험을 봤는데 100점을 맞았다."; //첫시작이 숫자가 아니면 숫자를 출력해주지 않는다.
+    console.log(parseInt(n4));
+    
+    var width = "200px";
+
+    console.log(width * 2);//안된다.
+
+    console.log(parseInt(width) * 2); //이렇게 해줘야 뒤에 px를 날려준다.
+
+    width = "2.5em";
+
+    console.log(parseInt(width));
+    console.log(parseFloat(width));
+        
+    //isNaN()
+    // - is Not a Number ? 
+
+    var age = "20"; // 사용자 입력값
+    age = "20세";
+
+    //자료형X, 데이터 형태O
+    console.log(isNaN(age));
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        #register {
+            width: 450px;
+            margin: 0px auto;
+        }
+
+        #ck {
+            border : 0px;
+            color : red;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <div id="register">
+            <h1>회원 가입</h1>
+            <div>아이디 : <input type="text" name="txtReg"> <input type="text" name="ck" id="ck"></div>
+        </div>
+    </form>
+
+    <script>
+        var txtReg;
+
+        txtReg = window.document.form1.txtReg;
+        txtck = window.document.form1.ck;
+
+
+        txtReg.onkeyup = check;
+
+        function check() {
+
+            if(txtReg.value.length >= 5) {
+                txtck.value = "아이디가 적합합니다.";
+            } else if (txtReg.value.length == 0) {
+                txtck.value = "";
+            } 
+            else {
+                txtck.value = "아이디가 적합하지 않습니다.";
+            }  
+
+
+        }
+
+
+    </script>
+
+</body>
+</html>

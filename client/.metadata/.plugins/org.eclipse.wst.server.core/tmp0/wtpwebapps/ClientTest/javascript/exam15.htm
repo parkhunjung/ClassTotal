@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- body oncontextmenu="return false"; -->
+    <style>
+        #tbl {
+            
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        #tbl td {
+            border: 1px solid black;
+            width: 120px;
+            height: 120px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 5em;
+        }
+
+
+    </style>
+
+
+</head>
+<body oncontextmenu="return false">
+    
+    <table id="tbl">
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <script>
+    
+        var cells = document.getElementsByTagName("td");
+        var n = 0;
+        
+        for (var i=0; i<cells.length; i++){
+            cells[i].onmousedown = function () {
+                // console.log(onmousedown);
+                var btn = event.button;
+                if (btn == 0){
+                    event.srcElement.innerText++;
+                    event.srcElement.bgColor = "white";
+                } else if (btn == 2){
+                    if(event.srcElement.innerText != "0"){
+                        event.srcElement.innerText--;
+                    } else {
+                        event.srcElement.innerText = "0";
+                        event.srcElement.bgColor = "#CCC";
+                    }
+                }
+                // event.srcElement.innerText++;
+                
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

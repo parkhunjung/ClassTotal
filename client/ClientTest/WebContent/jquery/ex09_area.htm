@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/my.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/my.js"></script>
+    
+    <style>
+        
+        #box1 {
+            border-width: 20px;
+            padding: 20px;
+        }
+    
+    
+    </style>
+    
+    <script>
+    
+        // jQuery(document).ready(function() {
+        $(document).ready(function() {
+            // setButton("input:button");
+
+            // 요구사항] box1의 너비???
+            // DOM
+            // alert(document.getElementById("box1").style.width);
+
+            // jQuery
+            console.log("width", $("#box1").css("width"));
+            console.log("height", $("#box1").css("height"));
+
+            console.log("width()", $("#box1").width());
+            console.log("height()", $("#box1").height());
+
+            // 컨텐츠 영역 + padding
+            console.log("innerWidth()", $("#box1").innerWidth());
+            console.log("innerHeight()", $("#box1").innerHeight());
+
+            // 실제상자!!!!
+            // 컨텐츠 영역 + padding + border
+            console.log("outerWidth()", $("#box1").outerWidth());
+            console.log("outerHeight()", $("#box1").outerHeight());
+
+            // 컨텐츠 영역 + padding + border + margin
+            console.log("outerWidth()", $("#box1").outerWidth(true));
+            console.log("outerHeight()", $("#box1").outerHeight(true));
+
+
+        });
+    
+    </script>
+
+
+</head>
+<body>
+    <!--  -->
+    <h1>jQuery에서 객체의 영역과 관련된 기능(=박스 모델)</h1>
+    
+    <div id="box1" class="box yellow"></div>
+
+
+
+    <!-- <input type="button" value="버튼1" id="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2"> -->
+
+</body>
+</html>

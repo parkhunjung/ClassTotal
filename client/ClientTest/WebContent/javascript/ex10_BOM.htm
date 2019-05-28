@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*
+    자바스크립트 기능 분류
+    - 코어 + BOM + DOM + 확장 라이브러리
+
+    처리 순서
+    0. 
+    1. 태그를 검색
+    2. 1을 조작(값을 수정, 삭제 등)
+
+    BOM, Browser Object Model
+    - 자바스크립트를 사용해서 HTML 문서상의 객체를 접근 + 조작하기 위한 기능 모음
+    - 아직도 사용
+    - 문서상의 일부 객체(태그)를 이미 정해진 트리구조를 통해 접근해야 하는 모델
+    - 객체를 구분하기 위해서 식별자를 사용한다.(name 속성 사용)
+    - class와 id 속성은 인식하지 못한다.
+    - 트리 구조에서 유일한 객체는 예약어로 접근한다.(window, document 등)
+    - 제한된 객체만 접근이 가능하다.(링크 + 이미지 + 폼)
+    - BOM 트리내에 없는 태그(객체)들을 접근/조작이 불가능
+    - DOM Level 0 
+
+
+    DOM, Document Object Model
+    - 자바스크립트를 사용해서 HTML 문서상의 객체를 접근 + 조작하기 위한 기능 모음
+    - BOM 단점 개선 + 기능 확장
+    - 모든 태그를 접근이 가능
+    - DOM Level 1 
+    - DOM Level 2
+    - DOM Level 3
+    
+    태그가 가질 수 있는 식별자
+    - <input type="text" name="txt1" id="txt1" class="txt1">
+
+    1. HTML 작성 중..
+        a. name : 내부 링크용 식별자(<a name="item1"></a> : 앵커(anchor))
+        b. name : 서버로 입력값을 전송할 때 식별자(txt1=홍길동) *************************
+        c. id : <label for="id"> or <a id="item1">
+        d. class : 사용 안함
+    
+    2. CSS 작성 중..
+        a. name : 사용 안함
+        b. id : 선택자
+        3. class : 선택자
+
+    3. JavaScript 작성 중..
+        3.1 BOM
+            a. name : BOM에서 사용
+            b. id : 사용 안함
+            c. class : 사용 안함
+        3.2 DOM
+            a. name : 사용함
+            b. id : 사용함(*****)
+            c. class : 사용함(***)
+
+    */
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <input type="text" name="txt1">
+    </form>
+    
+    <script>
+        //BOM을 사용해서 txt1에 접근하기 > 조작
+        // window.close();
+        var txt1 = window.document.form1.txt1;
+
+        //객체.변수 -> 프로퍼티(Property) = getter/setter + public 변수
+        txt1.value = "홍길동";
+
+
+    </script>
+
+</body>
+</html>

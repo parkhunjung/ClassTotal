@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #content {
+            border: 1px solid black;
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        #content > div {
+            transform: translate(0px, 0px);
+            transition: all 1s;
+        }
+
+        #content:hover > div {
+            transform: translate(0px, -200px);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="content">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, odit asperiores neque modi delectus accusamus vel, totam atque officia excepturi perferendis voluptatum, necessitatibus culpa corporis nemo ducimus illo dolores eum.</div>
+    </div>
+
+</body>
+</html>

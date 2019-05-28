@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+    // body onload = "init()"
+    // window.onload = init;
+    
+    window.onload = init;
+
+    var btn1, btn2, btn3, btn4;
+    
+    function init() {
+        btn1 = window.document.form1.btn1;
+        btn2 = window.document.all["btn2"];
+        btn3 = window.document.form1.elements["btn3"];
+        btn4 = window.document.form1.btn4;
+
+        txtID = window.document.form1.txtID;
+        btnCheck = window.document.form1.btnCheck
+
+        // window.open("ex18_collection.htm", "child", "width=300, height=250");
+
+        /*
+        window 객체
+        - BOM의 최상위 객체
+        - 브라우저 창 자체를 참조 객체
+        - 창과 관련된 행동을 구현
+        - 창을 열고 닫기
+        */
+
+        btn1.onclick = f1;
+        btn2.onclick = f2;
+        btnCheck.onclick = f3;
+        btn3.onclick = f4;
+        btn4.onclick = f5;
+
+    }
+
+    var child;
+
+    function f1() {
+        // window.open("자식창URL", "자식창 이름", "옵션"); 
+        // => 자식창이름: 주어지지않으면 계속해서 열린다. (중복창 방지)
+        child = window.open("ex19_child.htm", "child", "width=300, height=250, left=500, top=300");
+        // window.open("ex18_collection.htm", "child", "fullscreen");
+        // child.close();
+    }
+
+    function f2() {
+        // 자식창 닫기 > *** 자식창의 window 객체 참조를 얻어온다.
+        // window.close();
+        child.close();
+        // child.document.form1.elements[0].value = "Close Window";
+    }
+
+    function f3() {
+        window.open("ex19_child.htm", "idcheck" , "width=300, height= 250");
+
+    }
+
+    function f4() {
+        // 이동하기
+        // window.moveTo(500, 0);
+        window.moveBy(100, 100);
+    }
+
+    function f5() {
+        // 크기 변경하기
+        window.resizeTo(500,500);
+    }
+
+
+    </script>
+
+</head>
+<body>
+
+    <h1>window 객체</h1>
+
+    <form name="form1">
+        <input type="button" value="자식창 띄우기(새창 띄우기 - 팝업창)" name="btn1">
+        <input type="button" value="자식창 닫기" name="btn2">
+
+        <hr>
+
+        아이디 : <input type="text" name="txtID">
+        <input type="button" value="아이디 중복 검사" name="btnCheck">
+
+        <hr>
+        
+        <input type="button" name="btn3" value="창 이동하기">
+        <input type="button" name="btn4" value="창 크기 변경하기">
+
+    </form>
+
+
+</body>
+</html>

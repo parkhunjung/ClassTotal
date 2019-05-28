@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Multi-Level Sliding Sidebar Navigation Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/port.css">
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+        .header {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            background-image: url("../images/programing.jpg");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #txtInfo {
+            border: 0px;
+            background: transparent;
+            text-align: center;
+            margin: 0px auto;
+            font-size: 36px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="header">
+            <!-- <input type="text" value="개발자 포트폴리오" id="txtInfo"> -->
+        </div>
+        <div class="About">
+            <div id="title">
+                <h3>About me</h3>
+            </div>
+            <div id="aboutText">
+                <p>어릴때 부터 호기심이 많은 성격에 만들어 보았던 간단한 계산기 프로그램으로 무언가를 만드는 것의 재미를 느끼게 되었고 그때부터 개발자를 꿈꾸게 되었습니다. 그래서 대학교도
+                    컴퓨터공학과를 가게
+                    되었고 자연스럽게 많은것을 개발하게 될 수 있었습니다. 그 중 Javascript가 가지고 있는 가능성과 다양성에 매력을 느끼게 되어 웹 어플리케이션 개발자가 되기 위해 많은
+                    노력을 하고 있습니다.
+                </p>
+                <p>저는 제 목표를 '잘하는' 개발자로 삼아서 더 공부하고 있습니다. 경력을 쌓은 개발자는 경력만 쌓이면 자연스럽게 되지만 '잘하는'개발자는 경력뿐만 아니라 매일 공부하여 개발자로써 더
+                    높은 곳을
+                    바라보고 있기 때문입니다 . 저는 계속 공부하여 '잘하는'개발자로써 남고 싶습니다.</p>
+            </div>
+        </div>
+        <div id="skills"></div>
+        <div class="sidebar-menu">
+            <header class="logo"> <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#">
+                    <span id="logo"></span>
+                    <!--<img id="logo" src="" alt="Logo"/>-->
+                </a> </header>
+            <div></div>
+            <div class="menu">
+                <ul id="menu">
+                    <li id="menu-home"><a href="#"><i class="fa fa-home"></i><span>Home</span></a></li>
+                    <li><a href="#"><i class="fa fa-share-alt"></i><span>Share</span><span style="float: right"></span></a>
+                    </li>
+                    <li id="menu-comunicacao"><a href="#"><i class="fa fa-anchor"></i><span>Skills</span><span
+                                style="float: right"></span></a>
+                        <ul id="menu-comunicacao-sub">
+                            <!-- <li id="menu-mensagens" style="width: 120px" ><a href="#">Language<i class="fa fa-angle-right" style="float: right; margin-right: -8px; margin-top: 2px;"></i></a> -->
+                            <ul id="menu-mensagens-sub">
+                                <!-- <li id="menu-mensagens-enviadas" ><a href="#">Java</a></li> -->
+                                <!-- <li id="menu-mensagens-recebidas" ><a href="#">Python</a></li> -->
+                                <!-- <li id="menu-mensagens-nova" ><a href="#">Item 1.3</a></li> -->
+                            </ul>
+                    </li>
+                    <!-- <li id="menu-arquivos" ><a href="#">Web Skill</a></li> -->
+                </ul>
+                </li>
+                <li id="menu-academico"><a href="#"><i class="fa fa-envelope"></i><span>About</span><span
+                            style="float: right"></span></a>
+                    <ul id="menu-academico-sub">
+                        <!-- <li id="menu-academico-avaliacoes" ><a href="#">Contact us</a></li>
+                            <li id="menu-academico-boletim" ><a href="#">About us</a></li> -->
+                    </ul>
+                </li>
+
+                <li><a href="#"><i class="fa fa-history"></i><span>Blog</span></a></li>
+                <li><a href="#"><i class="fa fa-gears"></i><span>Settings</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var toggle = true;
+
+        $(".sidebar-icon").click(function () {
+            if (toggle) {
+                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                $("#menu span").css({ "position": "absolute" });
+            }
+            else {
+                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                setTimeout(function () {
+                    $("#menu span").css({ "position": "relative" });
+                }, 400);
+            }
+
+            toggle = !toggle;
+        });
+    </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</body>
+
+</html>

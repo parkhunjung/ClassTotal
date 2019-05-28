@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    
+    <style>
+    
+    
+    
+    </style>
+    
+    <script>
+    
+        $(document).ready(function() {
+            
+            // jQuery 함수의 별칭
+            // - jQuery > $
+            // jQuery("#btn1");
+            // document.getElementById("btn1").onclick = function() {};
+            // document.getElementById("btn1").onclick = () => {}; //람다식
+
+            // JavaScript
+            // $("#btn1").click(function() {
+
+            // });
+
+            $("#btn1").click(() => {
+                alert("클릭");
+            }); // 람다식
+
+
+            // 순수 자바스크립트 : event.srcElement
+            // jQuery : this
+
+            // var box2 = document.getElementById("box2");
+            
+            // for (var i=0; i<box2.children.length; i++){
+            //     box2.children[i].onclick = () => {
+            //         event.srcElement.style.backgroundColor = "orange";
+            //     };
+            // }
+            
+            // 람다 vs 익명함수
+            // $("#box2 > input:button").click(function() {
+                // event.srcElement.style.backgroundColor = "blue";
+                // $(this) == $(event.srcElement)
+            //     $(this).css("background-color", "green");
+            // });
+
+            // 하나의 객체에 여러개의 이벤트를 매핑하기
+            //  - mouseover & mouseout & click
+
+            // DOM(BOM)
+            // var btn5 = document.getElementById("btn5");
+            // btn5.owner = "홍길동";
+            // console.log(btn5.owner);
+            // console.log(typeof btn5);
+
+            // var hong = {
+            //     name: "홍길동"
+            // };
+
+            // hong.age = 20;
+            // console.log(typeof hong);
+
+            var btn5 =document.getElementById("btn5");
+
+            var events = {
+                mouseover: function() {
+                    alert("마우스 오버");
+                },
+                mouseout: function() {
+                    alert("마우스 아웃");
+                }
+            };
+
+            for (var p in events) {
+                console.log(p);
+            }
+
+            // events.mouseout();
+
+            btn5.setEvent = function(list) {
+                // alert(list.mouseout);
+                for(var p in list) {
+                    this.addEventListener(p, list[p]);
+                }
+            };
+
+            btn5.setEvent(events);
+
+
+            // jQuery 다중 이벤트 매핑
+            // $("#btn6").on(이벤트명, 함수); // 단일 이벤트 매핑
+            var evts = {
+                mouseover: function() {
+                    $(this).css("background-color", "gold");
+                },
+                mouseout: function() {
+                    $(this).css("background-color", "white");
+                }
+            };
+            $("#btn6").on(evts);
+
+            $("btn7").on({
+                mouseover: function() {},
+                mouseout: function() {}
+            });
+
+
+        }); //ready
+    
+    </script>
+
+
+</head>
+<body>
+    <!--  -->
+    <div id="box1">
+        <input type="button" value="버튼1" id="btn1">
+    </div>
+
+    <div id="box2">
+        <input type="button" value="버튼2" id="btn2">
+        <input type="button" value="버튼3" id="btn3">
+        <input type="button" value="버튼4" id="btn4">
+    </div>
+
+    <div id="box3">
+        <input type="button" value="버튼5" id="btn5">
+        <input type="button" value="버튼6" id="btn6">
+        <input type="button" value="버튼7" id="btn7">
+    </div>
+    
+</body>
+</html>

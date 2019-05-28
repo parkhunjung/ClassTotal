@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#box {
+		width: 890px;
+		margin: 30px auto;
+	}
+	
+	#secret {
+		border: 1px solid #aaa;
+		border-radius: 5px;
+		background-color: #eee;
+		float: left;
+		width: 500px;
+	}
+	#desc {
+		float: left;
+		width: 350px;
+		padding-left: 30px;
+		color: #555;
+	}
+	
+	#desc li {
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+	
+	#secret #pw {
+		border: 1px dashed #aaa;
+		font-size: 4.5em;
+		color: #555;
+		width: 390px;
+		display: block;
+		margin: 30px auto;
+		padding: 10px;
+		padding-left: 40px;
+		letter-spacing: .85em;
+		outline: none;
+	}
+	
+	#secret #digit {
+		padding-left: 23px;
+		padding-bottom: 30px;
+	}
+	
+	#secret #digit input {
+		display: block;
+		float: left;
+		border: 1px solid #ccc;
+		font-size: 6em;
+		text-align: center;
+		color: #555;
+		padding: 10px;
+		width: 140px;
+		height: 140px;
+		margin: 5px;
+		text-shadow: -1px -1px 2px gray; 
+		background: white;/*  linear-gradient(#ccc, white, #ccc); */
+		outline: none;
+	}
+	
+	#secret #digit input:nth-last-child(2)
+		, #secret #digit input:nth-last-child(3) {
+		font-size: 3em;
+	}
+	
+</style>
+<script>
+	// var countkey = 0;
+	var count = 0;
+
+	window.onload = function() {
+		
+		num = document.all.num;
+		pw = document.all.pw;
+		enter = document.all.enter;
+		del = document.all.del;
+		
+
+		for (var i=0; i<num.length; i++){
+			
+			num[i].onclick = function() {
+				var d = event.srcElement;
+				if(pw.value.length < 4){
+					pw.value += d.value;
+				}
+				
+				del.onclick = function() {
+					// alert(pw.value.length);
+					pw.value = pw.value.slice(0, -1); // 끝문자열 제거
+					document.body.style.backgroundColor = "white";
+				}
+			}
+			
+			enter.onclick = function() {
+				// alert(document.body);
+				// document.body.style.backgroundColor = "gold";
+				
+
+				// alert(event.srcElement.parentNode);
+				if (pw.value == "0425") {
+					document.body.style.backgroundColor = "cornflowerblue";
+				} else if (pw.value != "0425") {
+					document.body.style.backgroundColor = "#FF8080";
+					count++;
+					if (count >= 3) {
+						document.body.style.backgroundColor = "red";
+						num.disabled = true;
+						del.disabled = true;
+						enter.disabled = true;
+						window.onkeydown = null;
+					}
+				} 
+			}
+
+			// del.onclick = function() {
+			// 	alert(event.srcElement.previousElementSibling.name = "num");
+			// 	pw.value = pw.value - event.srcElement.previousElementSibling.name.value;
+			// }
+		}
+
+		
+
+
+
+	}; // onload
+	
+
+	
+	window.onkeydown = function() {
+		
+		// alert(event.keyCode);
+		
+
+		if (pw.value.length < 4) {
+			if (event.keyCode == 48 || event.keyCode == 96) { pw.value += "0"; }
+			if (event.keyCode == 49 || event.keyCode == 97) { pw.value += "1"; }
+			if (event.keyCode == 50 || event.keyCode == 98) { pw.value += "2"; }
+			if (event.keyCode == 51 || event.keyCode == 99) { pw.value += "3"; }
+			if (event.keyCode == 52 || event.keyCode == 100) { pw.value += "4"; }
+			if (event.keyCode == 53 || event.keyCode == 101) { pw.value += "5"; }
+			if (event.keyCode == 54 || event.keyCode == 102) { pw.value += "6"; }
+			if (event.keyCode == 55 || event.keyCode == 103) { pw.value += "7"; }
+			if (event.keyCode == 56 || event.keyCode == 104) { pw.value += "8"; }
+			if (event.keyCode == 57 || event.keyCode == 105) { pw.value += "9"; }
+		} // 넘버
+
+		if (event.keyCode == 13) {
+			
+			// countkey++;
+			// alert(count);
+			if (pw.value == "0425") {
+				document.body.style.backgroundColor = "cornflowerblue";
+			} else if (pw.value != "0425") {
+				document.body.style.backgroundColor = "#FF8080";
+				count++;
+				if (count >= 3) {
+					document.body.style.backgroundColor = "red";
+					// if (event.keyCode == 8 || event.keyCode == 46 || event.keyCode == 13) {
+					// 	// alert("엔터키,백스페이스,del키 입력불가");
+					// 	event.preventDefault;
+					// 	return false;
+					// }
+					window.onkeydown = null;
+				}
+			} 
+		} // 엔터
+		
+		if (event.keyCode == 46 || event.keyCode == 8) {
+			pw.value = pw.value.slice(0, -1);
+			document.body.style.backgroundColor = "white";
+		}
+				
+	};
+	
+	
+</script>
+</head>
+<body>
+	<div id="box">
+		<div id="secret">
+			<input type="text" id="pw" readonly maxlength="4">
+			<div id="digit">
+				<input type="button" value="7" name="num">
+				<input type="button" value="8" name="num">
+				<input type="button" value="9" name="num">
+				<input type="button" value="4" name="num">
+				<input type="button" value="5" name="num">
+				<input type="button" value="6" name="num">
+				<input type="button" value="1" name="num">
+				<input type="button" value="2" name="num">
+				<input type="button" value="3" name="num">
+				<input type="button" value="0" name="num">
+				<input type="button" value="del" name="del">
+				<input type="button" value="enter" name="enter">
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+		<div id="desc">
+			<h1>비밀번호 입력</h1>
+			<h3>사용법</h3>
+			<ol>
+				<li>숫자 4자리를 입력한다.</li>
+				<li>enter를 누른다.</li>
+			</ol>
+			<h3>구현할 것</h3>
+			<ul>
+				<li>숫자 버튼을 눌러 입력한다.</li>
+				<li>del 버튼을 눌러 삭제한다.</li>
+				<li>4자리 이상 입력이 되지 않는다.</li>
+				<li>정답 암호 0425</li>
+				<li>암호가 틀리면 붉게 변한다.</li>
+				<li>암호가 맞으면 파랗게 변한다.</li>
+				<li>3회 틀리면 작동이 불가능하다.</li>
+				<li>상단 숫자키로 입력할 수 있다.</li>
+				<li>우측 숫자키로 입력할 수 있다.</li>
+				<li>백스페이스, Delete, Enter 키로 입력할 수 있다.</li>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

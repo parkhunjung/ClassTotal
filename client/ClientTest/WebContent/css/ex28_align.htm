@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        /*
+        
+        정렬, Alignment
+        - 인라인 태그와 블럭 태그의 수평 정렬
+
+        1. 인라인 태그
+            - 내용물의 수평 정렬을 할 수 없다.(text-align 적용 불가능)
+            - 공간의 크기가 내용물과 동일하기 때문에 움직일 틈이 없다.
+            - 인라인 태그 스스로 수평 정렬을 할 수 없다. > 가능할 시 문장의 흐름이 깨지기 때문에 지원자체를 안함.
+            - 인라인 태그의 수평 정렬은 반드시 블럭 부모 태그의 text-align을 사용해서 한다.(유일한 방법)
+        2. 블럭 태그
+            - 수평 정렬 개념이 없다. > 원래 성질이 너비가 100%이기 때문에
+            - 수평 가운데 정렬을 사용할때 쓰는 대중화된 방법(margin: 0px auto;)
+
+        */
+        
+        #span1 {
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        #box {
+            border: 1px solid rebeccapurple;
+            text-align: right;
+        }
+        
+        #box2 {
+            text-align: center;
+            border: 1px solid black;
+            width: 200px;
+            margin: 0px auto;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>인라인 태그</h1>
+    <div id="box">
+        안녕하세요.<span id="span1">인라인</span>안녕히 가세요.
+    </div>
+
+    <div id="box2">상자2</div>
+
+
+</body>
+</html>

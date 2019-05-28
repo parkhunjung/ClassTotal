@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        #content > fieldset {
+            margin: 15px 3px;
+        }
+
+        #content > input {
+            margin-left: 20px;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <h3>주문하기</h3>
+    <form name="order">
+        <div id="content">
+            <fieldset>
+                <legend>주문하시는 분</legend>
+                <div>이름 : <input type="text" name="setName" id=""></div>
+                <div>주소 : <input type="text" name="setAddress" id=""></div>
+            </fieldset>
+
+            <input type="checkbox" name="sameCk" id=""> 주문하신분과 정보가 동일합니다.
+            
+            <fieldset>
+                <legend>받으시는 분</legend>
+                <div>이름 : <input type="text" name="setName" id=""></div>
+                <div>주소 : <input type="text" name="setAddress" id=""></div>
+            </fieldset>
+        </div>
+    </form>
+
+    <script>
+    
+        var setName, setAddress, sameCk;
+
+        setName = document.order.setName;
+        setAddress = document.order.setAddress;
+        sameCk = document.order.sameCk;
+
+
+        sameCk.onclick = function() {
+            if(sameCk.checked){
+                setName[1].value = setName[0].value;
+                setAddress[1].value = setAddress[0].value;
+            } else {
+                setName[1].value = "";
+                setAddress[1].value = "";
+
+                setName[1].focus();
+            }
+        };
+
+
+    
+    </script>
+
+</body>
+</html>

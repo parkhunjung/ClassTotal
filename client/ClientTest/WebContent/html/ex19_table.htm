@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- 
+	<table>, 표
+	- 표 만들 때 사용
+	- 레이아웃 만들 때 사용 > <div> CSS 사용
+	
+	1. <table>
+		- 큰 상자
+		- 전체 컨테이너
+	2. <tr>, Table Row
+		- 중간 상자
+		- 행 역할
+	3. <td>, Table Data
+		- 작은 상자
+		- 셀 역할
+		- 데이터를 직접 포함하는 역할
+		
+	-->
+	
+	<h1>2행 2열 테이블</h1>
+	
+	<table border = "1" width = "200" height="200" bgcolor="yellow">
+		<tr bgcolor="red">
+			<td width="100" height="100" bgcolor="blue">1</td>
+			<td width="100">2</td>
+		</tr>
+		<tr>
+			<td height="100" align="right" valign="bottom">3</td>		
+			<td background="images/catty01.png">4</td>
+		</tr>
+	</table>
+	
+	
+	<hr>
+	
+	<h1>주소록</h1>
+	<table border="1" width = "500">
+		<!-- 
+			행(Row)
+			1. 헤더용
+			2. 데이터용
+		-->
+		<!-- 테이블 헤더 -->
+		<!--  
+			<tr bgcolor="#cccccc"> <!-- 반드시(!!) 모든 td의 너비합은 테이블 너비와 동일해야 한다. 
+				<td width="50" align = "center"><b>번호</b></td>
+				<td width="80" align = "center"><b>이름</b></td>
+				<td width="50" align = "center"><b>나이</b></td>
+				<td width="50" align = "center"><b>성별</b></td>
+				<td width="270" align = "center"><b>주소</b></td>
+			</tr>
+			-->
+			
+		<tr bgcolor="#cccccc"> <!-- 반드시(!!) 모든 td의 너비합은 테이블 너비와 동일해야 한다. -->
+			<th width="50" align = "center">번호</th>
+			<th width="80" align = "center">이름</th>
+			<th width="50" align = "center">나이</th>
+			<th width="50" align = "center">성별</th>
+			<th width="270" align = "center">주소</th>
+		</tr>
+		<!-- 테이블 데이터 -->
+		<tr>
+			<td align="center" valign="top">1</td>
+			<td align="center" valign="top">홍길동</td>
+			<td align="center" valign="top">20</td>
+			<td align="center" valign="top">남자</td>
+			<td>서울시 강남구 역삼동 한독 빌딩</td>
+		</tr>
+		<tr>
+			<td align="center" valign="top">2</td>
+			<td align="center" valign="top">아무개</td>
+			<td align="center" valign="top">25</td>
+			<td align="center" valign="top">여자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		
+	</table>
+	
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

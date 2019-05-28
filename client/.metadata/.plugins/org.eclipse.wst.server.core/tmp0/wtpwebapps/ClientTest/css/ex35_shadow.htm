@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        #p1 {
+            /* text-shadow: h-shadow v-shadow(3px, 3px > 위글자에서 3,3만큼 떨어진거리에서 그림자를 보이게해라) blur(흐릿하게만드는 수치) color */
+            text-shadow: -3px -3px 2px gray;
+        }
+
+        #box1 {
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 2px gray;
+            text-shadow: 3px 2px 2px gray;
+        }
+
+        h1 > span:nth-child(1) {
+            text-shadow: -2px -3px 2px cornflowerblue;
+        }
+        
+        h1 > span:nth-child(2) {
+            text-shadow: 3px -3px 1px orange;
+        }
+
+        h1 > span:nth-child(3) {
+            text-shadow: -2px -2px 2px orchid;
+        }
+
+        h1 > span:nth-child(4) {
+            text-shadow: 4px 4px 2px palegoldenrod;
+        }
+
+        h1 > span:nth-child(5) {
+            text-shadow: -4px -4px 2px palegreen;
+        }
+
+        #btnWrite {
+            /* css3 + control + template + form */
+            border: 1px solid gray;
+            background-color: black;
+            color: white;
+            padding: 3px 15px;
+            text-shadow: 1px 1px 1px #ccc;
+            cursor: pointer;
+
+        }
+
+        #p2:hover {
+            text-shadow: 2px 2px 2px gray;
+            cursor: help;
+        }
+
+        #p4, #p5 {
+            border: 1px solid black;
+            width: 300px;
+            /* height: 20px; */
+            overflow: hidden; /* 사이즈 지정을 안하면 오버플로우는 작동을 안한다. */ 
+            /* 텍스트 오버플로우를 쓰려면 white-space 가 필수다. */
+            white-space: nowrap;
+        }
+
+        #p4 {
+            /* 기본값 */
+            text-overflow: clip;
+        }
+
+        #p5 {
+            /* 오버플로우된 현상을 ...으로 바꿔준다 */
+            /* 게시판 제목같은데다가 쓴다. */
+            text-overflow: ellipsis;
+            padding: 2px 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p id="p4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, maiores.</p>
+    <p id="p5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, fugit.</p>
+
+    <input type="button" value="Write" id="btnWrite">
+
+    <h1><span>H</span><span>T</span><span>M</span><span>L</span><span>5</span> <small>Hyper Text Markup Language version 5</small></h1>
+
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, vel.</p>
+    <p id="p2">Inventore officia culpa accusamus consequuntur cupiditate reprehenderit repudiandae iste dolores?</p>
+    <p id="p3">Temporibus dolore nobis pariatur voluptatibus harum earum laboriosam aliquam hic.</p>
+
+    <div id="box1">HTML5 & CSS3</div>
+    <div id="box2">HTML5 & CSS3</div>
+    <div id="box3">HTML5 & CSS3</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        .cat, body * {
+            position: absolute;
+        }
+    
+    </style>
+
+    <script>
+    
+        var isDown = false;
+        var ox, oy;
+        var obj;
+        var zindex = 1;
+
+        window.onload = function() {
+            // img1 = document.getElementById("img1");
+
+        };
+
+        window.onmousedown = function() {
+
+            // 이 이벤트 클릭당하는 고양이가 움직일 고양이
+            if(event.srcElement.nodeName != "HTML") {
+                obj = event.srcElement; // 눌린 고양이
+
+                obj.style.zIndex = zindex;
+                zindex++;
+
+                isDown = true;
+                ox = event.offsetX;
+                oy = event.offsetY;
+            }
+
+        };
+        
+        window.onmouseup = function() {
+            isDown = false;
+        };
+
+        window.onmousemove = function() {
+
+            if (isDown) {
+                obj.style.left = event.clientX - ox + "px";
+                obj.style.top = event.clientY - oy + "px";
+
+                event.preventDefault();
+                return false;
+            }
+
+        };
+
+    </script>
+
+</head>
+<body>
+    
+    <h1>Drag & Drop</h1>
+
+    <img src="../images/catty01.png" id="cat1" class="cat">
+    <img src="../images/catty02.png" id="cat2" class="cat">
+    <img src="../images/catty03.png" id="cat3" class="cat">
+    <img src="../images/catty04.png" id="cat4" class="cat">
+    <img src="../images/catty05.png" id="cat5" class="cat">
+
+    <button>버튼</button>
+
+    <input type="checkbox" name="" id="">
+
+    <ul>
+        <li>고양이</li>
+        <li>강아지</li>
+        <li>병아리</li>
+    </ul>
+
+</body>
+</html>

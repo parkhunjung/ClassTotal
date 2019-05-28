@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    
+    <style>
+    
+        #box2 {
+            width: 1000px;
+            height: 1000px;
+        }
+    
+    </style>
+    
+    <script>
+    
+        // jQuery(document).ready(function() {
+        $(document).ready(function() {
+
+            /*
+            jQuery 함수 형태
+            1. A 타입
+                - 전용 함수
+                a. obj.test()       // getter, 읽기
+                b. obj.test(value)  // setter, 쓰기
+            
+            2. B 타입
+                - 범용 함수
+                a. obj.test(name)           //getter, 읽기
+                b. obj.test(name, value)    //setter, 쓰기
+            
+            
+            */
+
+            $("#btn1").click(function() {
+                
+                // 1. 전용 함수 > 특정 태그에서만 사용
+                // alert($("#box1").text());    //읽기
+                // $("#box1").text("안녕하세요");  //쓰기
+
+                // alert($("#btn1").click());
+
+                // 2. 범용 함수 > 광범위하게 사용
+                // alert($("#box1").css("width")); //읽기
+                // $("#box1").css("color", "blue");
+
+                // DOM
+                // btn1.setAttribute("title", "풍선 도움말");
+                // alert(btn1.getAttribute("title"));
+                
+                // 조작
+                // 1. 컨텐츠 조작
+                // - innerText > text()
+                // - innerHTML > html()
+                // - value > val()
+
+                // $("#box1").text("<b>메모입니다.<b>"); //쓰기
+                // $("#link1").text("<i>구글<i>");
+
+                // $("#box1").html("<b>홍길동<b><input><h1>제목</h1>");
+                // $("#link1").html("<i>구글<i>");
+                // alert($("#txt1").val());
+                // $("#txt1").val("기본값");
+
+
+                // 2. 속성 조작
+                // a. BOM
+                //      - obj.prop          //읽기
+                //      - obj.prop = "값";  //쓰기
+                // b. DOM
+                //      - obj.getAttribute("prop")          //읽기
+                //      - obj.setAttribute("prop", "값")    //쓰기
+                // c. jQuery
+                //      - obj.attr("prop")          //읽기
+                //      - obj.attr("prop", "값")    //쓰기
+
+                
+                // alert($("#link1").attr("href"));
+                // $("#link1").attr("href", "http://google.com");
+                // $("#link1").attr("title", "구글");
+                // $("#link1").text("구글");
+
+                // $("#link1").attr({
+                //     href: "http://google.com",
+                //     title: "구글",
+                //     target: "_blank"
+                // }).text("구글");
+
+                // DOM
+                // 1. innerHTML
+                // 2. createElement
+
+                // jQuery
+                // 1. html()
+                // 2. 나중에
+
+                // $("#box2").html($("#box2").html() + "<img src='../images/catty01.png'>"); // 사용하지않는방법
+                
+                //내용 누적 메소드
+                // 1. append()
+                // 2. prepend()
+                // $("#box2").append("<img src='../images/catty01.png'>"); //기존애용의 뒤에 붙일때
+                // $("#box2").prepend("<img src='../images/catty01.png'>"); // 기존내용의 앞에 붙일때
+                
+                // 경직된방법
+                // $("#box2").append("<div style='color:red;'>내용물</div>")
+                
+                // 세련되고 유연된방법
+                // $("#box2")
+                //     .append("<div></div>")
+                //     .text("내용물")
+                //     .css("color", "blue");
+                
+                $("#box2")
+                    .prepend("<div></div>")
+                    .text("배경화면")
+                    .css("background-image", "url(../images/4.jpg)");
+
+            });//btn1
+
+
+        });//ready
+    
+    </script>
+
+
+</head>
+<body>
+    <!--  -->
+    <h1>jQuery를 사용한 HTML(CSS) 조작</h1>
+    
+    <input type="button" value="버튼1" id="btn1">
+    <hr>
+
+    <div id="box1">상자입니다</div>
+    <input type="text" id="txt1">
+    <a href="http://naver.com" title="네이버" id="link1">네이버</a>
+    <div id="box2"><img src="../images/catty02.png" alt=""></div>
+
+</body>
+</html>

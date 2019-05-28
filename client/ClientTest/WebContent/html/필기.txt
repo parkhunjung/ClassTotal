@@ -1,0 +1,19 @@
+ClientTest > WebContent > 필기.txt
+
+WebContent
+	- Content directory
+	- Content를 담는 폴더 중 Root directory(최상위 폴더)
+	- Content : 브라우저에게 제공하는 자원들(웹문서, 이미지, 동영상, 폰트 등..)
+	
+7. 실행과정
+	- 소스 파일 작성(*.java) -> 컴파일 -> 실행파일(*.class) -> 실행(런타임) -> 프로그램 동작(콘솔)
+	- 소스 파일 작성(*.html) -> 브라우저(컴파일(인터프리터 방식) + 실행(런타임)) -> 프로그램 동작(브라우저) // 브라우저(HTML 언어 컴파일 + 실행기 + 실행 환경)
+	
+8. 웹서버 설치
+	- 아파치 톰캣, Apache Tomcat(***) : http://apache.org
+	- IIS(MS)
+	- 제우스 , Jeus(티맥스)
+	-----------------------------
+	- 골든피시
+	- 기타 등등..
+	

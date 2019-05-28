@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+		2. ID 선택자
+		- 태그에 명시된 ID 속성을 검색하는 선택자
+		- 태그명#ID명
+		- 유일해야 한다.(***)
+	*/
+	
+	h1{
+		font-style : italic;
+	}
+	
+	h1#title1{
+		color : red;
+	}
+	
+	h1#title2{
+		color : blue;
+	}
+	
+	div.content{
+		color : green;
+	}
+	
+	/*
+	
+	3. Class 선택자
+	- 태그에 명시된 class 속성을 검색하는 선택자
+	- 태그명.클래스명
+	- 선택 대상 > 하나 or 여러개 가능
+	
+	*/
+	
+</style>
+</head>
+<body>
+
+<h1 id = "title1">회사 소개</h1>
+<div class = "content">대표 : 홍길동</div>
+<div class = "content">위치 : 역삼역</div>
+
+<h1 id = "title2">대표 소개</h1>
+<div>인사말 : 안녕하세요. 저희 회사는 어쩌구 쏼라쏼라~ 쌈바~ </div>
+
+<hr>
+
+<div>&copy;Copyright 2019 test.com All rights reserved.</div>
+
+</body>
+</html>

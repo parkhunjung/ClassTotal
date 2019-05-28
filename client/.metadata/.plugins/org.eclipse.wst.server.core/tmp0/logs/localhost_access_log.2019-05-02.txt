@@ -1,0 +1,4 @@
+127.0.0.1 - - [02/May/2019:08:39:37 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [02/May/2019:08:39:37 +0900] "GET /ClientTest/css/ex22_block_inline.htm HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [02/May/2019:08:39:37 +0900] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [02/May/2019:08:55:19 +0900] "GET /ClientTest/css/ex27_position.htm HTTP/1.1" 200 3625

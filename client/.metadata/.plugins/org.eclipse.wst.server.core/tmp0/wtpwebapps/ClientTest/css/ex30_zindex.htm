@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        .box {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+        }
+
+        #box1 {
+            background-color: red;
+        }
+
+        #box2 {
+            background-color: yellow;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            z-index: 1;
+        }
+
+        #box3 {
+            background-color: blue;
+            /* background-color: rgba(0, 0, 255, 0.1); */
+            position: absolute;
+            left: 150px;
+            top: 150px;
+            z-index: 2;
+            color: black;
+            opacity: 0.5;
+        }
+
+        #list {
+            border: 0px solid black;
+            width: 1300px;
+
+        }
+
+        #list img {
+            float: left;
+            opacity: 0.3;
+        }
+
+        #list img:hover {
+            opacity: 1;
+        }
+
+        #content span {
+            opacity: 0.5;
+        }
+
+        #content span:hover {
+            opacity: 1;
+        }
+
+        .data {
+            outline: none;
+            border: 5px solid cornflowerblue;
+            margin-bottom: 5px;
+            opacity: 0.4;
+        }
+
+        .data:focus {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">
+        상자3
+        <img src="../images/catty01.png">
+    </div>
+
+    <h1 style="margin-top: 200px;">고양이들</h1>
+
+    <div id="list">
+        <img src="../images/cat01.jpg" alt="">
+        <img src="../images/cat02.jpg" alt="">
+        <img src="../images/cat03.jpg" alt="">
+        <img src="../images/cat04.jpg" alt="">
+        <img src="../images/cat05.jpg" alt="">
+        <div style="clear: left;"></div>
+    </div>
+
+    다른 내용물
+
+    <h1>알려드립니다.</h1>
+
+    <div id="content">
+        <span>Lorem, ipsum.</span>
+        <span>Voluptatibus, omnis.</span>
+        <span>Eum, porro.</span>
+        <span>Consequuntur, modi?</span>
+        <span>Ullam, cum.</span>
+        <span>Impedit, minima?</span>
+        <span>Facilis, beatae.</span>
+        <span>Libero, incidunt.</span>
+        <span>Laboriosam, magnam.</span>
+        <span>Ad, repellendus?</span>
+        <span>Iusto, id?</span>
+        <span>Deleniti, quos.</span>
+        <span>Soluta, doloremque.</span>
+        <span>Fugit, eligendi?</span>
+        <span>Nam, hic?</span>
+        <span>Quas, voluptatum?</span>
+        <span>Iste, voluptates.</span>
+        <span>Nulla, dolorum?</span>
+        <span>Ipsum, suscipit!</span>
+        <span>Vitae, commodi.</span>
+        <span>Sed, nemo.</span>
+        <span>Temporibus, eos.</span>
+        <span>Atque, laboriosam.</span>
+        <span>Nulla, ea!</span>
+        <span>Dolorum, odit.</span>
+        <span>Quo, similique.</span>
+        <span>Cupiditate, repellendus.</span>
+        <span>Consectetur, quod.</span>
+        <span>Voluptate, necessitatibus.</span>
+        <span>Voluptates, nemo!</span>
+        <span>Amet, accusantium!</span>
+        <span>Distinctio, consectetur.</span>
+        <span>Reiciendis, quisquam?</span>
+        <span>Saepe, neque?</span>
+        <span>Praesentium, natus.</span>
+        <span>Ad, totam?</span>
+        <span>Commodi, ullam.</span>
+        <span>Animi, delectus?</span>
+        <span>Reprehenderit, voluptates.</span>
+        <span>Excepturi, possimus.</span>
+        <span>Quod, unde!</span>
+        <span>Non, necessitatibus.</span>
+        <span>Explicabo, illum?</span>
+        <span>Similique, id.</span>
+        <span>Ipsum, similique.</span>
+        <span>Praesentium, velit!</span>
+        <span>Voluptates, pariatur!</span>
+        <span>Dolor, quidem?</span>
+        <span>Nihil, saepe!</span>
+        <span>Adipisci, ducimus.</span>
+        <span>Iusto, doloribus.</span>
+        <span>Quasi, debitis.</span>
+        <span>Doloribus, fugiat.</span>
+        <span>Repellat, ratione?</span>
+        <span>Amet, maxime.</span>
+        <span>Voluptatem, atque.</span>
+        <span>Fugit, velit.</span>
+        <span>Doloremque, exercitationem.</span>
+        <span>Molestias, cumque?</span>
+        <span>Cum, ab!</span>
+        <span>Quae, mollitia?</span>
+        <span>Tempore, minus!</span>
+        <span>Est, vero!</span>
+        <span>Asperiores, facilis.</span>
+        <span>Doloremque, dignissimos.</span>
+        <span>Vel, autem.</span>
+        <span>Labore, fuga!</span>
+        <span>Suscipit, quibusdam!</span>
+        <span>Praesentium, similique?</span>
+        <span>Harum, recusandae.</span>
+        <span>Libero, aliquid.</span>
+        <span>Molestias, consequuntur?</span>
+        <span>Maiores, recusandae.</span>
+        <span>Saepe, veniam.</span>
+        <span>Aliquam, necessitatibus.</span>
+        <span>Error, omnis.</span>
+        <span>Assumenda, iste.</span>
+        <span>Quidem, culpa!</span>
+        <span>Non, sint.</span>
+        <span>Voluptas, ipsam.</span>
+        <span>Rerum, eius?</span>
+        <span>Tenetur, maxime.</span>
+        <span>Corrupti, facere!</span>
+        <span>Est, quaerat?</span>
+        <span>Accusantium, atque?</span>
+        <span>Aliquid, hic?</span>
+        <span>Asperiores, reiciendis.</span>
+        <span>Iste, laudantium?</span>
+        <span>Exercitationem, saepe!</span>
+        <span>Vel, odit.</span>
+        <span>Necessitatibus, qui.</span>
+        <span>Voluptatibus, veniam.</span>
+        <span>Architecto, quaerat.</span>
+        <span>Deleniti, debitis!</span>
+        <span>Ipsa, minus?</span>
+        <span>Dignissimos, soluta?</span>
+        <span>Neque, quam.</span>
+        <span>Unde, sit?</span>
+        <span>Ratione, recusandae.</span>
+        <span>Debitis, magni!</span>
+    </div>
+
+    <h1>입력 데이터</h1>
+
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+</body>
+</html>

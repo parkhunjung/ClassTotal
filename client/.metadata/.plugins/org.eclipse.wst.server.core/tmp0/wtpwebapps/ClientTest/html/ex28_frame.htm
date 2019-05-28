@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+	<!-- 
+	프레임, Frame
+	- 하나의 브라우저에 N개의 문서를 출력하는 역할
+	- <frameset>
+	- <frame>
+	
+	프레임 장점
+	1. 여러 페이지에서 반복되는 코드를 모듈화 시킨다.
+	2. 불필요한 소스나 리소스들을 반복해서 다운로드하지 않는다. 
+	3. 클라이언트 <-> 서버 : 불필요한 트래픽이 발생하지 않는다.
+	4. 클라이언트 : 인터넷 속도가 빠르다고 체감
+	
+	프레임 단점
+	1. 디자인 문제
+	
+	-->
+	
+<frameset rows="75,*" noresize frameborder="no">
+	<frame src="menu.htm" scrolling="no">
+	<frame src="content.htm" name="fcontent">
+</frameset>
+	
+</html>
