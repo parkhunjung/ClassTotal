@@ -1,0 +1,144 @@
+프로젝트 설정 > java 설정
+
+src > new > class 선택 > name 만쓰고 끝
+
+
+window - preference - font검색
+
+window - preference - encoding 검색 - text - UTF 8
+
+editplus 도 UTF-8로 수정
+
+마우스 우클릭 > new > java project > javatest
+
+추출하고 싶은 코드부분을 전부잡아서 마우스 우클릭 => Refactor 누르고 > Extract method 
+
+메소드를 만드는 방법 => m2(); 에 ctrl + 1 을 누르고 creat method
+
+// TODO 주석 이것은 내가 까먹지않고 위치를 기억하게해주는방식 window showview > tasks
+
+// STS 일부기능 - 마켓 - quick search
+
+/// 주민등록번호 구하기 공식
+
+ 70(범위x) 01(범위1~12) 01(1~31) - 1(1~2,3~4,9~0,5~6,7~8 즉 홀수면남자,짝수면여자(0포함)) 0101(주민센터번호) 0(출생신고순서) 
+x2x3      x4x5         x6x7        x8                                                    x9x2x3x4            x5 
+= 40을 11로 나눔 나누고 나온나머지값은 7
+거기에 11-7 = 4 이것이 유효번호
+만약 나머지가없고 두자리가 10,11 이면 십의자리숫자를 버린 0과 1이 값이된다.
+
+
+
+4(유효성번호)
+
+***()주민등록번호/ 
+
+www.github.com // 형상관리 홈페이지/ 소스공유
+
+Github > Gist ( 코드 조각 )
+
+
+https://www.curioustore.com//   변수명 사이트
+
+
+
+
+op.gg 
+
+버스,지하철,ktx,비행기,배 등 이동수단 대중교통
+
+
+figlet 사용하기
+
+https://github.com/lalyos/jfiglet
+
+https://search.maven.org
+
+//애니메이션 사용 코드
+class ScreenTest 
+{
+	public static void main(String[] args) throws Exception 
+	{
+		System.out.println("test");
+
+		new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();
+
+		//System.out.println("zzzz");
+		for (int j=0; j<100; j++){
+			for (int i=0; i<j; i++){
+				System.out.print(" ");
+			}
+		System.out.print("▶");
+		Thread.sleep(100);
+		
+		new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();
+		}
+	}
+}
+
+
+Null 포인트 Exception 이 날경우 . 앞에 있는 객체가 초기화 가 된 객체인가?
+꼭 확인해볼것
+
+java.lang.ClassCastException 자주볼 에러
+해결법? 마우스 우클릭 // surround with -> try/catch block 실행
+
+//온니 Exception 의 순서만 맨뒤로
+
+
+따로 유틸 프로젝트를 생성// 
+
+MyLibrary 유틸 패키지도 생성 com.test.util
+
+프로젝트에서 오른쪽버튼 > 내보내기(export) > jar file 선택 next 
+>> 다운로드 경로 설정 >> 다운로드 >> 알아서 풀기로 풀어주기
+
+++ 프로젝트에 lib 생성 >> lib 에 MyLibrary 복사 >> 자바테스트 우클릭 
+>> build path >> configure build path 선택후 add jar로 풀면 
+이클립스가 읽을수 있게됨
+
+
+1	kb	30
+2	
+3	
+
+
+
+
+저번달     				이번달
+이번달에 있는녀석을 시간이지나면 		이번달꺼는 그냥 이번달꺼 계산
+여기다가 적립시키기	   	
+
+
+
+kr.co.sist.cinema.[\]
+
+Git 설명 -----------
+
+윈도우 -> 쇼우뷰 -> 아더 -> git 선택 3번째꺼 클릭
+깃 만들때는
+
+내가백업하고자 하는 프로그램 = ? 
+add 후에 commit 메세지에 꼭 알아볼수 있는 
+ex) Modify Class [Master.java] 등등
+으로 커밋 후 관리하기. 
+
+branch 추가 => 프로젝트 우클릭 -> 팀 -> switch to -> 뉴 브랜치
+
+마스터 버전은 작업을 하는 파일이아니다. 마스터파일은 배포하는 파일
+
+작업을 하기위해선 버전을 복사해서 새 가지에서 작업을시도
+
+
+
+
+1. 본인작업 완료 > commit
+2. pull
+3. Conflict : Solved
+4. Push
+
+ArrayList 와 LinkedList 는 둘중에 하나를 선택해서 써야한다.
+어레이리스트 => 읽고 쓰기에 굉장히 능한 리스트
+링크드리스트 => 삭제와 추가삽입에 굉장히 능한 리스트
+Double Circuler LinkedList 만 쓴다.
+

@@ -1,0 +1,47 @@
+오라클 계정
+아이디 qkrgjswjd100@gmail.com	
+비번   4785qorhvkdQ
+
+오라클 다운로드 -
+
+메뉴 - 개발자 - 데이터베이스  - > Tools => 오라클 sql 개발자 다운로드 => 윈도우 64비트 JDK 8 includded 428MB
+메뉴 - 개발자 - 데이터베이스 -> 오라클 데이터베이스
+
+shutdown -s -t 10800  컴퓨터 끄기 예약어(예약시간)
+shutdown -a  컴퓨터 끄기 예약 취소
+
+D\class\oracle 폴더생성
+java1234 // 비번
+
+1521 (?)
+8080 (?)
+
+OracleXE112 Express Edition => //오라클 서버
+sqldeveloper -> 무설치버전이라 C:\ 로 옮김 => //오라클 클라이언트
+
+services.msc // 자주칠 명령어 외우기
+  - OracleServiceXE  //얘는 오라클 자체이다. 얘가 죽으면 오라클 작동 x
+  - OracleXETNSListener  //기다리는녀석
+
+집에서는oracle을 수동상태로 바꿔놓는게 좋다.
+
+cmd - 관리자권한실행 = net stop OracleServiceXE //멈추기
+cmd - 관리자권한실행 = net start OracleServiceXE //시작하기
+
+C:\Users\sist48\AppData\Roaming\SQL Developer\system18.4.0.376.1900\o.sqldeveloper => product-preferences.xml// 폰트조작
+
+이클립스 - 윈도우즈 쇼우뷰 -> 아더 -> 데이터 매니지먼트 -> 첫번째 - >처음꺼 new 누르고
+C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib 여기서 OJDBC 6을 자르로 추가하고
+
+11 확인하면 화면나오는데
+localhost hr java1234 SID 에 xe 하면된다
+
+오픈시트 =>
+오라클 11
+수업용 
+xe
+
+윈도우 프리퍼런스
+키
+excute 어쩌고 alt + x 되잇는놈 컨트롤 엔터로 수정 끝 
+이클립스등록
